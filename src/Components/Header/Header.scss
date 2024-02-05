@@ -1,6 +1,20 @@
+@use "../../Styles/partials/variables" as *;
+@use "../../Styles/partials/mixins" as *;
+
 .header {
-  background-color: #232940;
+  background-color: $background-graphite;
   padding-bottom: 5rem;
+
+  @include tablet-breakpoint {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem 6rem;
+  }
+
+  @include desktop-breakpoint {
+    padding: 2rem 8.125rem 7.5rem;
+  }
 
   &__logo {
     padding: 1.5rem 0;
@@ -12,19 +26,37 @@
     list-style-type: none;
     padding: 0 1rem;
     margin-bottom: 1.5rem;
+    margin-top: 0;
+
+    @include tablet-breakpoint {
+      margin-bottom: 0;
+      padding: 0;
+      gap: 1rem;
+    }
   }
 
   &__nav-item {
-    color: #bdc5d5;
+    color: $secondary-cloud;
     border-radius: 20px;
     border: none;
     flex: 1;
     background: none;
     height: 2.25rem;
 
+    &:hover {
+      text-decoration: underline;
+      color: $primary-white;
+      cursor: pointer;
+    }
+
+    @include tablet-breakpoint {
+      padding: 0.5rem 1rem;
+      height: 2.375rem;
+    }
+
     &--active {
       background-color: #13182c;
-      color: #ffffff;
+      color: $primary-white;
     }
   }
 }
