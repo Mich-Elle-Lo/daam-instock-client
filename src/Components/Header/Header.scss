@@ -1,5 +1,6 @@
 @use "../../Styles/partials/variables" as *;
 @use "../../Styles/partials/mixins" as *;
+@use "../../Styles/partials/typography" as *;
 
 .header {
   background-color: $background-graphite;
@@ -36,6 +37,9 @@
   }
 
   &__nav-item {
+    font-family: "TitilliumWeb-SemiBold", sans-serif;
+    font-weight: $bold-txt;
+    font-size: 0.8125rem;
     color: $secondary-cloud;
     border-radius: 20px;
     border: none;
@@ -49,14 +53,15 @@
       cursor: pointer;
     }
 
-    @include tablet-breakpoint {
-      padding: 0.5rem 1rem;
-      height: 2.375rem;
-    }
-
     &--active {
       background-color: #13182c;
       color: $primary-white;
+    }
+
+    @include tablet-breakpoint {
+      padding: 0.5rem 1rem;
+      height: 2.375rem;
+      font-size: 0.875rem;
     }
   }
 }
