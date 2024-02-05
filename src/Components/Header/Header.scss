@@ -1,0 +1,30 @@
+.header {
+  background-color: #232940;
+  padding-bottom: 5rem;
+
+  &__logo {
+    padding: 1.5rem 0;
+  }
+
+  &__nav-list {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__nav-item {
+    color: #bdc5d5;
+    border-radius: 20px;
+    border: none;
+    flex: 1;
+    background: none;
+    height: 2.25rem;
+
+    &--active {
+      background-color: #13182c;
+      color: #ffffff;
+    }
+  }
+}
