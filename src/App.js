@@ -7,8 +7,8 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/" element={<WareHousesPage />} />
+          <Route path="/inventories" element={<InventoriesPage />} />
         </Routes>
       </BrowserRouter>
     </div>
