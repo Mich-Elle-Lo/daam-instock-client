@@ -1,0 +1,108 @@
+//COLORS
+$primary-black: #13182c; //Global text color
+$primary-indigo: #2e66e5; //Interactive elements
+$primary-white: #ffffff; //Global white color
+
+$secondary-slate: #5c667e; //Table column headers & placeholder text
+$secondary-cloud: #bdc5d5; //Outlines, dividers, borders, table sorting icon
+
+$background-graphite: #232940; //Top navigation header background,CTA button hover state background
+$background-light-grey: #f7f8f9; //Page background,table column header background, CTA background
+//SCREEN BREAKPOINTS
+
+$min-mobile-screen: 320px;
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+$max-desktop-screen: 1920px;
+
+// TEXT & COLOR STYLES
+
+$regular-txt: 400;
+$demi-txt: 500;
+$bold-txt: 600;
+
+$letter-spacing: 0.011rem;
+
+// DESKTOP & TABLET TEXT STYLES
+$desktopPageTextSize: 2.0625rem; // 33px
+$desktopPageLineHeight: 2.75rem; // 44px
+$desktopSectionTextSize: 0.75rem; // 12px
+$desktopSectionLineHeight: 1.25rem; // 20px
+$desktopSubheaderTextSize: 0.875rem; // 14px
+$desktopSubheaderLineHeight: 1.375rem; // 22px
+$desktopBodyTextSize: 0.875rem; // 14px
+$desktopBodyLineHeight: 1.375rem; // 22px
+$desktopLabelButtonTextSize: 0.75rem; // 12px
+$desktopLabelButtonLineHeight: 1.25rem; // 20px
+
+// MOBILE TEXT STYLES
+$mobilePageTextSize: 1.5rem; // 24px
+$mobilePageLineHeight: 2rem; // 32px
+$mobileSectionTextSize: 0.75rem; // 12px
+$mobileSectionLineHeight: 1.25rem; // 20px
+$mobileSubheaderTextSize: 0.8125rem; // 13px
+$mobileSubheaderLineHeight: 1.125rem; // 18px
+$mobileBodyTextSize: 0.8125rem; // 13px
+$mobileBodyLineHeight: 1.125rem; // 18px
+$mobileLabelButtonTextSize: 0.625rem; // 10px
+$mobileLabelButtonLineHeight: 1.25rem; // 20px
+
+//NAV PROPERTIES
+$nav-height-mobile: 4.5rem;
+$nav-height-tablet: 4.2rem;
+$nav-padding: 0;
+$underline-link-padding-mobile: 0.1rem 0rem 0.6rem 0rem;
+$underline-link-padding-tablet: 1.5rem 0.1rem 1.5rem 0.1rem;
+
+//PADDING PROPERTIES
+$m-padding-top: 1.5rem; //24px
+$m-padding-space: 1rem; //16px
+$m-padding-sides: 1rem; //16px
+$t-padding-top: 2.25rem; //36px
+$t-padding-space: 1.5rem; //24px
+$t-padding-sides: 1.5rem; //24px
+$side-padding-increment: 0.5rem; //8px
+
+//Desktop and Tablet Text VARIABLES
+$h1-component-height: 2.5rem; //40px Page Header
+$h2-component-height: 2rem; //32px Subheader
+$h3-component-height: 1.375rem; //22px Labels Links Buttons
+$h4-component-height: 1.125rem; //18px Table Header
+$p1-body-height: 1.75rem; // 28px Body Large
+$p2-body-height: 1.375rem; // 22px Body Medium
+$p3-body-height: 1.125rem; // 18px Body Small
+
+//Mobile Text VARIABLES
+$mh1-component-height: 2.25rem; //36px Page Header
+$mh2-component-height: 1.75rem; //28px Subheader
+$mh3-component-height: 1.25rem; //20px Labels Links Buttons
+$mh4-component-height: 1.125rem; //18px Table Header
+$p1-body-height: 0.9375rem; // 15px Body Large
+$p2-body-height: 0.8125rem; // 13px Body Medium
+$p3-body-height: 0.6875rem; // 11px Body Small
+
+//LOGO
+$logo-height: 1.563rem; //25px
+$logo-width: 7.5rem; //120px
+
+//BUTTON VARIABLES
+$btn-border-radius: 0.25rem; //4px
+$btn-height: 2.5rem; //40px
+$btn-tablet-width: 9.375rem; //150px
+$btn-mobile-width: 100%;
+
+//FORM VARIABLES
+$form-height-tablet: 2.5rem; // 40px
+$form-height-mobile: 2.25rem; // 36px
+$form-width: 15rem; // 240px
+$form-max-width: 100%;
+$form-padding-tablet: 1rem; // 16px
+$form-padding-mobile: 0.75rem; // 12px
+$form-label-spacing: 0.25rem; // 4px
+$form-border-default: 0.0625rem solid #e5e5e5; // 1px to REM
+$form-border-active: 0.125rem solid #0077ff; // 2px to REM
+$form-border-error: 0.0625rem solid #d22d2d; // 1px to REM
+$form-border-radius: 0.3rem;
+
+//DIVIDER LINE
+$divider-line: 0.063rem solid $secondary-mercury;

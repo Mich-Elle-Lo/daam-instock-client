@@ -1,0 +1,30 @@
+@use "./partials/typography" as *;
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Avenir Next LT Pro", sans-serif;
+  width: auto;
+  margin: 0 auto;
+  padding: 0;
+  min-width: $min-mobile-screen;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  &__desktop {
+    @include desktop-breakpoint {
+      display: flex;
+    }
+  }
+  &__box {
+    width: 100%;
+  }
+}
