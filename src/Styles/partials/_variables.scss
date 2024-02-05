@@ -1,0 +1,93 @@
+//COLORS
+$primary-black: #323232;
+$primary-blue: #0095ff;
+$primary-silver: #afafaf;
+$primary-white: #ffffff;
+$secondary-dark-black: #000000;
+$secondary-dark-blue: #0065ad;
+$secondary-mercury: #e1e1e1;
+$secondary-alabaster: #fafafa;
+
+//SCREEN BREAKPOINTS
+
+$min-mobile-screen: 320px;
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+$max-desktop-screen: 1920px;
+
+// TEXT & COLOR STYLES
+
+$regular-txt: 400;
+$demi-txt: 500;
+$bold-txt: 600;
+
+$letter-spacing: 0.011rem;
+
+// DESKTOP & TABLET TEXT STYLES
+$desktopPageTextSize: 2.0625rem; // 33px
+$desktopPageLineHeight: 2.75rem; // 44px
+$desktopSectionTextSize: 0.75rem; // 12px
+$desktopSectionLineHeight: 1.25rem; // 20px
+$desktopSubheaderTextSize: 0.875rem; // 14px
+$desktopSubheaderLineHeight: 1.375rem; // 22px
+$desktopBodyTextSize: 0.875rem; // 14px
+$desktopBodyLineHeight: 1.375rem; // 22px
+$desktopLabelButtonTextSize: 0.75rem; // 12px
+$desktopLabelButtonLineHeight: 1.25rem; // 20px
+
+// MOBILE TEXT STYLES
+$mobilePageTextSize: 1.5rem; // 24px
+$mobilePageLineHeight: 2rem; // 32px
+$mobileSectionTextSize: 0.75rem; // 12px
+$mobileSectionLineHeight: 1.25rem; // 20px
+$mobileSubheaderTextSize: 0.8125rem; // 13px
+$mobileSubheaderLineHeight: 1.125rem; // 18px
+$mobileBodyTextSize: 0.8125rem; // 13px
+$mobileBodyLineHeight: 1.125rem; // 18px
+$mobileLabelButtonTextSize: 0.625rem; // 10px
+$mobileLabelButtonLineHeight: 1.25rem; // 20px
+
+//NAV PROPERTIES
+$nav-height-mobile: 4.5rem;
+$nav-height-tablet: 4.2rem;
+$nav-padding: 0;
+$underline-link-padding-mobile: 0.1rem 0rem 0.6rem 0rem;
+$underline-link-padding-tablet: 1.5rem 0.1rem 1.5rem 0.1rem;
+
+//PADDING PROPERTIES
+$m-padding-top: 1.5rem; //24px
+$m-padding-space: 1rem; //16px
+$m-padding-sides: 1rem; //16px
+$t-padding-top: 2.25rem; //36px
+$t-padding-space: 1.5rem; //24px
+$t-padding-sides: 1.5rem; //24px
+$side-padding-increment: 0.5rem; //8px
+
+//HEADER VARIABLES
+$header-component-height: 2.5rem;
+
+//LOGO
+$logo-height: 1.563rem; //25px
+$logo-width: 7.5rem; //120px
+
+//BUTTON VARIABLES
+$btn-border-radius: 0.25rem; //4px
+$btn-height: 2.5rem; //40px
+$btn-tablet-width: 9.375rem; //150px
+$btn-mobile-width: 100%;
+
+//FORM VARIABLES
+$form-height-tablet: 2.5rem; // 40px
+$form-height-mobile: 2.25rem; // 36px
+$form-width: 15rem; // 240px
+$form-max-width: 100%;
+$form-padding-tablet: 1rem; // 16px
+$form-padding-mobile: 0.75rem; // 12px
+$form-label-spacing: 0.25rem; // 4px
+$form-border-default: 0.0625rem solid #e5e5e5; // 1px to REM
+$form-border-active: 0.125rem solid #0077ff; // 2px to REM
+$form-border-error: 0.0625rem solid #d22d2d; // 1px to REM
+$form-border-radius: 0.3rem;
+
+//DIVIDER LINE
+$divider-line: 0.063rem solid $secondary-mercury;

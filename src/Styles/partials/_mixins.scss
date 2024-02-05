@@ -1,0 +1,224 @@
+@use "./variables" as *;
+
+@mixin tablet-breakpoint {
+  @media (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+@mixin desktop-breakpoint {
+  @media (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+@mixin background-cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+@mixin logo-cover {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@mixin flex-direction($flex-direction) {
+  display: flex;
+  flex-direction: $flex-direction;
+}
+@mixin flex($flex-direction, $align-items, $justify-content) {
+  display: flex;
+  flex-direction: $flex-direction;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+@mixin flex-default($align-items, $justify-content) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+@mixin box($width, $height) {
+  width: $width;
+  height: $height;
+}
+@mixin border-bottom($color) {
+  border-bottom-width: 0.3rem;
+  border-bottom-style: solid;
+  border-color: $color;
+}
+@mixin mobile-padding-sides {
+  padding-right: $m-padding-sides;
+  padding-left: $m-padding-sides;
+}
+@mixin tablet-padding-sides {
+  padding-right: $t-padding-sides;
+  padding-left: $t-padding-sides;
+}
+@mixin mobile-tablet-pageheader-text-style {
+  //FALLBACK IF SUPPORT DOESNT WORK
+  font-size: $mobilePageTextSize;
+  line-height: $mobilePageLineHeight;
+  font-weight: $bold-txt;
+  letter-spacing: $letter-spacing;
+  //CLAMP FEATURE
+  @supports (font-size: clamp(0px, 0px, 0px)) {
+    font-size: clamp($mobilePageTextSize, 3vw + 0.75rem, $desktopPageTextSize);
+    line-height: clamp($mobilePageLineHeight, 2vw, $desktopPageLineHeight);
+    font-weight: $bold-txt;
+    letter-spacing: $letter-spacing;
+  }
+  @include tablet-breakpoint() {
+    font-size: $desktopPageTextSize;
+    line-height: $desktopPageLineHeight;
+    font-weight: $bold-txt;
+    @supports (font-size: clamp(0px, 0px, 0px)) {
+      font-size: clamp(
+        $mobilePageTextSize,
+        3vw + 0.75rem,
+        $desktopPageTextSize
+      );
+      line-height: clamp($mobilePageLineHeight, 2vw, $desktopPageLineHeight);
+      font-weight: $bold-txt;
+      letter-spacing: $letter-spacing;
+    }
+  }
+}
+@mixin mobile-tablet-section-header-text-style {
+  font-size: $mobileSectionTextSize;
+  line-height: $mobileSectionLineHeight;
+  font-weight: $bold-txt;
+  letter-spacing: $letter-spacing;
+  @supports (font-size: clamp(0px, 0px, 0px)) {
+    font-size: clamp(
+      $mobileSectionTextSize,
+      3vw + 0.75rem,
+      $desktopSectionTextSize
+    );
+    line-height: clamp(
+      $mobileSectionLineHeight,
+      2vw,
+      $desktopSectionLineHeight
+    );
+    font-weight: $bold-txt;
+    letter-spacing: $letter-spacing;
+  }
+  @include tablet-breakpoint() {
+    font-size: $desktopSectionTextSize;
+    line-height: $desktopSectionLineHeight;
+    font-weight: $regular-txt;
+    letter-spacing: $letter-spacing;
+    @supports (font-size: clamp(0px, 0px, 0px)) {
+      font-size: clamp($mheader-size, 3vw + 0.75rem, $desktopSectionTextSize);
+      line-height: clamp($mhead-line-height, 2vw, $desktopSectionLineHeight);
+      font-weight: $bold-txt;
+      letter-spacing: $letter-spacing;
+    }
+  }
+}
+@mixin mobile-tablet-subheader-text-style {
+  font-size: $mobileSubheaderTextSize;
+  line-height: $mobileSubheaderLineHeight;
+  font-weight: $demi-txt;
+  letter-spacing: $letter-spacing;
+  @supports (font-size: clamp(0px, 0px, 0px)) {
+    font-size: clamp(
+      $mobileSubheaderTextSize,
+      3vw + 0.75rem,
+      $desktopSubheaderTextSize
+    );
+    line-height: clamp(
+      $mobileSubheaderLineHeight,
+      2vw,
+      $desktopSubheaderLineHeight
+    );
+    font-weight: $demi-txt;
+    letter-spacing: $letter-spacing;
+  }
+  @include tablet-breakpoint() {
+    font-size: $desktopSubheaderTextSize;
+    line-height: $desktopSubheaderLineHeight;
+    font-weight: $demi-txt;
+    letter-spacing: $letter-spacing;
+    @supports (font-size: clamp(0px, 0px, 0px)) {
+      font-size: clamp(
+        $mobileSubheaderTextSize,
+        3vw + 0.75rem,
+        $desktopSubheaderTextSize
+      );
+      line-height: clamp(
+        $mobileSubheaderLineHeight,
+        2vw,
+        $desktopSubheaderLineHeight
+      );
+      font-weight: $demi-txt;
+      letter-spacing: $letter-spacing;
+    }
+  }
+}
+@mixin mobile-tablet-body-text-style {
+  font-size: $mobileBodyTextSize;
+  line-height: $mobileBodyLineHeight;
+  font-weight: $regular-txt;
+  letter-spacing: $letter-spacing;
+  @supports (font-size: clamp(0px, 0px, 0px)) {
+    font-size: clamp($mobileBodyTextSize, 3vw + 0.75rem, $desktopBodyTextSize);
+    line-height: clamp($mobileBodyLineHeight, 2vw, $desktopBodyLineHeight);
+    font-weight: $regular-txt;
+    letter-spacing: $letter-spacing;
+  }
+  @include tablet-breakpoint() {
+    font-size: $desktopBodyTextSize;
+    line-height: $desktopBodyLineHeight;
+    font-weight: $regular-txt;
+    letter-spacing: $letter-spacing;
+    @supports (font-size: clamp(0px, 0px, 0px)) {
+      font-size: clamp(
+        $mobileBodyTextSize,
+        3vw + 0.75rem,
+        $desktopBodyTextSize
+      );
+      line-height: clamp($mobileBodyLineHeight, 2vw, $desktopBodyLineHeight);
+      font-weight: $regular-txt;
+      letter-spacing: $letter-spacing;
+    }
+  }
+}
+@mixin mobile-tablet-labels-buttons-text-style {
+  font-size: $mobileLabelButtonTextSize;
+  line-height: $mobileLabelButtonLineHeight;
+  font-weight: $regular-txt;
+  letter-spacing: $letter-spacing;
+  @supports (font-size: clamp(0px, 0px, 0px)) {
+    font-size: clamp(
+      $mobileLabelButtonTextSize,
+      3vw + 0.75rem,
+      $desktopLabelButtonTextSize
+    );
+    line-height: clamp(
+      $mobileLabelButtonLineHeight,
+      2vw,
+      $desktopLabelButtonLineHeight
+    );
+    font-weight: $regular-txt;
+    letter-spacing: $letter-spacing;
+  }
+  @include tablet-breakpoint() {
+    font-size: $desktopLabelButtonTextSize;
+    line-height: $desktopLabelButtonLineHeight;
+    font-weight: $regular-txt;
+    letter-spacing: $letter-spacing;
+    @supports (font-size: clamp(0px, 0px, 0px)) {
+      font-size: clamp(
+        $mobileLabelButtonTextSize,
+        3vw + 0.75rem,
+        $desktopLabelButtonTextSize
+      );
+      line-height: clamp(
+        $mobileLabelButtonLineHeight,
+        2vw,
+        $desktopLabelButtonLineHeight
+      );
+      font-weight: $regular-txt;
+      letter-spacing: $letter-spacing;
+    }
+  }
+}
