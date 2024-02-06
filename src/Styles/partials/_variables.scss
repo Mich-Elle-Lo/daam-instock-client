@@ -34,9 +34,8 @@ $mobile-gutter: 1rem; //16px
 $regular-txt: 400;
 $semibold-txt: 600;
 
-$letter-spacing: 0.011rem;
-
 // TEXT STYLES
+$letter-spacing: 0.011rem;
 $base-font-size: 1rem;
 
 //// Desktop and Tablet
@@ -84,13 +83,20 @@ $mobile-font-size-p3: 0.6875rem;
 $mobile-line-height-p3: 1rem;
 
 // //NAV PROPERTIES
-// $nav-height-mobile: 4.5rem;
-// $nav-height-tablet: 4.2rem;
-// $nav-padding: 0;
-// $underline-link-padding-mobile: 0.1rem 0rem 0.6rem 0rem;
-// $underline-link-padding-tablet: 1.5rem 0.1rem 1.5rem 0.1rem;
+$nav-height-mobile: 8.5rem; //136px
+$nav-width-mobile: 23.4375rem; //375px
 
-//PADDING PROPERTIES
+$nav-height-tablet: 5.75rem; // 92px
+$nav-width-tablet: 48rem; // 768px
+
+$nav-height-desktop: 5.75rem; // 92px
+$nav-width-desktop: 75rem; // 1200px
+
+$nav-padding: 0;
+$underline-link-padding-mobile: 0.1rem 0rem 0.6rem 0rem;
+$underline-link-padding-tablet: 1.5rem 0.1rem 1.5rem 0.1rem;
+
+//PADDING PROPERTIES mobile and tablet
 $m-padding-top: 1.5rem; //24px
 $m-padding-space: 1rem; //16px
 $m-padding-sides: 1rem; //16px
@@ -99,31 +105,85 @@ $t-padding-top: 2.25rem; //36px
 $t-padding-space: 1.5rem; //24px
 $t-padding-sides: 1.5rem; //24px
 
-$base-padding: 0.5rem; //8px
+$side-padding-increment: 0.5rem; //8px
 $padding-space-title: 0.25rem; //4px between title and paragraph
 
 // //LOGO
-// $logo-height: 1.563rem; //25px
-// $logo-width: 7.5rem; //120px
+$logo-height-1: 1.75rem; //28px
+$logo-width-1: 8.0625rem; //129px
 
-// //BUTTON VARIABLES
-// $btn-border-radius: 0.25rem; //4px
-// $btn-height: 2.5rem; //40px
-// $btn-tablet-width: 9.375rem; //150px
-// $btn-mobile-width: 100%;
+$logo-height-2: 3.5rem; //56px
+$logo-width-2: 16.125rem; //258px
 
-// //FORM VARIABLES
-// $form-height-tablet: 2.5rem; // 40px
-// $form-height-mobile: 2.25rem; // 36px
-// $form-width: 15rem; // 240px
-// $form-max-width: 100%;
-// $form-padding-tablet: 1rem; // 16px
-// $form-padding-mobile: 0.75rem; // 12px
-// $form-label-spacing: 0.25rem; // 4px
-// $form-border-default: 0.0625rem solid #e5e5e5; // 1px to REM
-// $form-border-active: 0.125rem solid #0077ff; // 2px to REM
-// $form-border-error: 0.0625rem solid #d22d2d; // 1px to REM
-// $form-border-radius: 0.3rem;
+//BUTTON VARIABLES
+$btn-border-radius: 1.25rem; //20px
+$btn-chevron-spacing: 0.25rem; //4px
 
-// //DIVIDER LINE
-// $divider-line: 0.063rem solid $secondary-mercury;
+////mobile
+$m-btn-width: 10.1875rem; //163px
+$m-btn-height: 2.25rem; //36px
+
+////tablet
+$t-btn-width: 6.6875rem; //107px
+$t-btn-height: 2.375rem; //38px
+
+////desktop
+$d-btn-width: 6.6875rem; //107px
+$d-btn-height: 2.375rem; //38px
+
+//CTA BUTTON VARIABLES
+
+$d-cta-btn-padding: 0.5rem, 1rem, 0.5rem, 1rem; // 8px, 16px, 8px, 16p
+
+////desktop and tablet
+/////// Primary Default/Hover
+$d-cta-btn-width: 6.125rem; //98px
+$d-cta-btn-height: 2.375rem; //38px
+
+//// mobile
+/////// Primary Default/Hover
+$m-cta-btn-width: 8.6875rem; //139px
+$m-cta-btn-height: 2.25rem; //36px
+$m-cta-btn-padding: 0.5rem, 2.4375rem, 0.5rem, 2.4375rem; // 8px, 39px, 8px, 39px
+
+////desktop and tablet
+/////// Secondary Default/Hover
+$ds-cta-btn-width: 6.125rem; //98px
+//height is same as default
+$ds-cta-border-hover: 0.0625rem solid #2e66e5; // 1px to REM
+//// mobile
+/////// Secondary
+$ms-cta-btn-width: 10.1875rem; //163px
+//height is the same as default
+$ms-cta-border-hover: 0.0625rem solid #bdc5d5; // 1px to REM
+////desktop and tablet
+/////// Delete
+$dd-cta-btn-width: 6.125rem; //71px
+//height is same as default
+//// mobile
+/////// Delete
+//width is the same as secondary
+//height is the same as default
+
+//FORM VARIABLES
+$form-height-tablet: 2.375rem; // 38px
+$form-height-mobile: 2.25rem; // 36px
+
+$form-width: 74rem; // 184px
+$form-max-width: 100%;
+
+$form-padding: 1rem; // 16px
+$form-label-spacing: 0.25rem; //Use 4px spacing between a label and form field
+$form-border-radius: 1.25rem; //20px
+
+$form-border-default: 0.0625rem solid#BDC5D5; // 1px to REM
+$form-border-active: 0.0625rem solid #2e66e5; // 1px to REM
+$form-border-error: 0.0625rem solid #c94515; // 1px to REM
+
+//dropdown & search
+$icon-width: 1.5rem; //24px
+$icon-height: 1.5rem; //24px
+
+//selection controls
+$label-radio-spacing: 0.25rem; // 4px spacing between a label and radio button group,
+$radio-text-spacing: 0.5rem; // 8px spacing between a radio button and text.
