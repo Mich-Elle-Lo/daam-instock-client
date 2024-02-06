@@ -1,0 +1,189 @@
+//COLORS
+$primary-black: #13182c; //Global text color
+$primary-indigo: #2e66e5; //Interactive elements
+$primary-white: #ffffff; //Global white color
+
+$secondary-slate: #5c667e; //Table column headers & placeholder text
+$secondary-cloud: #bdc5d5; //Outlines, dividers, borders, table sorting icon
+
+$background-graphite: #232940; //Top navigation header background,CTA button hover state background
+$background-light-grey: #f7f8f9; //Page background,table column header background, CTA background
+
+$supporting-green: #158463; // “In stock” label
+$supporting-red: #c94515; // “Out of stock” label, error states & delete icon
+
+//SCREEN BREAKPOINTS
+
+$min-mobile-screen: 320px; // 320px - 767px
+$tablet-breakpoint: 768px; // 767px - 1279px
+$desktop-breakpoint: 1280px; // 1280px +
+$max-desktop-screen: 1920px;
+
+// Layout - columns, gutters
+
+$desktop-col: 0.75rem; // 12px
+$tablet-col: 0.75rem; //12px
+$mobile-col: 0.375rem; //6px
+
+$desktop-gutter: 1.5rem; //24px
+$tablet-gutter: 1.5rem; //24px
+$mobile-gutter: 1rem; //16px
+
+// TEXT & COLOR STYLES
+
+$regular-txt: 400;
+$semibold-txt: 600;
+
+// TEXT STYLES
+$letter-spacing: 0.011rem;
+$base-font-size: 1rem;
+
+//// Desktop and Tablet
+/// Page Header
+$d-font-size-h1: 2rem;
+$d-line-height-h1: 2.5rem;
+/// SubHeader
+$d-font-size-h2: 1.5rem;
+$d-line-height-h2: 2rem;
+/// Labels, Links & Buttons
+$d-font-size-h3: 0.875rem;
+$d-line-height-h3: 1.375rem;
+/// Table header //same as section
+$d-font-size-h4: 0.75rem;
+$d-line-height-h4: 1.125rem;
+/// Body Large
+$d-font-size-p1: 1rem;
+$d-line-height-p1: 1.75rem;
+/// Body Medium
+$d-font-size-p2: 0.875rem;
+$d-line-height-p2: 1.375rem;
+/// Body Small
+$d-font-size-p3: 0.75rem;
+$d-line-height-p3: 1.125rem;
+
+//// Mobile
+/// Page Header
+$m-font-size-h1: 1.75rem; //32px
+$m-line-height-h1: 2.25rem;
+/// SubHeader
+$m-font-size-h2: 1.25rem;
+$m-line-height-h2: 1.75rem;
+/// Labels, Links & Buttons
+$m-font-size-h3: 0.8125rem;
+$m-line-height-h3: 1.25rem;
+/// Table header //same as section
+$m-font-size-h4: 0.6875rem;
+$m-line-height-h4: 1rem;
+/// Body Large
+$m-font-size-p1: 0.9375rem;
+$m--line-height-p1: 1.625rem;
+/// Body Medium
+$m-font-size-p2: 0.8125rem;
+$m-line-height-p2: 1.25rem;
+/// Body Small
+$m-font-size-p3: 0.6875rem;
+$m-line-height-p3: 1rem;
+
+// //NAV PROPERTIES
+$nav-height-mobile: 8.5rem; //136px
+$nav-width: 100%;
+
+$nav-height-tablet: 5.75rem; // 92px
+
+$nav-height-desktop: 5.75rem; // 92px
+
+$nav-padding: 0;
+$underline-link-padding-mobile: 0.1rem 0rem 0.6rem 0rem;
+$underline-link-padding-tablet: 1.5rem 0.1rem 1.5rem 0.1rem;
+
+//PADDING PROPERTIES mobile and tablet
+$m-padding-top: 1.5rem; //24px
+$m-padding-space: 1rem; //16px
+$m-padding-sides: 1rem; //16px
+
+$t-padding-top: 2.25rem; //36px
+$t-padding-space: 1.5rem; //24px
+$t-padding-sides: 1.5rem; //24px
+
+$side-padding-increment: 0.5rem; //8px
+$padding-space-title: 0.25rem; //4px between title and paragraph
+
+// //LOGO
+$logo-height-1: 1.75rem; //28px
+$logo-width-1: 8.0625rem; //129px
+
+$logo-height-2: 3.5rem; //56px
+$logo-width-2: 16.125rem; //258px
+
+//BUTTON VARIABLES
+$btn-border-radius: 1.25rem; //20px
+$btn-chevron-spacing: 0.25rem; //4px
+
+////mobile
+$m-btn-width: 10.1875rem; //163px
+$m-btn-height: 2.25rem; //36px
+
+////tablet
+$t-btn-width: 6.6875rem; //107px
+$t-btn-height: 2.375rem; //38px
+
+////desktop
+$d-btn-width: 6.6875rem; //107px
+$d-btn-height: 2.375rem; //38px
+
+//CTA BUTTON VARIABLES
+
+$d-cta-btn-padding: 0.5rem, 1rem, 0.5rem, 1rem; // 8px, 16px, 8px, 16p
+
+////desktop and tablet
+/////// Primary Default/Hover
+$d-cta-btn-width: 6.125rem; //98px
+$d-cta-btn-height: 2.375rem; //38px
+
+//// mobile
+/////// Primary Default/Hover
+$m-cta-btn-width: 8.6875rem; //139px
+$m-cta-btn-height: 2.25rem; //36px
+$m-cta-btn-padding: 0.5rem, 2.4375rem, 0.5rem, 2.4375rem; // 8px, 39px, 8px, 39px
+
+////desktop and tablet
+/////// Secondary Default/Hover
+$ds-cta-btn-width: 6.125rem; //98px
+//height is same as default
+$ds-cta-border-hover: 0.0625rem solid $primary-indigo; // 1px to REM
+//// mobile
+/////// Secondary
+$ms-cta-btn-width: 10.1875rem; //163px
+//height is the same as default
+$ms-cta-border-hover: 0.0625rem solid $secondary-cloud; // 1px to REM
+////desktop and tablet
+/////// Delete
+$dd-cta-btn-width: 6.125rem; //71px
+//height is same as default
+//// mobile
+/////// Delete
+//width is the same as secondary
+//height is the same as default
+
+//FORM VARIABLES
+$form-height-tablet: 2.375rem; // 38px
+$form-height-mobile: 2.25rem; // 36px
+
+$form-width: 74rem; // 184px
+$form-max-width: 100%;
+
+$form-padding: 1rem; // 16px
+$form-label-spacing: 0.25rem; //Use 4px spacing between a label and form field
+$form-border-radius: 1.25rem; //20px
+
+$form-border-default: 0.0625rem solid $secondary-cloud; // 1px to REM
+$form-border-active: 0.0625rem solid $primary-indigo; // 1px to REM
+$form-border-error: 0.0625rem solid $supporting-red; // 1px to REM
+
+//dropdown & search
+$icon-width: 1.5rem; //24px
+$icon-height: 1.5rem; //24px
+
+//selection controls
+$label-radio-spacing: 0.25rem; // 4px spacing between a label and radio button group,
+$radio-text-spacing: 0.5rem; // 8px spacing between a radio button and text.
