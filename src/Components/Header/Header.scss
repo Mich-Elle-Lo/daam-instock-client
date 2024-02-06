@@ -1,0 +1,65 @@
+@use "../../Styles/partials/variables" as *;
+@use "../../Styles/partials/mixins" as *;
+@use "../../Styles/partials/typography" as *;
+
+.header {
+  background-color: $background-graphite;
+  padding-bottom: 5rem;
+
+  @include tablet {
+    @include flex-default(center, space-between);
+    padding: 0 $t-padding-sides 6rem;
+  }
+
+  @include desktop {
+    padding: 2rem 8.125rem 7.5rem;
+  }
+
+  &__logo {
+    padding: $m-padding-top 0;
+    @include flex(default, center, center);
+  }
+
+  &__nav-list {
+    @include flex(default, center, between);
+    list-style-type: none;
+    padding: 0 $m-padding-sides;
+    margin-bottom: $m-padding-sides;
+    margin-top: 0;
+
+    @include tablet {
+      margin-bottom: 0;
+      padding: 0;
+      gap: $m-padding-sides;
+    }
+  }
+
+  &__nav-item {
+    font-family: "TitilliumWeb-SemiBold", sans-serif;
+    font-weight: $semibold-txt;
+    font-size: $m-font-size-h3;
+    color: $secondary-cloud;
+    border-radius: $btn-border-radius;
+    border: none;
+    flex: 1;
+    background: none;
+    height: $m-btn-height;
+
+    &:hover {
+      text-decoration: underline;
+      color: $primary-white;
+      cursor: pointer;
+    }
+
+    &--active {
+      background-color: $primary-black;
+      color: $primary-white;
+    }
+
+    @include tablet {
+      padding: 0.5rem $m-padding-sides;
+      height: $t-btn-height;
+      font-size: $d-font-size-h3;
+    }
+  }
+}
