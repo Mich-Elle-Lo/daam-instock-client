@@ -27,28 +27,28 @@
 }
 @mixin flex-direction($flex-direction) {
   display: flex;
-  flex-direction: $flex-direction; //
+  flex-direction: $flex-direction;
 }
 @mixin flex($flex-direction, $align-items, $justify-content) {
   display: flex;
-  flex-direction: $flex-direction; //
-  align-items: $align-items; //
-  justify-content: $justify-content; //
+  flex-direction: $flex-direction;
+  align-items: $align-items;
+  justify-content: $justify-content;
 }
 @mixin flex-default($align-items, $justify-content) {
   display: flex;
-  align-items: $align-items; //
-  justify-content: $justify-content; //
+  align-items: $align-items;
+  justify-content: $justify-content;
 }
 
 @mixin box($width, $height) {
-  width: $width; //
-  height: $height; //
+  width: $width;
+  height: $height;
 }
 @mixin border-bottom($color) {
   border-bottom-width: 0.3rem;
   border-bottom-style: solid;
-  border-color: $color; //
+  border-color: $color;
 }
 @mixin mobile-padding-sides {
   padding-right: $m-padding-sides;
@@ -83,7 +83,7 @@
     }
   }
 }
-//same as section?
+//same as section
 @mixin mobile-tablet-table-header-text-style {
   font-size: $m-font-size-h4;
   line-height: $m-line-height-h4;
@@ -101,8 +101,8 @@
     font-weight: $regular-txt;
     letter-spacing: $letter-spacing;
     @supports (font-size: clamp(0px, 0px, 0px)) {
-      font-size: clamp($mheader-size, 3vw + 0.75rem, $d-font-size-h4); //
-      line-height: clamp($mhead-line-height, 2vw, $d-line-height-h4); //
+      font-size: clamp($m-font-size-h4, 3vw + 0.75rem, $d-font-size-h4);
+      line-height: clamp($m-line-height-h4, 2vw, $d-line-height-h4);
       font-weight: $bold-txt;
       letter-spacing: $letter-spacing;
     }
