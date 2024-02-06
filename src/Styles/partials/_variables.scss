@@ -39,48 +39,50 @@ $letter-spacing: 0.011rem;
 $base-font-size: 1rem;
 
 //// Desktop and Tablet
-$desktop-font-size-h1: 2rem;
-$desktop-line-height-h1: 2.5rem;
-
-$desktop-font-size-h2: 1.5rem;
-$desktop-line-height-h2: 2rem;
-
-$desktop-font-size-h3: 0.875rem;
-$desktop-line-height-h3: 1.375rem;
-
-$desktop-font-size-h4: 0.75rem;
-$desktop-line-height-h4: 1.125rem;
-
-$desktop-font-size-p1: 1rem;
-$desktop-line-height-p1: 1.75rem;
-
-$desktop-font-size-p2: 0.875rem;
-$desktop-line-height-p2: 1.375rem;
-
-$desktop-font-size-p3: 0.75rem;
-$desktop-line-height-p3: 1.125rem;
+/// Page Header
+$d-font-size-h1: 2rem;
+$d-line-height-h1: 2.5rem;
+/// SubHeader
+$d-font-size-h2: 1.5rem;
+$d-line-height-h2: 2rem;
+/// Labels, Links & Buttons
+$d-font-size-h3: 0.875rem;
+$d-line-height-h3: 1.375rem;
+/// Table header
+$d-font-size-h4: 0.75rem;
+$d-line-height-h4: 1.125rem;
+/// Body Large
+$d-font-size-p1: 1rem;
+$d-line-height-p1: 1.75rem;
+/// Body Medium
+$d-font-size-p2: 0.875rem;
+$d-line-height-p2: 1.375rem;
+/// Body Small
+$d-font-size-p3: 0.75rem;
+$d-line-height-p3: 1.125rem;
 
 //// Mobile
-$mobile-font-size-h1: 1.75rem;
-$mobile-line-height-h1: 2.25rem;
-
-$mobile-font-size-h2: 1.25rem;
-$mobile-line-height-h2: 1.75rem;
-
-$mobile-font-size-h3: 0.8125rem;
-$mobile-line-height-h3: 1.25rem;
-
-$mobile-font-size-h4: 0.6875rem;
-$mobile-line-height-h4: 1rem;
-
-$mobile-font-size-p1: 0.9375rem;
-$mobile-line-height-p1: 1.625rem;
-
-$mobile-font-size-p2: 0.8125rem;
-$mobile-line-height-p2: 1.25rem;
-
-$mobile-font-size-p3: 0.6875rem;
-$mobile-line-height-p3: 1rem;
+/// Page Header
+$m-font-size-h1: 1.75rem; //32px
+$m-line-height-h1: 2.25rem;
+/// SubHeader
+$m--font-size-h2: 1.25rem;
+$m--line-height-h2: 1.75rem;
+/// Labels, Links & Buttons
+$m--font-size-h3: 0.8125rem;
+$m--line-height-h3: 1.25rem;
+/// Table header
+$m--font-size-h4: 0.6875rem;
+$m--line-height-h4: 1rem;
+/// Body Large
+$m--font-size-p1: 0.9375rem;
+$m--line-height-p1: 1.625rem;
+/// Body Medium
+$m-font-size-p2: 0.8125rem;
+$m-line-height-p2: 1.25rem;
+/// Body Small
+$m-font-size-p3: 0.6875rem;
+$m-line-height-p3: 1rem;
 
 // //NAV PROPERTIES
 $nav-height-mobile: 8.5rem; //136px
