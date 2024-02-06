@@ -150,12 +150,12 @@ $m-cta-btn-padding: 0.5rem, 2.4375rem, 0.5rem, 2.4375rem; // 8px, 39px, 8px, 39p
 /////// Secondary Default/Hover
 $ds-cta-btn-width: 6.125rem; //98px
 //height is same as default
-$ds-cta-border-hover: 0.0625rem solid #2e66e5; // 1px to REM
+$ds-cta-border-hover: 0.0625rem solid $primary-indigo; // 1px to REM
 //// mobile
 /////// Secondary
 $ms-cta-btn-width: 10.1875rem; //163px
 //height is the same as default
-$ms-cta-border-hover: 0.0625rem solid #bdc5d5; // 1px to REM
+$ms-cta-border-hover: 0.0625rem solid $secondary-cloud; // 1px to REM
 ////desktop and tablet
 /////// Delete
 $dd-cta-btn-width: 6.125rem; //71px
@@ -176,9 +176,9 @@ $form-padding: 1rem; // 16px
 $form-label-spacing: 0.25rem; //Use 4px spacing between a label and form field
 $form-border-radius: 1.25rem; //20px
 
-$form-border-default: 0.0625rem solid#BDC5D5; // 1px to REM
-$form-border-active: 0.0625rem solid #2e66e5; // 1px to REM
-$form-border-error: 0.0625rem solid #c94515; // 1px to REM
+$form-border-default: 0.0625rem solid $secondary-cloud; // 1px to REM
+$form-border-active: 0.0625rem solid $primary-indigo; // 1px to REM
+$form-border-error: 0.0625rem solid $supporting-red; // 1px to REM
 
 //dropdown & search
 $icon-width: 1.5rem; //24px
