@@ -1,4 +1,4 @@
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
           <Route path="/" element={<WareHousesPage />} />
           <Route path="/inventories" element={<InventoriesPage />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
