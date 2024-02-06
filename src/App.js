@@ -1,7 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import logo from "./logo.svg";
 import "./App.scss";
 import Header from "./Components/Header/Header";
+import Footer from "./Components/Footer/Footer";
+
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route path="/" element={<WareHousesPage />} />
           <Route path="/inventories" element={<InventoriesPage />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
       <Header />
     </div>
