@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+// import { BrowserRouter, Route, Routes } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.scss";
 import Header from "./Components/Header/Header";
@@ -6,13 +6,13 @@ import Header from "./Components/Header/Header";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Header />
         <Routes>
           <Route path="/" element={<WareHousesPage />} />
           <Route path="/inventories" element={<InventoriesPage />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
       <Header />
     </div>
   );

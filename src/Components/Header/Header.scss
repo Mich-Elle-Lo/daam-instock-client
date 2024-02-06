@@ -6,46 +6,44 @@
   background-color: $background-graphite;
   padding-bottom: 5rem;
 
-  @include tablet-breakpoint {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem 6rem;
+  @include tablet {
+    @include flex-default(center, space-between);
+    padding: 0 $t-padding-sides 6rem;
   }
 
-  @include desktop-breakpoint {
+  @include desktop {
     padding: 2rem 8.125rem 7.5rem;
   }
 
   &__logo {
-    padding: 1.5rem 0;
+    padding: $m-padding-top 0;
+    @include flex(default, center, center);
   }
 
   &__nav-list {
-    display: flex;
-    justify-content: space-between;
+    @include flex(default, center, between);
     list-style-type: none;
-    padding: 0 1rem;
-    margin-bottom: 1.5rem;
+    padding: 0 $m-padding-sides;
+    margin-bottom: $m-padding-sides;
     margin-top: 0;
 
-    @include tablet-breakpoint {
+    @include tablet {
       margin-bottom: 0;
       padding: 0;
-      gap: 1rem;
+      gap: $m-padding-sides;
     }
   }
 
   &__nav-item {
     font-family: "TitilliumWeb-SemiBold", sans-serif;
-    font-weight: $bold-txt;
-    font-size: 0.8125rem;
+    font-weight: $semibold-txt;
+    font-size: $m-font-size-h3;
     color: $secondary-cloud;
-    border-radius: 20px;
+    border-radius: $btn-border-radius;
     border: none;
     flex: 1;
     background: none;
-    height: 2.25rem;
+    height: $m-btn-height;
 
     &:hover {
       text-decoration: underline;
@@ -54,14 +52,14 @@
     }
 
     &--active {
-      background-color: #13182c;
+      background-color: $primary-black;
       color: $primary-white;
     }
 
-    @include tablet-breakpoint {
-      padding: 0.5rem 1rem;
-      height: 2.375rem;
-      font-size: 0.875rem;
+    @include tablet {
+      padding: 0.5rem $m-padding-sides;
+      height: $t-btn-height;
+      font-size: $d-font-size-h3;
     }
   }
 }
