@@ -10,20 +10,7 @@ footer {
   &__cr {
     font-family: "TitilliumWeb-Regular", sans-serif;
     color: $secondary-slate;
-    font-weight: $regular-txt;
     text-align: center;
-    font-size: $d-font-size-p3;
-    line-height: $d-line-height-p3;
-    $letter-spacing: 0.011rem;
-
-    @include tablet {
-      font-size: $d-font-size-p3;
-      line-height: $d-line-height-p3;
-
-      @include mobile {
-        font-size: $m-font-size-p3;
-        line-height: $m-line-height-p3;
-      }
-    }
+    @include mobile-tablet-body-p3-text-style;
   }
 }
