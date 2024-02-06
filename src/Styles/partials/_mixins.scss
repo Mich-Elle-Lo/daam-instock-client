@@ -132,70 +132,101 @@
     }
   }
 }
-@mixin mobile-tablet-body-text-style {
-  font-size: $mobileBodyTextSize;
-  line-height: $mobileBodyLineHeight;
+//
+@mixin mobile-tablet-body-p1-text-style {
+  font-size: $m-font-size-p1;
+  line-height: $m-line-height-p1;
   font-weight: $regular-txt;
   letter-spacing: $letter-spacing;
   @supports (font-size: clamp(0px, 0px, 0px)) {
-    font-size: clamp($mobileBodyTextSize, 3vw + 0.75rem, $desktopBodyTextSize);
-    line-height: clamp($mobileBodyLineHeight, 2vw, $desktopBodyLineHeight);
+    font-size: clamp($m-font-size-p1, 3vw + 0.75rem, $d-font-size-p1);
+    line-height: clamp($m-line-height-p1, 2vw, $d-line-height-p1);
     font-weight: $regular-txt;
     letter-spacing: $letter-spacing;
   }
   @include tablet-breakpoint() {
-    font-size: $desktopBodyTextSize;
-    line-height: $desktopBodyLineHeight;
+    font-size: $d-font-size-p1;
+    line-height: $d-line-height-p1;
     font-weight: $regular-txt;
 
     letter-spacing: $letter-spacing;
     @supports (font-size: clamp(0px, 0px, 0px)) {
-      font-size: clamp(
-        $mobileBodyTextSize,
-        3vw + 0.75rem,
-        $desktopBodyTextSize
-      );
-      line-height: clamp($mobileBodyLineHeight, 2vw, $desktopBodyLineHeight);
+      font-size: clamp($m-font-size-p1, 3vw + 0.75rem, $d-font-size-p1);
+      line-height: clamp($m-line-height-p1, 2vw, $d-line-height-h4);
+      font-weight: $regular-txt;
+      letter-spacing: $letter-spacing;
+    }
+  }
+}
+@mixin mobile-tablet-body-p2-text-style {
+  font-size: $m-font-size-p2;
+  line-height: $m-line-height-p2;
+  font-weight: $regular-txt;
+  letter-spacing: $letter-spacing;
+  @supports (font-size: clamp(0px, 0px, 0px)) {
+    font-size: clamp($m-font-size-p2, 3vw + 0.75rem, $d-font-size-p2);
+    line-height: clamp($m-line-height-p2, 2vw, $d-line-height-p2);
+    font-weight: $regular-txt;
+    letter-spacing: $letter-spacing;
+  }
+  @include tablet-breakpoint() {
+    font-size: $d-font-size-p2;
+    line-height: $d-line-height-p2;
+    font-weight: $regular-txt;
+
+    letter-spacing: $letter-spacing;
+    @supports (font-size: clamp(0px, 0px, 0px)) {
+      font-size: clamp($m-font-size-p2, 3vw + 0.75rem, $d-font-size-p2);
+      line-height: clamp($m-line-height-p2, 2vw, $d-line-height-p2);
+      font-weight: $regular-txt;
+      letter-spacing: $letter-spacing;
+    }
+  }
+}
+@mixin mobile-tablet-body-p3-text-style {
+  font-size: $m-font-size-p3;
+  line-height: $m-line-height-p3;
+  font-weight: $regular-txt;
+  letter-spacing: $letter-spacing;
+  @supports (font-size: clamp(0px, 0px, 0px)) {
+    font-size: clamp($m-font-size-p3, 3vw + 0.75rem, $d-font-size-p3);
+    line-height: clamp($m-line-height-p3, 2vw, $d-line-height-p3);
+    font-weight: $regular-txt;
+    letter-spacing: $letter-spacing;
+  }
+  @include tablet-breakpoint() {
+    font-size: $d-font-size-p3;
+    line-height: $d-line-height-p3;
+    font-weight: $regular-txt;
+
+    letter-spacing: $letter-spacing;
+    @supports (font-size: clamp(0px, 0px, 0px)) {
+      font-size: clamp($m-font-size-p3, 3vw + 0.75rem, $d-font-size-p3);
+      line-height: clamp($m-line-height-p3, 2vw, $d-line-height-p3);
       font-weight: $regular-txt;
       letter-spacing: $letter-spacing;
     }
   }
 }
 @mixin mobile-tablet-labels-buttons-text-style {
-  font-size: $mobileLabelButtonTextSize;
-  line-height: $mobileLabelButtonLineHeight;
+  font-size: $m-font-size-h3;
+  line-height: $m-line-height-h2;
   font-weight: $regular-txt;
   letter-spacing: $letter-spacing;
   @supports (font-size: clamp(0px, 0px, 0px)) {
-    font-size: clamp(
-      $mobileLabelButtonTextSize,
-      3vw + 0.75rem,
-      $desktopLabelButtonTextSize
-    );
-    line-height: clamp(
-      $mobileLabelButtonLineHeight,
-      2vw,
-      $desktopLabelButtonLineHeight
-    );
+    font-size: clamp($m-font-size-h3, 3vw + 0.75rem, $d-font-size-h3);
+    line-height: clamp($m-line-height-h3, 2vw, $d-line-height-h3);
     font-weight: $regular-txt;
     letter-spacing: $letter-spacing;
   }
   @include tablet-breakpoint() {
-    font-size: $desktopLabelButtonTextSize;
-    line-height: $desktopLabelButtonLineHeight;
+    font-size: $d-font-size-h3;
+    line-height: $d-line-height-h3;
     font-weight: $regular-txt;
     letter-spacing: $letter-spacing;
     @supports (font-size: clamp(0px, 0px, 0px)) {
-      font-size: clamp(
-        $mobileLabelButtonTextSize,
-        3vw + 0.75rem,
-        $desktopLabelButtonTextSize
-      );
-      line-height: clamp(
-        $mobileLabelButtonLineHeight,
-        2vw,
-        $desktopLabelButtonLineHeight
-      );
+      font-size: clamp($m-font-size-h3, 3vw + 0.75rem, d-font-size-h3);
+      line-height: clamp($m-line-height-h3, 2vw, $d-line-height-h3);
       font-weight: $regular-txt;
       letter-spacing: $letter-spacing;
     }
