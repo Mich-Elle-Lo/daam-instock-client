@@ -88,9 +88,11 @@ export default function WareHousesPage() {
             <div className="warehouses__details">
               <div className="warehouses__mobilebox">
                 <div className="warehouses__infobox">
-                  <div className="warehouses__infotitle">WAREHOUSE</div>
+                  <div className="warehouses__infotitle ">WAREHOUSE</div>
                   <div className="warehouses__data">
-                    {warehouse.warehouse_name}
+                    <p className="warehouses__data--highlight">
+                      {warehouse.warehouse_name}
+                    </p>
                   </div>
                 </div>
 
@@ -120,26 +122,24 @@ export default function WareHousesPage() {
               </div>
               {/* Tablet View */}
               <div className="warehouses__tabletinfo">
-                {/* <div className="warehouses__filler"> */}
                 <div className="warehouses__datatablet">
-                  {warehouse.warehouse_name}
+                  <p className="warehouses__datatablet--highlight">
+                    {warehouse.warehouse_name}
+                  </p>
                   <img
                     className="warehouses__arrowicon"
                     src={arrowIcon}
                     alt="arrow icon"
                   />
-                  {/* </div> */}
                 </div>
-                {/* <div className="warehouses__filler"> */}
+
                 <div className="warehouses__datatablet">
                   {warehouse.address}
                 </div>
-                {/* </div> */}
-                {/* <div className="warehouses__filler"> */}
+
                 <div className="warehouses__datatablet">
                   {warehouse.contact_name}
                 </div>
-                {/* </div> */}
                 <div className=" warehouses__infoboxdiv">
                   <div className="warehouses__datatablet2">
                     {warehouse.contact_phone}

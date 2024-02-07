@@ -84,22 +84,29 @@
     display: none;
 
     @include tablet-breakpoint {
+      @include mobile-tablet-labels-buttons-text-style;
+      color: $secondary-slate;
+      background-color: $background-light-grey;
       margin: 0;
       width: 100%;
       padding-left: $m-padding-sides;
       padding-right: $m-padding-sides;
+      padding-bottom: 0.5rem;
+      padding-top: 0.5rem;
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      border: 2px solid pink;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 
   &__box {
     display: flex;
     align-items: center;
-    border: 2px solid brown;
+
     width: 20%;
   }
   &__boxflex {
@@ -115,14 +122,16 @@
   &__card {
     width: 100%;
     display: flex;
+    padding-top: $m-padding-top;
+    padding-bottom: $m-padding-top;
     flex-direction: column;
+    border-top: 0.1rem solid $secondary-cloud;
     @include tablet-breakpoint {
       width: 100%;
 
       flex-direction: row;
       justify-content: space-between;
       gap: 0.5rem;
-      border: 2px solid red;
     }
   }
   &__details {
@@ -146,8 +155,6 @@
   &__tabletinfo {
     display: none;
     @include tablet-breakpoint {
-      // padding-left: $m-padding-sides;
-      // padding-right: $m-padding-sides;
       width: 100%;
       display: flex;
       flex-direction: row;
@@ -189,11 +196,17 @@
       }
     }
   }
-  // &__filler {
-  //   display: flex;
-  //   width: 15%;
-  //   justify-content: flex-start;
-  // }
+  &__infotitle {
+    @include mobile-tablet-labels-buttons-text-style;
+    color: $secondary-slate;
+  }
+  &__data {
+    @include mobile-tablet-labels-buttons-text-style;
+
+    &--highlight {
+      color: $primary-indigo;
+    }
+  }
   &__infoboxdiv {
     display: flex;
     width: 20%;
@@ -202,8 +215,15 @@
   }
   &__datatablet {
     // border: 2px solid blue;
+    @include mobile-tablet-labels-buttons-text-style;
     width: 20%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     display: flex;
     align-items: center;
+    &--highlight {
+      color: $primary-indigo;
+    }
   }
 }
