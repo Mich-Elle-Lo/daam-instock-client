@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./WarehousesPage.scss";
-import searchIcon from "../Assets/Icons/search-24px.svg";
-import sortIcon from "../Assets/Icons/sort-24px.svg";
-import trashIcon from "../Assets/Icons/delete_outline-24px.svg";
-import editIcon from "../Assets/Icons/edit-24px.svg";
-import arrowIcon from "../Assets/Icons/chevron_right-24px.svg";
+import searchIcon from "../../Assets/Icons/search-24px.svg";
+import sortIcon from "../../Assets/Icons/sort-24px.svg";
+import trashIcon from "../../Assets/Icons/delete_outline-24px.svg";
+import editIcon from "../../Assets/Icons/edit-24px.svg";
+import arrowIcon from "../../Assets/Icons/chevron_right-24px.svg";
 
 export default function WareHousesPage() {
   const [warehouses, setWarehouses] = useState([]);

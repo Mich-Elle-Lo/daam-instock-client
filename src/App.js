@@ -1,12 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.scss";
-<<<<<<< HEAD
-import WareHousesPage from "./Pages/WarehousePage/WareousesPage.js";
-=======
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
-
->>>>>>> develop
+import WarehousesPage from "./Pages/WarehousePage/WareousesPage";
 
 function App() {
   return (
@@ -14,7 +10,7 @@ function App() {
       <BrowserRouter>
         {/* <Header /> */}
         <Routes>
-          <Route path="/" element={<WareHousesPage />} />
+          <Route path="/" element={<WarehousesPage />} />
           {/* <Route path="/inventories" element={<InventoriesPage />} /> */}
         </Routes>
         <Footer />
