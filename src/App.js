@@ -1,19 +1,19 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import logo from "./logo.svg";
 import "./App.scss";
 import Header from "./Components/Header/Header";
+import Add from "./Components/AddNewWarehouse/Add";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Header />
-        <Routes>
+        <Add />
+        {/* <Routes>
           <Route path="/" element={<WareHousesPage />} />
           <Route path="/inventories" element={<InventoriesPage />} />
-        </Routes>
+        </Routes> */}
       </BrowserRouter>
-      <Header />
     </div>
   );
 }
