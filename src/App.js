@@ -3,7 +3,6 @@ import "./App.scss";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 
-
 function App() {
   return (
     <div className="App">
@@ -15,7 +14,6 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
-      <Header />
     </div>
   );
 }
