@@ -1,16 +1,21 @@
-import { BrowserRouter, Route } from "react-router-dom";
-import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.scss";
+import Header from "./Components/Header/Header";
+import Footer from "./Components/Footer/Footer";
+import WarehousesPage from "./Pages/WarehousePage/WareousesPage";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
+        {/* <Header /> */}
         <Routes>
-          <Route path="/" element={<WareHousesPage />} />
-          <Route path="/inventories" element={<InventoriesPage />} />
+          <Route path="/" element={<WarehousesPage />} />
+          {/* <Route path="/inventories" element={<InventoriesPage />} /> */}
         </Routes>
+        <Footer />
       </BrowserRouter>
+      <Header />
     </div>
   );
 }
