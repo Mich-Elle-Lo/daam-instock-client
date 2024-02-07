@@ -6,10 +6,10 @@
   background-color: $background-graphite;
   padding-bottom: 5rem;
 
-  @include tablet {
-    @include flex-default(center, space-between);
-    padding: 0 $t-padding-sides 6rem;
-  }
+  // @include tablet {
+  //   @include flex-default(center, space-between);
+  //   padding: 0 $t-padding-sides 6rem;
+  // }
 
   @include desktop {
     padding: 2rem 8.125rem 7.5rem;
