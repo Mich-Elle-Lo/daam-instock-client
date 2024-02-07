@@ -1,17 +1,21 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.scss";
+<<<<<<< HEAD
+import WareHousesPage from "./Pages/WarehousePage/WareousesPage.js";
+=======
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 
+>>>>>>> develop
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
+        {/* <Header /> */}
         <Routes>
           <Route path="/" element={<WareHousesPage />} />
-          <Route path="/inventories" element={<InventoriesPage />} />
+          {/* <Route path="/inventories" element={<InventoriesPage />} /> */}
         </Routes>
         <Footer />
       </BrowserRouter>
