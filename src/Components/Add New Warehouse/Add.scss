@@ -1,3 +1,16 @@
 @use "../../Styles/partials/variables" as *;
 @use "../../Styles/partials/mixins" as *;
 @use "../../Styles/partials/typography" as *;
+
+// add - Wrapper class for the entire component.
+// add__title - Title section.
+// add__icon - Icon within the title section.
+// add__separator - Separator line.
+// add__form - Form wrapper.
+// add__section - Sections within the form.
+// add__section-title - Titles within sections.
+// add__label - Labels for form inputs.
+// add__input - Form input fields.
+// add__error - Error messages for form validation.
+// add__button--cancel - Cancel button.
+// add__button--add - Add warehouse button.
