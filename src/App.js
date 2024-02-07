@@ -1,6 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.scss";
+<<<<<<< HEAD
 import WareHousesPage from "./Pages/WarehousePage/WareousesPage.js";
+=======
+import Header from "./Components/Header/Header";
+import Footer from "./Components/Footer/Footer";
+
+>>>>>>> develop
 
 function App() {
   return (
@@ -11,7 +17,9 @@ function App() {
           <Route path="/" element={<WareHousesPage />} />
           {/* <Route path="/inventories" element={<InventoriesPage />} /> */}
         </Routes>
+        <Footer />
       </BrowserRouter>
+      <Header />
     </div>
   );
 }

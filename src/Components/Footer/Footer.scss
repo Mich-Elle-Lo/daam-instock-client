@@ -1,0 +1,16 @@
+@use "../../Styles/partials/variables" as *;
+@use "../../Styles/partials/mixins" as *;
+@use "../../Styles/partials/typography" as *;
+
+footer {
+  background-color: $background-graphite;
+  width: 100%;
+  height: auto;
+
+  &__cr {
+    font-family: "TitilliumWeb-Regular", sans-serif;
+    color: $secondary-slate;
+    text-align: center;
+    @include mobile-tablet-body-p3-text-style;
+  }
+}
