@@ -66,12 +66,14 @@ export default function InventoryItemDetails() {
       </div>
       <div className="itemdetails__container">
         <div className="itemdetails__description">
-          <h3 className="itemdetails__description-header">ITEM DESCRIPTION:</h3>
-          <p className="itemdetails__description-description">
+          <h3 className="itemdetails__description--header">
+            ITEM DESCRIPTION:
+          </h3>
+          <p className="itemdetails__description--description">
             {singleItem.description}
           </p>
-          <h3 className="itemdetails__description-header">CATEGORY:</h3>
-          <p className="itemdetails__description-description">
+          <h3 className="itemdetails__description--header">CATEGORY:</h3>
+          <p className="itemdetails__description--description">
             {singleItem.category}
           </p>
         </div>
@@ -81,10 +83,10 @@ export default function InventoryItemDetails() {
             <div className="itemdetails__logistics--status">
               <h3 className="itemdetails__logistics--name">STATUS:</h3>
               {singleItem.status === "In Stock" && (
-                <p className="itemdetails__logistics--stock">IN STOCK</p>
+                <p className="itemdetails__logistics--instock">IN STOCK</p>
               )}
               {singleItem.status === "Out of Stock" && (
-                <p className="itemdetails__logistics--stock">OUT OF STOCK</p>
+                <p className="itemdetails__logistics--outstock">OUT OF STOCK</p>
               )}
             </div>
             <div className="itemdetails__logistics--quantity">
