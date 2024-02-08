@@ -1,7 +1,7 @@
 import "./InventoryModal.scss";
 import closeIcon from "../../Assets/Icons/close-24px.svg";
 
-export default function Modal({
+export default function InventoryModal({
   show,
   onClose,
   onDelete,
