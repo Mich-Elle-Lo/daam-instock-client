@@ -1,8 +1,8 @@
-@use "../Styles/partials/mixins" as *;
-@use "../Styles/partials/variables" as *;
-@use "../Styles/partials/typography" as *;
+@use "../../Styles/partials/mixins" as *;
+@use "../../Styles/partials/variables" as *;
+@use "../../Styles/partials/typography" as *;
 
-.warehouses {
+.inventories {
   margin: 0;
   padding-left: 1rem;
   padding-right: 1rem;
