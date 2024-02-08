@@ -19,12 +19,16 @@ body {
   min-width: $min-mobile-screen;
 }
 
-//
+button {
+  font-family: "TitilliumWeb-Regular", sans-serif;
+  cursor: pointer;
+}
+
 .app {
   display: flex;
   flex-direction: column;
   &__desktop {
-    @include desktop {
+    @include desktop-breakpoint {
       display: flex;
     }
   }

@@ -1,1 +1,7 @@
+@use "./Styles/partials/variables" as *;
+@use "./Styles/partials/mixins" as *;
 
+.App {
+  background-color: $background-light-grey;
+  color: $primary-black;
+}

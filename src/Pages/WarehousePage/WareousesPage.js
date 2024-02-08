@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./WarehousesPage.scss";
 import WarehouseModal from "../../Components/Modal/WarehouseModal";
@@ -14,6 +15,7 @@ export default function WareHousesPage() {
 
   const [showModal, setShowModal] = useState(false);
   const [selectedWarehouse, setSelectedWarehouse] = useState(null);
+  const navigate = useNavigate();
 
   const deleteWarehouse = (warehouseId) => {
     return axios
@@ -190,7 +192,14 @@ export default function WareHousesPage() {
                       alt="trash icon"
                     />
                   </div>
-                  <div className="warehouses__edit">
+                  <div
+                    className="warehouses__edit"
+                    onClick={() =>
+                      navigate(`/edit-warehouse/${warehouse.id}`, {
+                        state: { warehouse },
+                      })
+                    }
+                  >
                     <img
                       className="warehouses__editicon"
                       src={editIcon}
@@ -211,7 +220,14 @@ export default function WareHousesPage() {
                     alt="trash icon"
                   />
                 </div>
-                <div className="warehouses__edit">
+                <div
+                  className="warehouses__edit"
+                  onClick={() =>
+                    navigate(`/edit-warehouse/${warehouse.id}`, {
+                      state: { warehouse },
+                    })
+                  }
+                >
                   <img
                     className="warehouses__editicon"
                     src={editIcon}
