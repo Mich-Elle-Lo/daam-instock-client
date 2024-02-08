@@ -6,20 +6,21 @@ import InventoriesPage from "./Pages/InventoriesPage/InventoriesPage";
 // import WarehousesPage from "./Pages/WarehousePage/WareousesPage";
 // import WarehouseModal from "./Components/Modal/WarehouseModal";
 // import EditWarehouse from "./Components/EditWarehouse/EditWarehouse";
+// import WarehousesPage from "./Pages/WarehousePage/WareousesPage";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <BrowserRouter>
         <Header />
         <Routes>
-          {/* <Route path="/" element={<WarehousesPage />} /> */}
-          {/* <WarehouseModal /> */}
           <Route path="/" element={<InventoriesPage />} />
           {/* <EditWarehouse /> */}
           {/* <Route path="/edit-warehouse/:id" element={<EditWarehouse />} /> */}
           {/* <Route path="/inventories" element={<InventoriesPage />} /> */}
         </Routes>
+        {/* <Route path="/inventories" element={<InventoriesPage />} /> */}
+
         <Footer />
       </BrowserRouter>
     </div>

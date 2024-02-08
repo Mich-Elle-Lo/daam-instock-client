@@ -3,13 +3,42 @@
 @use "../../Styles/partials/typography" as *;
 
 .warehouses {
-  margin: 0;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  margin-top: -6rem;
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  // top: 0;
+  // left: 0;
+  width: 100%;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 10;
+
+  &__content {
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
+    background: $primary-white;
+    // padding: 1.5rem;
+    border-radius: 0.2rem;
+    height: 70%;
+    width: 90%;
+    margin-top: 5vh;
+
+    @include tablet-breakpoint {
+      margin-top: 5vh;
+      height: 95%;
+      width: 95%;
+    }
+  }
   &__title {
     @include mobile-tablet-pageheader-text-style;
   }
   &__wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: $t-padding-space;
     @include tablet-breakpoint {
       display: flex;
       flex-direction: row;
@@ -56,7 +85,7 @@
   }
 
   &__button {
-    // @include mobile-tablet-labels-buttons-text-style;
+    @include mobile-tablet-labels-buttons-text-style;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,18 +95,14 @@
     border: none;
     background-color: #2e66e5;
     color: #f7f8f9;
+    cursor: pointer;
     @include tablet-breakpoint {
       width: auto;
       white-space: nowrap;
       @include t-btn-width;
     }
-    // @include desktop-breakpoint {
-    //   margin-right: 1rem;
-    // }
     &:hover {
-      background-color: #13182c;
-      color: #f7f8f9;
-      cursor: pointer;
+      background: $background-graphite;
     }
   }
   &__options {
@@ -116,8 +141,7 @@
   }
   &__list {
     width: 100%;
-    padding-left: $m-padding-sides;
-    padding-right: $m-padding-sides;
+    height: auto;
   }
   &__card {
     width: 100%;
@@ -137,6 +161,7 @@
   &__details {
     @include tablet-breakpoint {
       width: 100%;
+      padding-left: $m-padding-sides;
       padding-right: $m-padding-sides;
       display: flex;
       flex-direction: row;
@@ -148,6 +173,8 @@
     flex-direction: row;
     justify-content: space-between;
     width: auto;
+    padding-left: $m-padding-sides;
+
     @include tablet-breakpoint {
       display: none;
     }
@@ -181,6 +208,8 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      padding-left: $m-padding-sides;
+      padding-right: $m-padding-sides;
     }
     &--tablet {
       display: none;
@@ -193,6 +222,7 @@
         display: contents;
         display: flex;
         justify-content: flex-end;
+        gap: 0.5rem;
       }
     }
   }
@@ -211,10 +241,8 @@
     display: flex;
     width: 20%;
     flex-direction: column;
-    // border: 2px solid yellow;
   }
   &__datatablet {
-    // border: 2px solid blue;
     @include mobile-tablet-labels-buttons-text-style;
     width: 20%;
     white-space: nowrap;
