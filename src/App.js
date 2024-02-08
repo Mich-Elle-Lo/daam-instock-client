@@ -11,12 +11,13 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Header />
-        <EditWarehouse />
+        {/* <EditWarehouse /> */}
         <WarehouseModal />
-        {/* <Routes> */}
-        {/* <Route path="/" element={<WarehousesPage />} /> */}
-        {/* <Route path="/inventories" element={<InventoriesPage />} /> */}
-        {/* </Routes> */}
+        <Routes>
+          <Route path="/" element={<WarehousesPage />} />
+          <Route path="/edit-warehouse/:id" element={<EditWarehouse />} />
+          {/* <Route path="/inventories" element={<InventoriesPage />} /> */}
+        </Routes>
         <Footer />
       </BrowserRouter>
     </div>
