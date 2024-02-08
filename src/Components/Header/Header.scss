@@ -5,10 +5,11 @@
 .header {
   background-color: $background-graphite;
   padding-bottom: 5rem;
+  z-index: -1;
 
   @include tablet-breakpoint {
     @include flex-default(center, space-between);
-    padding: 0 $t-padding-sides 6rem;
+    padding: 0 2rem 6rem;
   }
 
   @include desktop-breakpoint {
