@@ -126,7 +126,17 @@ export default function InventoriesPage() {
               <div className="inventories__mobilebox2">
                 <div className="inventories__infobox">
                   <div className="inventories__infotitle">STATUS</div>
-                  <div className="inventories__data">{inventory.status}</div>
+                  <div className="inventories__stockdata">
+                    <div
+                      className={`inventories__data--${
+                        inventory.status.toLowerCase() === "in stock"
+                          ? "in-stock"
+                          : "out-of-stock"
+                      }`}
+                    >
+                      {inventory.status}
+                    </div>
+                  </div>
                 </div>
 
                 <div className="inventories__infobox">

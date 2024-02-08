@@ -4,12 +4,15 @@
 
 .inventories {
   margin: 0;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  // padding-left: 1rem;
+  // padding-right: 1rem;
   &__title {
     @include mobile-tablet-pageheader-text-style;
   }
   &__wrapper {
+    padding: 0 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid $secondary-cloud;
     @include tablet-breakpoint {
       display: flex;
       flex-direction: row;
@@ -66,6 +69,7 @@
     border: none;
     background-color: #2e66e5;
     color: #f7f8f9;
+
     @include tablet-breakpoint {
       width: auto;
       white-space: nowrap;
@@ -84,14 +88,22 @@
     display: none;
 
     @include tablet-breakpoint {
+      @include mobile-tablet-labels-buttons-text-style;
+      color: $secondary-slate;
+      background-color: $background-light-grey;
       margin: 0;
       width: 100%;
+      padding-bottom: 0.5rem;
+      padding-top: 0.5rem;
       padding-left: $m-padding-sides;
       padding-right: $m-padding-sides;
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       border: 2px solid pink;
     }
   }
@@ -99,7 +111,7 @@
   &__box {
     display: flex;
     align-items: center;
-    border: 2px solid brown;
+    //border: 2px solid brown;
     width: 20%;
   }
   &__boxflex {
@@ -109,13 +121,19 @@
   }
   &__list {
     width: 100%;
-    padding-left: $m-padding-sides;
-    padding-right: $m-padding-sides;
+    // padding-left: $m-padding-sides;
+    // padding-right: $m-padding-sides;
   }
   &__card {
-    width: 100%;
+    width: auto;
     display: flex;
+    padding-top: $m-padding-top;
+    padding-bottom: $m-padding-top;
+    padding-left: 1rem;
+    padding-right: 1rem;
     flex-direction: column;
+    border-bottom: 0.1rem solid $secondary-cloud;
+    //border: 2px solid red;
     @include tablet-breakpoint {
       width: 100%;
 
@@ -127,35 +145,14 @@
   }
 
   &__mobiledetails {
+    //padding: 0 0.5rem;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
     width: 100%;
-    border: 2px solid red;
-    @include tablet-breakpoint {
-      display: none;
-    }
-  }
-
-  &__details {
-    @include tablet-breakpoint {
-      width: 100%;
-      padding-right: $m-padding-sides;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  }
-
-  &__mobilebox1 {
-    display: flex;
-    flex-direction: column;
-
-    //flex-direction: row;
-    justify-content: space-between;
-    width: 50%;
-    border: 2px solid green;
+    padding-bottom: 1rem;
+    //border: 2px solid green;
     @include tablet-breakpoint {
       display: none;
     }
@@ -167,7 +164,7 @@
     //flex-direction: row;
     justify-content: space-between;
     width: 50%;
-    border: 2px solid blue;
+    //border: 2px solid blue;
     @include tablet-breakpoint {
       display: none;
     }
@@ -176,8 +173,6 @@
   &__tabletinfo {
     display: none;
     @include tablet-breakpoint {
-      // padding-left: $m-padding-sides;
-      // padding-right: $m-padding-sides;
       width: 100%;
       display: flex;
       flex-direction: row;
@@ -186,8 +181,8 @@
     }
   }
   &__infobox {
-    width: 15rem;
-    display: flex;
+    width: 10rem;
+    display: inline-block;
     flex-direction: column;
     justify-content: flex-start;
     gap: 0.5rem;
@@ -198,6 +193,35 @@
       display: none;
     }
   }
+
+  &__data--in-stock {
+    @include mobile-tablet-labels-buttons-text-style;
+    color: $supporting-green;
+    text-transform: uppercase;
+    background-color: lighten($supporting-green, 60%);
+    padding: 0.4rem;
+    border-radius: 25px;
+    width: max-content;
+  }
+
+  &__data--out-of-stock {
+    @include mobile-tablet-labels-buttons-text-style;
+    color: $supporting-red;
+    text-transform: uppercase;
+    background-color: lighten($supporting-red, 50%);
+    padding: 0.4rem;
+    border-radius: 25px;
+    width: max-content;
+  }
+
+  // &__stockdata {
+  //   width: max-content;
+  //   padding: 0.4rem;
+  //   border-radius: 25px;
+  //   background-color: lighten($supporting-green, 60%);
+  //   color: $supporting-green;
+  //   text-transform: uppercase;
+  // }
   // &__actions {
   //   &--mobile {
   //     width: auto;
@@ -221,13 +245,26 @@
 
   &__actions {
     &--mobile {
+      // padding: 0 0.5rem;
+      // padding-left: 1rem;
+      // padding-right: 1rem;
       width: auto;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+
+      //border: 1px solid red;
     }
     &--tablet {
       display: none;
+    }
+
+    &__trashicon,
+    &__editicon {
+      width: 2rem;
+      height: 2rem;
+      cursor: pointer;
+      padding-left: 0.5rem;
     }
 
     @include tablet-breakpoint {
@@ -241,11 +278,19 @@
       }
     }
   }
-  // &__filler {
-  //   display: flex;
-  //   width: 15%;
-  //   justify-content: flex-start;
-  // }
+
+  &__infotitle {
+    @include mobile-tablet-labels-buttons-text-style;
+    color: $secondary-slate;
+  }
+  &__data {
+    @include mobile-tablet-labels-buttons-text-style;
+
+    &--highlight {
+      color: $primary-indigo;
+    }
+  }
+
   &__infoboxdiv {
     display: flex;
     width: 20%;
@@ -254,8 +299,15 @@
   }
   &__datatablet {
     // border: 2px solid blue;
+    @include mobile-tablet-labels-buttons-text-style;
     width: 20%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     display: flex;
     align-items: center;
+    &--highlight {
+      color: $primary-indigo;
+    }
   }
 }
