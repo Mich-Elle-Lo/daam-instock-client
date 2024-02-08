@@ -27,12 +27,17 @@ button {
 .app {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  overflow-y: auto;
   &__desktop {
     @include desktop-breakpoint {
       display: flex;
     }
   }
-  &__box {
-    width: 100%;
+  // &__box {
+  //   width: 100%;
+  // }
+  &__content {
+    flex-grow: 1;
   }
 }
