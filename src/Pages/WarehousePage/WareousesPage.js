@@ -50,6 +50,12 @@ export default function WareHousesPage() {
 
   return (
     <section className="warehouses">
+      <WarehouseModal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+        onDelete={deleteWarehouse}
+        warehouse={selectedWarehouse}
+      />
       <div className="warehouses__wrapper">
         <h1 className="warehouses__title">Warehouses</h1>
         <form className="warehouses__form">
@@ -106,12 +112,6 @@ export default function WareHousesPage() {
         </div>
         <div className="warehouses__boxflex">ACTIONS</div>
       </div>
-      <WarehouseModal
-        show={showModal}
-        onClose={() => setShowModal(false)}
-        onDelete={deleteWarehouse}
-        warehouse={selectedWarehouse}
-      />
 
       <div className="warehouses__list">
         {warehouses.map((warehouse) => (

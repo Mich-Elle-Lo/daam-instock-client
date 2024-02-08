@@ -14,7 +14,7 @@
   z-index: 10;
 
   &__content {
-    background: #fff;
+    background: $primary-white;
     padding: 1.5rem;
     border-radius: 0.2rem;
     height: 50%;
@@ -57,25 +57,21 @@
     align-items: center;
     font-size: 1.25rem;
     padding-bottom: 1rem;
-
-    .close-button {
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
   }
 
   &__title {
-    font-size: 1.5rem;
+    @include mobile-tablet-subheader-text-style;
     margin: 0;
   }
 
   &__body {
     padding: 1rem 0;
   }
+  &__message {
+    @include mobile-tablet-body-p1-text-style;
+  }
   &__wrapper {
-    height: 85%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -90,6 +86,7 @@
     gap: 0.5rem;
   }
   &__button {
+    @include mobile-tablet-labels-buttons-text-style;
     width: $m-btn-width;
     height: $m-btn-height;
     border-radius: 1.25rem;

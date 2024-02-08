@@ -31,7 +31,7 @@ export default function Modal({
           />
         </div>
         <div className="modal__header">
-          <h2 className="modal__title">Delete {warehouse?.warehouse_name}?</h2>
+          <h2 className="modal__title">Delete {warehouse.warehouse_name}?</h2>
           <img
             className="modal__close--tablet"
             onClick={onClose}
@@ -42,7 +42,7 @@ export default function Modal({
           <div className="modal__body">
             <p className="modal__message">
               Please confirm that you’d like to delete the{" "}
-              {warehouse?.warehouse_name} from the list of warehouses. You won’t
+              {warehouse.warehouse_name} from the list of warehouses. You won’t
               be able to undo this action.
             </p>
           </div>
