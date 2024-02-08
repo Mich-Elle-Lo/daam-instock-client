@@ -3,8 +3,7 @@
 @use "../../Styles/partials/typography" as *;
 
 .itemdetails {
-  display: flex;
-  flex-direction: column;
+  @include flex-direction(column);
   width: 876px;
   width: auto;
   background: $primary-white;
@@ -18,13 +17,13 @@
   top: 140px;
   margin: 0 17px 100px 17px;
   &__header {
-    display: flex;
-    flex-direction: row;
+    @include flex-direction(row);
     justify-content: flex-start;
     border-bottom: 0.5px solid $secondary-cloud;
     padding: 15px 7%;
     margin: 0;
-    @include tablet {
+
+    @include tablet-breakpoint {
       align-items: center;
       justify-content: space-between;
       padding: 15px 4%;
@@ -38,7 +37,7 @@
       color: $primary-black;
       margin: 12px 0;
 
-      @include tablet {
+      @include tablet-breakpoint {
         margin: 10px 0 0 0;
       }
     }
@@ -50,7 +49,7 @@
       border-radius: 20px;
       width: 36px;
       height: 36px;
-      @include tablet {
+      @include tablet-breakpoint {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
@@ -66,7 +65,8 @@
     &__buttontext {
       display: none;
       color: $primary-white;
-      @include tablet {
+
+      @include tablet-breakpoint {
         display: flex;
         flex-direction: row;
         margin: 0;
@@ -75,15 +75,15 @@
   }
   &__container {
     padding: 5%;
-    @include tablet {
-      display: flex;
-      flex-direction: row;
+
+    @include tablet-breakpoint {
+      @include flex-direction(row);
     }
   }
   &__description {
-    display: flex;
-    flex-direction: column;
-    @include tablet {
+    @include flex-direction(column);
+
+    @include tablet-breakpoint {
       width: 50%;
     }
     &--header {
@@ -98,13 +98,14 @@
       font-weight: 100;
       width: 95%;
       font-size: $m-font-size-p2;
-      @include tablet {
+
+      @include tablet-breakpoint {
         width: 85%;
       }
     }
   }
   &__line {
-    @include tablet {
+    @include tablet-breakpoint {
       border-right: 0.5px solid $secondary-cloud;
       position: absolute;
       top: 40%;
@@ -113,9 +114,9 @@
     }
   }
   &__logistics {
-    display: flex;
-    flex-direction: column;
-    @include tablet {
+    @include flex-direction(column);
+
+    @include tablet-breakpoint {
       width: 50%;
       padding-left: 5%;
     }
@@ -124,16 +125,15 @@
       flex-direction: row;
     }
     &--status {
-      display: flex;
-      flex-direction: column;
+      @include flex-direction(column);
       width: 50%;
-      @include tablet {
+
+      @include tablet-breakpoint {
         width: 100%;
       }
     }
     &--quantity {
-      display: flex;
-      flex-direction: column;
+      @include flex-direction(column);
       width: 50%;
     }
     &--name {
