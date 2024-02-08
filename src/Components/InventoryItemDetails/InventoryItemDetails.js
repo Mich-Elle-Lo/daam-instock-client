@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Arrow from "../../Assets/Icons/arrow_back-24px.svg";
@@ -36,9 +36,7 @@ export default function InventoryItemDetails() {
   }, [id]);
 
   const editItem = () => {
-    navigate(
-      `/inventories/edititem/${singleItem.id}/${singleItem.warehouse_name}`
-    );
+    navigate(`/inventories/edititem/${singleItem.id}`);
   };
 
   return (
