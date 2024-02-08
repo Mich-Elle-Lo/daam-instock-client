@@ -3,9 +3,9 @@ import "./App.scss";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import InventoriesPage from "./Pages/InventoriesPage/InventoriesPage";
-import WarehousesPage from "./Pages/WarehousePage/WareousesPage";
-import WarehouseModal from "./Components/Modal/WarehouseModal";
-import EditWarehouse from "./Components/EditWarehouse/EditWarehouse";
+// import WarehousesPage from "./Pages/WarehousePage/WareousesPage";
+// import WarehouseModal from "./Components/Modal/WarehouseModal";
+// import EditWarehouse from "./Components/EditWarehouse/EditWarehouse";
 
 function App() {
   return (
