@@ -1,1 +1,41 @@
+@use "./Styles/partials/typography" as *;
+@use "./Styles/partials/variables" as *;
+@use "./Styles/partials/mixins" as *;
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "TitilliumWeb-Regular", sans-serif;
+  width: auto;
+  margin: 0 auto;
+  padding: 0;
+  min-width: $min-mobile-screen;
+}
+
+button {
+  font-family: "TitilliumWeb-Regular", sans-serif;
+  cursor: pointer;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: scroll;
+  &__desktop {
+    @include desktop-breakpoint {
+      display: flex;
+    }
+  }
+  &__content {
+    height: auto;
+    // flex-grow: 3;
+  }
+}
