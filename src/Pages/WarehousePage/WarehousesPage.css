@@ -1,0 +1,372 @@
+@font-face {
+  font-family: "TitilliumWeb-Regular";
+  src: url("../../Assets/Fonts/TitilliumWeb-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TitilliumWeb-SemiBold";
+  src: url("../../Assets/Fonts/TitilliumWeb-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+.warehouses {
+  margin: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.warehouses__title {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+}
+@supports (font-size: clamp(0px, 0px, 0px)) {
+  .warehouses__title {
+    font-size: clamp(1.75rem, 3vw + 0.75rem, 2rem);
+    line-height: clamp(2.25rem, 2vw, 2.5rem);
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .warehouses__title {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-weight: 600;
+  }
+  @supports (font-size: clamp(0px, 0px, 0px)) {
+    .warehouses__title {
+      font-size: clamp(1.75rem, 3vw + 0.75rem, 2rem);
+      line-height: clamp(2.25rem, 2vw, 2.5rem);
+      font-weight: 600;
+      letter-spacing: 0.05rem;
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+  .warehouses__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: space-between;
+  }
+}
+.warehouses__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media only screen and (min-width: 768px) {
+  .warehouses__form {
+    gap: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.warehouses__search {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+.warehouses__input {
+  margin: 0;
+  width: 100%;
+  background-color: #f7f8f9;
+  border: 0.0625rem solid #bdc5d5;
+  height: 2.25rem;
+  border-radius: 1.25rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.warehouses__input:focus {
+  border: 0.0625rem solid #2e66e5;
+}
+.warehouses__iconbox {
+  position: absolute;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+}
+.warehouses__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 2.25rem;
+  border-radius: 20px;
+  border: none;
+  background-color: #2e66e5;
+  color: #f7f8f9;
+}
+@media only screen and (min-width: 768px) {
+  .warehouses__button {
+    width: auto;
+    white-space: nowrap;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+.warehouses__button:hover {
+  background-color: #13182c;
+  color: #f7f8f9;
+  cursor: pointer;
+}
+.warehouses__options {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  .warehouses__options {
+    font-size: 0.8125rem;
+    line-height: 1.75rem;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+    color: #5c667e;
+    background-color: #f7f8f9;
+    margin: 0;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  @supports (font-size: clamp(0px, 0px, 0px)) {
+    .warehouses__options {
+      font-size: clamp(0.8125rem, 3vw + 0.75rem, 0.875rem);
+      line-height: clamp(1.25rem, 2vw, 1.375rem);
+      font-weight: 400;
+      letter-spacing: 0.05rem;
+    }
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 768px) {
+  .warehouses__options {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+  }
+  @supports (font-size: clamp(0px, 0px, 0px)) {
+    .warehouses__options {
+      font-size: clamp(0.8125rem, 3vw + 0.75rem, d-font-size-h3);
+      line-height: clamp(1.25rem, 2vw, 1.375rem);
+      font-weight: 400;
+      letter-spacing: 0.05rem;
+    }
+  }
+}
+.warehouses__box {
+  display: flex;
+  align-items: center;
+  width: 20%;
+}
+.warehouses__boxflex {
+  display: flex;
+  width: 20%;
+  justify-content: flex-end;
+}
+.warehouses__list {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.warehouses__card {
+  width: 100%;
+  display: flex;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  flex-direction: column;
+  border-top: 0.1rem solid #bdc5d5;
+}
+@media only screen and (min-width: 768px) {
+  .warehouses__card {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .warehouses__details {
+    width: 100%;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.warehouses__mobilebox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: auto;
+}
+@media only screen and (min-width: 768px) {
+  .warehouses__mobilebox {
+    display: none;
+  }
+}
+.warehouses__tabletinfo {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  .warehouses__tabletinfo {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.warehouses__infobox {
+  width: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+.warehouses__infotitle {
+  display: contents;
+}
+@media only screen and (min-width: 768px) {
+  .warehouses__infotitle {
+    display: none;
+  }
+}
+.warehouses__actions--mobile {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.warehouses__actions--tablet {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  .warehouses__actions--mobile {
+    display: none;
+  }
+  .warehouses__actions--tablet {
+    display: contents;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+.warehouses__infotitle {
+  font-size: 0.8125rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  color: #5c667e;
+}
+@supports (font-size: clamp(0px, 0px, 0px)) {
+  .warehouses__infotitle {
+    font-size: clamp(0.8125rem, 3vw + 0.75rem, 0.875rem);
+    line-height: clamp(1.25rem, 2vw, 1.375rem);
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .warehouses__infotitle {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+  }
+  @supports (font-size: clamp(0px, 0px, 0px)) {
+    .warehouses__infotitle {
+      font-size: clamp(0.8125rem, 3vw + 0.75rem, d-font-size-h3);
+      line-height: clamp(1.25rem, 2vw, 1.375rem);
+      font-weight: 400;
+      letter-spacing: 0.05rem;
+    }
+  }
+}
+.warehouses__data {
+  font-size: 0.8125rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+}
+@supports (font-size: clamp(0px, 0px, 0px)) {
+  .warehouses__data {
+    font-size: clamp(0.8125rem, 3vw + 0.75rem, 0.875rem);
+    line-height: clamp(1.25rem, 2vw, 1.375rem);
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .warehouses__data {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+  }
+  @supports (font-size: clamp(0px, 0px, 0px)) {
+    .warehouses__data {
+      font-size: clamp(0.8125rem, 3vw + 0.75rem, d-font-size-h3);
+      line-height: clamp(1.25rem, 2vw, 1.375rem);
+      font-weight: 400;
+      letter-spacing: 0.05rem;
+    }
+  }
+}
+.warehouses__data--highlight {
+  color: #2e66e5;
+}
+.warehouses__infoboxdiv {
+  display: flex;
+  width: 20%;
+  flex-direction: column;
+}
+.warehouses__datatablet {
+  font-size: 0.8125rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  width: 20%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+}
+@supports (font-size: clamp(0px, 0px, 0px)) {
+  .warehouses__datatablet {
+    font-size: clamp(0.8125rem, 3vw + 0.75rem, 0.875rem);
+    line-height: clamp(1.25rem, 2vw, 1.375rem);
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .warehouses__datatablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+  }
+  @supports (font-size: clamp(0px, 0px, 0px)) {
+    .warehouses__datatablet {
+      font-size: clamp(0.8125rem, 3vw + 0.75rem, d-font-size-h3);
+      line-height: clamp(1.25rem, 2vw, 1.375rem);
+      font-weight: 400;
+      letter-spacing: 0.05rem;
+    }
+  }
+}
+.warehouses__datatablet--highlight {
+  color: #2e66e5;
+}/*# sourceMappingURL=WarehousesPage.css.map */

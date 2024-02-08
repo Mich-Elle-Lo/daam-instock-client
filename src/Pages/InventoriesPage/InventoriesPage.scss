@@ -125,6 +125,19 @@
       border: 2px solid red;
     }
   }
+
+  &__mobiledetails {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    border: 2px solid red;
+    @include tablet-breakpoint {
+      display: none;
+    }
+  }
+
   &__details {
     @include tablet-breakpoint {
       width: 100%;
@@ -134,15 +147,32 @@
       justify-content: space-between;
     }
   }
-  &__mobilebox {
+
+  &__mobilebox1 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+
+    //flex-direction: row;
     justify-content: space-between;
-    width: auto;
+    width: 50%;
+    border: 2px solid green;
     @include tablet-breakpoint {
       display: none;
     }
   }
+
+  &__mobilebox2 {
+    display: flex;
+    flex-direction: column;
+    //flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    border: 2px solid blue;
+    @include tablet-breakpoint {
+      display: none;
+    }
+  }
+
   &__tabletinfo {
     display: none;
     @include tablet-breakpoint {
@@ -168,6 +198,27 @@
       display: none;
     }
   }
+  // &__actions {
+  //   &--mobile {
+  //     width: auto;
+  //     display: flex;
+  //     flex-direction: row;
+  //     justify-content: space-between;
+  //   }
+  //   &--tablet {
+  //     display: none;
+  //   }
+  //   @include tablet-breakpoint {
+  //     &--mobile {
+  //       display: none;
+  //     }
+  //     &--tablet {
+  //       display: contents;
+  //       display: flex;
+  //       justify-content: flex-end;
+  //     }
+  //   }
+
   &__actions {
     &--mobile {
       width: auto;
@@ -178,6 +229,7 @@
     &--tablet {
       display: none;
     }
+
     @include tablet-breakpoint {
       &--mobile {
         display: none;

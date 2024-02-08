@@ -8,8 +8,8 @@ import editIcon from "../../Assets/Icons/edit-24px.svg";
 import arrowIcon from "../../Assets/Icons/chevron_right-24px.svg";
 
 export default function InventoriesPage() {
-  const [warehouses, setWarehouses] = useState([1]);
-  const [inventory, setInventory] = useState([]);
+  const [warehouses, setWarehouses] = useState([]);
+  const [inventories, setInventories] = useState([]);
 
   const baseUrl = "http://localhost:8080/";
 
@@ -17,13 +17,25 @@ export default function InventoriesPage() {
     const fetchInventories = async () => {
       try {
         const response = await axios.get(`${baseUrl}api/inventories`);
-
-        setInventory(response.data);
+        setInventories(response.data);
+        console.log("response", response.data);
       } catch (error) {
         console.error("error error", error);
       }
     };
+
+    const fetchWarehouses = async () => {
+      try {
+        const response = await axios.get(`${baseUrl}api/warehouses`);
+        console.log("response", response.data);
+        setWarehouses(response.data);
+      } catch (error) {
+        console.error("error error", error);
+      }
+    };
+
     fetchInventories();
+    fetchWarehouses();
   }, []);
 
   return (
@@ -97,8 +109,9 @@ export default function InventoriesPage() {
       <div className="inventories__list">
         {inventories.map((inventory) => (
           <div key={inventory.id} className="inventories__card">
-            <div className="inventories__details">
-              <div className="inventories__mobilebox">
+            {/* Mobile View */}
+            <div className="inventories__mobiledetails">
+              <div className="inventories__mobilebox1">
                 <div className="inventories__infobox">
                   <div className="inventories__infotitle">INVENTORY ITEM</div>
                   <div className="inventories__data">{inventory.item_name}</div>
@@ -110,7 +123,7 @@ export default function InventoriesPage() {
                 </div>
               </div>
 
-              <div className="inventories__mobilebox">
+              <div className="inventories__mobilebox2">
                 <div className="inventories__infobox">
                   <div className="inventories__infotitle">STATUS</div>
                   <div className="inventories__data">{inventory.status}</div>
@@ -157,7 +170,8 @@ export default function InventoriesPage() {
             </div>
 
             <div className="inventories__actions">
-              <div className="inventories__datatablet inventories__actions--tablet">
+              {/* <div className="inventories__datatablet inventories__actions--tablet"> */}
+              <div className="inventories__actions--tablet">
                 <div className="inventories__trash">
                   <img
                     className="inventories__trashicon"
@@ -174,24 +188,24 @@ export default function InventoriesPage() {
                   />
                 </div>
               </div>
-            </div>
 
-            {/* mobile buttons */}
-            <div className="inventories__actions--mobile">
-              <div className="inventories__trash">
-                <img
-                  className="inventories__trashicon"
-                  src={trashIcon}
-                  alt="trash icon"
-                />
-              </div>
+              {/* mobile buttons */}
+              <div className="inventories__actions--mobile">
+                <div className="inventories__trash">
+                  <img
+                    className="inventories__trashicon"
+                    src={trashIcon}
+                    alt="trash icon"
+                  />
+                </div>
 
-              <div className="inventories__edit">
-                <img
-                  className="inventories__editicon"
-                  src={editIcon}
-                  alt="edit icon"
-                />
+                <div className="inventories__edit">
+                  <img
+                    className="inventories__editicon"
+                    src={editIcon}
+                    alt="edit icon"
+                  />
+                </div>
               </div>
             </div>
           </div>

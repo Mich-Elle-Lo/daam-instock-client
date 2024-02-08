@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "TitilliumWeb-Regular";
+  src: url("../../Assets/Fonts/TitilliumWeb-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TitilliumWeb-SemiBold";
+  src: url("../../Assets/Fonts/TitilliumWeb-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+footer {
+  background-color: #232940;
+  width: 100%;
+  height: auto;
+}
+footer__cr {
+  font-family: "TitilliumWeb-Regular", sans-serif;
+  color: #5c667e;
+  text-align: center;
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+}
+@supports (font-size: clamp(0px, 0px, 0px)) {
+  footer__cr {
+    font-size: clamp(0.6875rem, 3vw + 0.75rem, 0.75rem);
+    line-height: clamp(1rem, 2vw, 1.125rem);
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer__cr {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+  }
+  @supports (font-size: clamp(0px, 0px, 0px)) {
+    footer__cr {
+      font-size: clamp(0.6875rem, 3vw + 0.75rem, 0.75rem);
+      line-height: clamp(1rem, 2vw, 1.125rem);
+      font-weight: 400;
+      letter-spacing: 0.05rem;
+    }
+  }
+}/*# sourceMappingURL=Footer.css.map */
