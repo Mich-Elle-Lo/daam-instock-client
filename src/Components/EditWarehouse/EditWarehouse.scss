@@ -5,12 +5,14 @@
 
 .edit-warehouse {
   background-color: $primary-white;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  margin-top: -4rem;
+  margin: -4rem 1rem 2.5rem;
   z-index: 99;
   border-radius: 5px;
   box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
+
+  @include tablet-breakpoint {
+    margin: -5.75rem 2rem 2.5rem;
+  }
 
   &__title-container {
     padding: 2rem 1.5rem 1.5rem;
@@ -32,13 +34,27 @@
   &__warehouse-details {
     padding: 0 1.5rem 1rem;
     border-bottom: 1px solid $secondary-cloud;
+
+    @include tablet-breakpoint {
+      border-bottom: none;
+      border-right: 1px solid $secondary-cloud;
+      flex: 1;
+    }
   }
 
   &__contact-details {
     padding: 0 1.5rem;
+
+    @include tablet-breakpoint {
+      flex: 1;
+    }
   }
 
   &__form {
+    @include tablet-breakpoint {
+      display: flex;
+      width: 100%;
+    }
   }
 
   &__label {
@@ -60,15 +76,18 @@
 
   &__btn-container {
     display: flex;
+    gap: 1.0625rem;
     padding: 1rem 1.5rem;
+    margin-top: 1.5rem;
     background-color: $background-light-grey;
   }
 
   &__btn {
     border-radius: $btn-border-radius;
-    padding: 0.5rem 1rem;
+    height: 2.25rem;
     font-weight: $semibold-txt;
     font-size: $m-font-size-h3;
+    width: 100%;
   }
 }
 

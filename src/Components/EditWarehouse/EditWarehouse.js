@@ -93,15 +93,15 @@ export default function EditWarehouse() {
             name="email"
           />
         </div>
-        <div className="edit-warehouse__btn-container">
-          <button className="edit-warehouse__btn cancel-btn" type="button">
-            Cancel
-          </button>
-          <button className="edit-warehouse__btn save-btn" type="submit">
-            Save
-          </button>
-        </div>
       </form>
+      <div className="edit-warehouse__btn-container">
+        <button className="edit-warehouse__btn cancel-btn" type="button">
+          Cancel
+        </button>
+        <button className="edit-warehouse__btn save-btn" type="submit">
+          Save
+        </button>
+      </div>
     </section>
   );
 }
