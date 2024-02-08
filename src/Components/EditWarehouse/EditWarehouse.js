@@ -6,12 +6,14 @@ export default function EditWarehouse() {
     <section className="edit-warehouse">
       <div className="edit-warehouse__title-container">
         <img src={BackArrow} alt="Back Arrow" />
-        <h1>Edit Warehouse</h1>
+        <h1 className="edit-warehouse__title">Edit Warehouse</h1>
       </div>
       <form className="edit-warehouse__form">
         <div className="edit-warehouse__warehouse-details">
-          <h3>Warehouse Details</h3>
-          <label htmlFor="warehouseName">Warehouse Name</label>
+          <h2 className="edit-warehouse__section-title">Warehouse Details</h2>
+          <label className="edit-warehouse__label" htmlFor="warehouseName">
+            Warehouse Name
+          </label>
           <input
             className="edit-warehouse__input"
             type="text"
@@ -19,7 +21,9 @@ export default function EditWarehouse() {
             name="warehouseName"
           />
 
-          <label htmlFor="streetAddress">Street Address</label>
+          <label className="edit-warehouse__label" htmlFor="streetAddress">
+            Street Address
+          </label>
           <input
             className="edit-warehouse__input"
             type="text"
@@ -27,7 +31,9 @@ export default function EditWarehouse() {
             name="streetAddress"
           />
 
-          <label htmlFor="city">City</label>
+          <label className="edit-warehouse__label" htmlFor="city">
+            City
+          </label>
           <input
             className="edit-warehouse__input"
             type="text"
@@ -35,7 +41,9 @@ export default function EditWarehouse() {
             name="city"
           />
 
-          <label htmlFor="country">Country</label>
+          <label className="edit-warehouse__label" htmlFor="country">
+            Country
+          </label>
           <input
             className="edit-warehouse__input"
             type="text"
@@ -44,8 +52,10 @@ export default function EditWarehouse() {
           />
         </div>
         <div className="edit-warehouse__contact-details">
-          <h3>Contact Details</h3>
-          <label htmlFor="contactName">Contact Name</label>
+          <h2 className="edit-warehouse__section-title">Contact Details</h2>
+          <label className="edit-warehouse__label" htmlFor="contactName">
+            Contact Name
+          </label>
           <input
             className="edit-warehouse__input"
             type="text"
@@ -53,7 +63,9 @@ export default function EditWarehouse() {
             name="contactName"
           />
 
-          <label htmlFor="position">Position</label>
+          <label className="edit-warehouse__label" htmlFor="position">
+            Position
+          </label>
           <input
             className="edit-warehouse__input"
             type="text"
@@ -61,7 +73,9 @@ export default function EditWarehouse() {
             name="position"
           />
 
-          <label htmlFor="phone">Phone Number</label>
+          <label className="edit-warehouse__label" htmlFor="phone">
+            Phone Number
+          </label>
           <input
             className="edit-warehouse__input"
             type="text"
@@ -69,7 +83,9 @@ export default function EditWarehouse() {
             name="phone"
           />
 
-          <label htmlFor="email">Email</label>
+          <label className="edit-warehouse__label" htmlFor="email">
+            Email
+          </label>
           <input
             className="edit-warehouse__input"
             type="text"
@@ -77,9 +93,13 @@ export default function EditWarehouse() {
             name="email"
           />
         </div>
-        <div>
-          <button type="button">Cancel</button>
-          <button type="submit">Save</button>
+        <div className="edit-warehouse__btn-container">
+          <button className="edit-warehouse__btn cancel-btn" type="button">
+            Cancel
+          </button>
+          <button className="edit-warehouse__btn save-btn" type="submit">
+            Save
+          </button>
         </div>
       </form>
     </section>
