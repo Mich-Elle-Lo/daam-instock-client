@@ -14,3 +14,10 @@
 // add__error - Error messages for form validation.
 // add__button--cancel - Cancel button.
 // add__button--add - Add warehouse button.
+
+.add {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
