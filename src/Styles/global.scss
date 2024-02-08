@@ -19,16 +19,15 @@ body {
   min-width: $min-mobile-screen;
 }
 
-//
-.app {
-  display: flex;
-  flex-direction: column;
-  &__desktop {
-    @include desktop {
-      display: flex;
-    }
-  }
-  &__box {
-    width: 100%;
-  }
-}
+// .app {
+//   display: flex;
+//   flex-direction: column;
+//   &__desktop {
+//     @include desktop {
+//       display: flex;
+//     }
+//   }
+//   &__box {
+//     width: 100%;
+//   }
+// }
