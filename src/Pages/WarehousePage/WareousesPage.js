@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./WarehousesPage.scss";
+import WarehouseModal from "../../Components/Modal/WarehouseModal";
 import searchIcon from "../../Assets/Icons/search-24px.svg";
 import sortIcon from "../../Assets/Icons/sort-24px.svg";
 import trashIcon from "../../Assets/Icons/delete_outline-24px.svg";
@@ -10,6 +11,29 @@ import arrowIcon from "../../Assets/Icons/chevron_right-24px.svg";
 export default function WareHousesPage() {
   const [warehouses, setWarehouses] = useState([]);
   const baseUrl = "http://localhost:8080/";
+
+  const [showModal, setShowModal] = useState(false);
+  const [selectedWarehouse, setSelectedWarehouse] = useState(null);
+
+  const deleteWarehouse = (warehouseId) => {
+    return axios
+      .delete(`http://localhost:8080/api/warehouses/${warehouseId}`)
+      .then((response) => {
+        const updatedWarehouses = warehouses.filter(
+          (warehouse) => warehouse.id !== warehouseId
+        );
+        setWarehouses(updatedWarehouses);
+      })
+      .catch((error) => {
+        console.error("Error error with deletion:", error);
+        throw error;
+      });
+  };
+
+  const handleOpenModal = (selectedWarehouse) => {
+    setSelectedWarehouse(selectedWarehouse);
+    setShowModal(true);
+  };
 
   useEffect(() => {
     const fetchWarehouses = async () => {
@@ -82,6 +106,13 @@ export default function WareHousesPage() {
         </div>
         <div className="warehouses__boxflex">ACTIONS</div>
       </div>
+      <WarehouseModal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+        onDelete={deleteWarehouse}
+        warehouse={selectedWarehouse}
+      />
+
       <div className="warehouses__list">
         {warehouses.map((warehouse) => (
           <div key={warehouse.id} className="warehouses__card">
@@ -149,7 +180,10 @@ export default function WareHousesPage() {
                   </div>
                 </div>
                 <div className="warehouses__datatablet warehouses__actions--tablet">
-                  <div className="warehouses__trash">
+                  <div
+                    className="warehouses__trash"
+                    onClick={() => handleOpenModal(warehouse)}
+                  >
                     <img
                       className="warehouses__trashicon"
                       src={trashIcon}
@@ -167,7 +201,10 @@ export default function WareHousesPage() {
               </div>
               {/* mobile buttons */}
               <div className="warehouses__actions--mobile">
-                <div className="warehouses__trash">
+                <div
+                  className="warehouses__trash"
+                  onClick={() => handleOpenModal(warehouse)}
+                >
                   <img
                     className="warehouses__trashicon"
                     src={trashIcon}

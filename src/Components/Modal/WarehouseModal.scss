@@ -1,0 +1,120 @@
+@use "../../Styles/partials/mixins" as *;
+@use "../../Styles/partials/variables" as *;
+@use "../../Styles/partials/typography" as *;
+.modal {
+  display: flex;
+  justify-content: center;
+  //   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+
+  &__content {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 0.2rem;
+    height: 50%;
+    max-width: 45%;
+    margin-top: 15vh;
+    @include tablet-breakpoint {
+      margin-top: 20vh;
+      min-height: 15rem;
+      max-height: 20%;
+      max-width: 38rem;
+    }
+  }
+  &__closebox {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__close {
+    &--mobile {
+      display: block;
+      cursor: pointer;
+    }
+    &--tablet {
+      display: none;
+    }
+    @include tablet-breakpoint {
+      &--mobile {
+        display: none;
+      }
+      &--tablet {
+        display: block;
+        cursor: pointer;
+      }
+    }
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25rem;
+    padding-bottom: 1rem;
+
+    .close-button {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  &__body {
+    padding: 1rem 0;
+  }
+  &__wrapper {
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include tablet-breakpoint {
+      height: 70%;
+    }
+  }
+  &__footer {
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+  &__button {
+    width: $m-btn-width;
+    height: $m-btn-height;
+    border-radius: 1.25rem;
+    border: none;
+    color: $secondary-cloud;
+    @include tablet-breakpoint {
+      width: auto;
+      white-space: nowrap;
+      @include t-btn-width;
+    }
+    cursor: pointer;
+  }
+  &__cancel {
+    color: $secondary-cloud;
+    border: 1px solid $secondary-cloud;
+    background: $primary-white;
+    &:hover {
+      border: 1px solid $primary-indigo;
+      color: $primary-indigo;
+    }
+  }
+  &__delete {
+    background: $supporting-red;
+    &:hover {
+      background: $background-graphite;
+    }
+  }
+}
