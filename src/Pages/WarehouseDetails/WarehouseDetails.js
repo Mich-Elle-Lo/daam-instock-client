@@ -16,90 +16,188 @@ export default function WarehouseDetails() {
 
   const [warehouse, setWarehouse] = useState(state?.warehouse);
   const [inventories, setInventories] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    if (!warehouse) {
-      const fetchWarehouseDetails = async () => {
-        try {
-          const response = await axios.get(`${baseUrl}api/warehouses/${id}`);
-          setWarehouse(response.data);
-        } catch (error) {
-          console.error("Error fetching warehouse details:", error);
-        }
-      };
-      fetchWarehouseDetails();
-    }
-
-    const fetchInventories = async () => {
+    const fetchWarehouseDetails = async () => {
+      setIsLoading(true);
       try {
-        const response = await axios.get(`${baseUrl}api/inventories/${id}`);
-        setInventories(response.data);
+        let warehouseData = state?.warehouse;
+        if (!warehouseData) {
+          const response = await axios.get(`${baseUrl}api/warehouses/${id}`);
+          warehouseData = response.data;
+          setWarehouse(warehouseData);
+        }
+
+        const inventoryResponse = await axios.get(
+          `${baseUrl}api/warehouses/${id}/inventories`
+        );
+
+        setInventories(inventoryResponse.data);
       } catch (error) {
-        console.error("Error fetching inventories:", error);
+        console.error("Error fetching data:", error);
+        setError("Failed to fetch data");
+      } finally {
+        setIsLoading(false);
       }
     };
-    fetchInventories();
-  }, [id]);
+
+    fetchWarehouseDetails();
+  }, [id, warehouse]);
 
   return (
-    <section className="warehouses">
-      <div className="warehouses__content">
-        <div className="warehouses__wrapper">
-          <h1 className="warehouses__title">{warehouse.warehouse_name}</h1>
-          <form className="warehouses__form">
-            <div className="warehouses__search">
-              <input
-                type="text"
-                placeholder="Search"
-                id="searchBar"
-                className="warehouses__input"
-              />
-              <div className="warehouses__iconbox">
-                <img
-                  className="warehouses__searchicon"
-                  src={searchIcon}
-                  alt="search icon"
-                />
+    <section className="warehouse">
+      <div className="warehouse__content">
+        <div className="warehouse__wrapper">
+          <h1 className="warehouse__title">
+            {warehouse?.warehouse_name || "Loading warehouse details..."}
+          </h1>
+        </div>
+        <article className="warehouse__contact">
+          <div className="warehouse__contact-box">
+            <div>
+              <p>WAREHOUSE ADDRESS:</p>
+              <p>{warehouse.address}</p>
+            </div>
+          </div>
+          <div className="warehouse__contact-box">
+            <div className="warehouse__contact-info">
+              {" "}
+              <p>CONTACT NAME:</p>
+              <br></br>
+              <p>{warehouse.contact_name}</p>
+            </div>
+
+            <div className="warehouse__contact-info">
+              {" "}
+              <p>CONTACT INFORMATION:</p>
+              <br></br>
+              <p>{warehouse.contact_phone}</p>
+              <p>{warehouse.contact_email}</p>
+            </div>
+          </div>
+        </article>
+        <div className="warehouse__options">
+          <div className="warehouse__box">
+            INVENTORY ITEM
+            <img
+              className="warehouse__sorticon"
+              src={sortIcon}
+              alt="sort icon"
+            />
+          </div>
+          <div className="warehouse__box">
+            CATEGORY
+            <img
+              className="warehouse__sorticon"
+              src={sortIcon}
+              alt="sort icon"
+            />
+          </div>
+          <div className="warehouse__box">
+            STATUS
+            <img
+              className="warehouse__sorticon"
+              src={sortIcon}
+              alt="sort icon"
+            />
+          </div>
+          <div className="warehouse__box">
+            QUANITY
+            <img
+              className="warehouse__sorticon"
+              src={sortIcon}
+              alt="sort icon"
+            />
+          </div>
+          <div className="warehouse__boxflex">ACTIONS</div>
+        </div>
+        <section className="inventory">
+          {inventories.map((inventory) => (
+            <div key={inventory.id} className="inventory__card">
+              <div className="inventory__details">
+                <div className="inventory__mobilebox">
+                  <div className="inventory__infobox">
+                    <p className="inventory__infotitle">INVENTORY ITEM</p>
+                    <p className="warehouses__data">{inventory.item_name}</p>
+                  </div>
+
+                  <div className="inventory__infobox">
+                    <p className="inventory__infotitle">CATEGORY</p>
+                    <p className="warehouses__data">{inventory.category}</p>
+                  </div>
+                </div>
+                <div className="inventory__mobilebox">
+                  <div className="inventory__infobox">
+                    <div className="inventory__infotitle">STATUS</div>
+                    <p className="warehouses__data">{inventory.status}</p>
+                  </div>
+
+                  <div className="inventory__infobox">
+                    <p className="inventory__infotitle">QTY</p>
+                    <p className="warehouses__data">{inventory.quantity}</p>
+                  </div>
+                </div>
+              </div>
+              <div className="inventory__actions--mobile">
+                <div className="inventory__trash">
+                  <img
+                    className="inventory__trashicon"
+                    src={trashIcon}
+                    alt="trash icon"
+                  />
+                </div>
+                <div className="inventory__edit">
+                  <img
+                    className="inventory__editicon"
+                    src={editIcon}
+                    alt="edit icon"
+                  />
+                </div>
+              </div>
+              <div className="warehouses__tabletinfo">
+                <div className="warehouses__datatablet">
+                  <p className="warehouses__datatablet--highlight">
+                    {inventory.item_name}
+                  </p>
+                  <img
+                    className="warehouses__arrowicon"
+                    src={arrowIcon}
+                    alt="arrow icon"
+                  />
+                </div>
+
+                <div className="warehouses__datatablet">
+                  {inventory.category}
+                </div>
+
+                <div className="warehouses__datatablet">{inventory.status}</div>
+                <div className=" warehouses__infoboxdiv">
+                  <div className="warehouses__datatablet2">
+                    {inventory.quantity}
+                  </div>
+                </div>
+                <div className="warehouses__datatablet warehouses__actions--tablet">
+                  <div className="warehouses__trash">
+                    <img
+                      className="warehouses__trashicon"
+                      src={trashIcon}
+                      alt="trash icon"
+                    />
+                  </div>
+                  <div className="warehouses__edit">
+                    <img
+                      className="warehouses__editicon"
+                      src={editIcon}
+                      alt="edit icon"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
-            <button className="warehouses__button"> +Add New Warehouse</button>
-          </form>
-        </div>
-        <div className="warehouses__options">
-          <div className="warehouses__box">
-            WAREHOUSE
-            <img
-              className="warehouses__sorticon"
-              src={sortIcon}
-              alt="sort icon"
-            />
-          </div>
-          <div className="warehouses__box">
-            ADDRESS
-            <img
-              className="warehouses__sorticon"
-              src={sortIcon}
-              alt="sort icon"
-            />
-          </div>
-          <div className="warehouses__box">
-            CONTACT NAME
-            <img
-              className="warehouses__sorticon"
-              src={sortIcon}
-              alt="sort icon"
-            />
-          </div>
-          <div className="warehouses__box">
-            CONTACT INFORMATION
-            <img
-              className="warehouses__sorticon"
-              src={sortIcon}
-              alt="sort icon"
-            />
-          </div>
-          <div className="warehouses__boxflex">ACTIONS</div>
-        </div>
+          ))}
+        </section>
       </div>
     </section>
   );

@@ -4,7 +4,7 @@ import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import WarehousesPage from "./Pages/WarehousePage/WareousesPage";
 import WarehouseDetails from "./Pages/WarehouseDetails/WarehouseDetails";
-import EditWarehouse from "./Components/EditWarehouse/EditWarehouse";
+import EditWarehouse from "./Pages/EditWarehouse/EditWarehouse";
 
 function App() {
   return (
