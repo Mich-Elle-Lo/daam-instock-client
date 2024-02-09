@@ -19,7 +19,6 @@ function App() {
           {/* <Route path="/edit-warehouse/:id" element={<EditWarehouse />} /> */}
           {/* <Route path="/inventories" element={<InventoriesPage />} /> */}
         </Routes>
-        {/* <Route path="/inventories" element={<InventoriesPage />} /> */}
 
         <Footer />
       </BrowserRouter>

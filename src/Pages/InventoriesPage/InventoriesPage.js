@@ -155,7 +155,7 @@ export default function InventoriesPage() {
 
             {/* Tablet View */}
             <div className="inventories__tabletinfo">
-              <div className="inventories__datatablet">
+              <div className=" inventories__datatablet">
                 {inventory.item_name}
                 <img
                   className="inventories__arrowicon"
@@ -168,7 +168,15 @@ export default function InventoriesPage() {
                 {inventory.category}
               </div>
 
-              <div className="inventories__datatablet">{inventory.status}</div>
+              <div
+                className={`inventories__datatablet--${
+                  inventory.status.toLowerCase() === "in stock"
+                    ? "in-stock"
+                    : "out-of-stock"
+                }`}
+              >
+                {inventory.status}
+              </div>
 
               <div className="inventories__datatablet">
                 {inventory.quantity}
