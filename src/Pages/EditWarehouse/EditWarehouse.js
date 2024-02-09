@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import BackArrow from "../../Assets/Icons/arrow_back-24px.svg";
+import ErrorIcon from "../../Assets/Icons/error-24px.svg";
 
 export default function EditWarehouse() {
   const location = useLocation();
@@ -20,6 +21,8 @@ export default function EditWarehouse() {
     contact_email: "",
   });
 
+  const [errors, setErrors] = useState({});
+
   useEffect(() => {
     if (warehouse) {
       setFormData(warehouse);
@@ -29,6 +32,7 @@ export default function EditWarehouse() {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
+    setErrors({ ...errors, [name]: "" });
   };
 
   const handleCancel = () => {
@@ -36,6 +40,17 @@ export default function EditWarehouse() {
   };
 
   const handleSave = async () => {
+    const newErrors = {};
+    Object.keys(formData).forEach((key) => {
+      if (!formData[key]) {
+        newErrors[key] = "This field is required";
+      }
+    });
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
+      return;
+    }
     try {
       const formattedDateTime = new Date()
         .toISOString()
@@ -71,49 +86,81 @@ export default function EditWarehouse() {
             Warehouse Name
           </label>
           <input
-            className="edit-warehouse__input"
+            className={`edit-warehouse__input ${
+              errors.warehouse_name && "error-outline"
+            }`}
             type="text"
             id="warehouse_name"
             name="warehouse_name"
             value={formData.warehouse_name}
             onChange={handleInputChange}
           />
+          {errors.warehouse_name && (
+            <div className="edit-warehouse__error">
+              <img src={ErrorIcon} className="error-icon" alt="Error Icon" />
+              {errors.warehouse_name}
+            </div>
+          )}
 
           <label className="edit-warehouse__label" htmlFor="streetAddress">
             Street Address
           </label>
           <input
-            className="edit-warehouse__input"
+            className={`edit-warehouse__input ${
+              errors.address && "error-outline"
+            }`}
             type="text"
             id="address"
             name="address"
             value={formData.address}
             onChange={handleInputChange}
           />
+          {errors.address && (
+            <div className="edit-warehouse__error">
+              <img src={ErrorIcon} className="error-icon" alt="Error Icon" />
+              {errors.address}
+            </div>
+          )}
 
           <label className="edit-warehouse__label" htmlFor="city">
             City
           </label>
           <input
-            className="edit-warehouse__input"
+            className={`edit-warehouse__input ${
+              errors.city && "error-outline"
+            }`}
             type="text"
             id="city"
             name="city"
             value={formData.city}
             onChange={handleInputChange}
           />
+          {errors.city && (
+            <div className="edit-warehouse__error">
+              <img src={ErrorIcon} className="error-icon" alt="Error Icon" />
+              {errors.city}
+            </div>
+          )}
 
           <label className="edit-warehouse__label" htmlFor="country">
             Country
           </label>
           <input
-            className="edit-warehouse__input"
+            className={`edit-warehouse__input ${
+              errors.country && "error-outline"
+            }`}
             type="text"
             id="country"
             name="country"
             value={formData.country}
             onChange={handleInputChange}
           />
+          {errors.country && (
+            <div className="edit-warehouse__error">
+              <img src={ErrorIcon} className="error-icon" alt="Error Icon" />
+              {errors.country}
+            </div>
+          )}
         </div>
         <div className="edit-warehouse__contact-details">
           <h2 className="edit-warehouse__section-title">Contact Details</h2>
@@ -121,49 +168,81 @@ export default function EditWarehouse() {
             Contact Name
           </label>
           <input
-            className="edit-warehouse__input"
+            className={`edit-warehouse__input ${
+              errors.contact_name && "error-outline"
+            }`}
             type="text"
             id="contact_name"
             name="contact_name"
             value={formData.contact_name}
             onChange={handleInputChange}
           />
+          {errors.contact_name && (
+            <div className="edit-warehouse__error">
+              <img src={ErrorIcon} className="error-icon" alt="Error Icon" />
+              {errors.contact_name}
+            </div>
+          )}
 
           <label className="edit-warehouse__label" htmlFor="position">
             Position
           </label>
           <input
-            className="edit-warehouse__input"
+            className={`edit-warehouse__input ${
+              errors.contact_position && "error-outline"
+            }`}
             type="text"
             id="contact_position"
             name="contact_position"
             value={formData.contact_position}
             onChange={handleInputChange}
           />
+          {errors.contact_position && (
+            <div className="edit-warehouse__error">
+              <img src={ErrorIcon} className="error-icon" alt="Error Icon" />
+              {errors.contact_position}
+            </div>
+          )}
 
           <label className="edit-warehouse__label" htmlFor="phone">
             Phone Number
           </label>
           <input
-            className="edit-warehouse__input"
+            className={`edit-warehouse__input ${
+              errors.contact_phone && "error-outline"
+            }`}
             type="text"
             id="contact_phone"
             name="contact_phone"
             value={formData.contact_phone}
             onChange={handleInputChange}
           />
+          {errors.contact_phone && (
+            <div className="edit-warehouse__error">
+              <img src={ErrorIcon} className="error-icon" alt="Error Icon" />
+              {errors.contact_phone}
+            </div>
+          )}
 
           <label className="edit-warehouse__label" htmlFor="email">
             Email
           </label>
           <input
-            className="edit-warehouse__input"
+            className={`edit-warehouse__input ${
+              errors.contact_email && "error-outline"
+            }`}
             type="text"
             id="contact_email"
             name="contact_email"
             value={formData.contact_email}
             onChange={handleInputChange}
           />
+          {errors.contact_email && (
+            <div className="edit-warehouse__error">
+              <img src={ErrorIcon} className="error-icon" alt="Error Icon" />
+              {errors.contact_email}
+            </div>
+          )}
         </div>
       </form>
       <div className="edit-warehouse__btn-container">
