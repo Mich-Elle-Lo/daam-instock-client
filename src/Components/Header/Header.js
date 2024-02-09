@@ -12,13 +12,13 @@ export default function Header() {
 
   return (
     <header className="header">
-      <div className="header__logo">
+      <Link to="/" className="header__logo">
         <img src={logo} alt="InStock Logo" />
-      </div>
+      </Link>
       <nav>
         <ul className="header__nav-list">
           <Link
-            to={"/"}
+            to="/"
             className={`header__nav-item ${
               activeLink === "warehouses" ? "header__nav-item--clicked" : ""
             }`}
@@ -27,7 +27,7 @@ export default function Header() {
             <li>Warehouses</li>
           </Link>
           <Link
-            to={"/inventories"}
+            to="/inventories"
             className={`header__nav-item ${
               activeLink === "inventories" ? "header__nav-item--clicked" : ""
             }`}
