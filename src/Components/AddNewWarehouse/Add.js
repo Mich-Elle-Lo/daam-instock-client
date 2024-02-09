@@ -207,15 +207,15 @@ const Add = () => {
             )}
           </div>
         </div>
-        <div className="add__button--container">
-          <button className="add__button--cancel" type="submit">
-            Cancel
-          </button>
-          <button className="add__button--add" type="submit">
-            + Add Warehouse
-          </button>
-        </div>
       </form>
+      <div className="add__button--container">
+        <button className="add__button--cancel" type="submit">
+          Cancel
+        </button>
+        <button className="add__button--add" type="submit">
+          + Add Warehouse
+        </button>
+      </div>
     </section>
   );
 };
