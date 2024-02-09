@@ -106,15 +106,33 @@
     }
   }
 
-  .save-btn {
-    background-color: $primary-indigo;
-    color: $primary-white;
-    border: none;
+  &__error {
+    color: $supporting-red;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.8rem;
+    margin-top: -0.9rem;
   }
+}
 
-  .cancel-btn {
-    background-color: $primary-white;
-    color: $secondary-slate;
-    border: 1px solid $secondary-cloud;
-  }
+.save-btn {
+  background-color: $primary-indigo;
+  color: $primary-white;
+  border: none;
+}
+
+.cancel-btn {
+  background-color: $primary-white;
+  color: $secondary-slate;
+  border: 1px solid $secondary-cloud;
+}
+
+.error-outline {
+  border: $form-border-error;
+}
+
+.error-icon {
+  width: 1rem;
+  height: 1rem;
 }
