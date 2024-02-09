@@ -1,0 +1,261 @@
+@use "../../Styles/partials/mixins" as *;
+@use "../../Styles/partials/variables" as *;
+@use "../../Styles/partials/typography" as *;
+
+.warehouses {
+  margin-top: -6rem;
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  // top: 0;
+  // left: 0;
+  width: 100%;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 10;
+
+  &__content {
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
+    background: $primary-white;
+    // padding: 1.5rem;
+    border-radius: 0.2rem;
+    height: 70%;
+    width: 90%;
+    margin-top: 5vh;
+
+    @include tablet-breakpoint {
+      margin-top: 5vh;
+      height: 95%;
+      width: 95%;
+    }
+  }
+  &__title {
+    @include mobile-tablet-pageheader-text-style;
+  }
+  &__wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: $t-padding-space;
+    @include tablet-breakpoint {
+      display: flex;
+      flex-direction: row;
+      align-self: center;
+      justify-content: space-between;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: $m-padding-space;
+    @include tablet-breakpoint {
+      gap: $t-padding-space;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  &__search {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+  }
+  &__input {
+    margin: 0;
+    width: 100%;
+    background-color: $background-light-grey;
+    border: $form-border-default;
+    height: $form-height-mobile;
+    border-radius: $form-border-radius;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    &:focus {
+      border: $form-border-active;
+    }
+  }
+  &__iconbox {
+    position: absolute;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__button {
+    @include mobile-tablet-labels-buttons-text-style;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $m-btn-width;
+    height: $m-btn-height;
+    border-radius: 20px;
+    border: none;
+    background-color: #2e66e5;
+    color: #f7f8f9;
+    cursor: pointer;
+    @include tablet-breakpoint {
+      width: auto;
+      white-space: nowrap;
+      @include t-btn-width;
+    }
+    &:hover {
+      background: $background-graphite;
+    }
+  }
+  &__options {
+    display: none;
+
+    @include tablet-breakpoint {
+      @include mobile-tablet-labels-buttons-text-style;
+      color: $secondary-slate;
+      background-color: $background-light-grey;
+      margin: 0;
+      width: 100%;
+      padding-left: $m-padding-sides;
+      padding-right: $m-padding-sides;
+      padding-bottom: 0.5rem;
+      padding-top: 0.5rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+
+    width: 20%;
+  }
+  &__boxflex {
+    display: flex;
+    width: 20%;
+    justify-content: flex-end;
+  }
+  &__list {
+    width: 100%;
+    height: auto;
+  }
+  &__card {
+    width: 100%;
+    display: flex;
+    padding-top: $m-padding-top;
+    padding-bottom: $m-padding-top;
+    flex-direction: column;
+    border-top: 0.1rem solid $secondary-cloud;
+    @include tablet-breakpoint {
+      width: 100%;
+
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+    &:hover {
+      cursor: pointer;
+      background-color: $background-light-grey;
+    }
+  }
+  &__details {
+    @include tablet-breakpoint {
+      width: 100%;
+      padding-left: $m-padding-sides;
+      padding-right: $m-padding-sides;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  &__mobilebox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: auto;
+    padding-left: $m-padding-sides;
+
+    @include tablet-breakpoint {
+      display: none;
+    }
+  }
+  &__tabletinfo {
+    display: none;
+    @include tablet-breakpoint {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  &__infobox {
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+  &__infotitle {
+    display: contents;
+    @include tablet-breakpoint {
+      display: none;
+    }
+  }
+  &__actions {
+    &--mobile {
+      width: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-left: $m-padding-sides;
+      padding-right: $m-padding-sides;
+    }
+    &--tablet {
+      display: none;
+    }
+    @include tablet-breakpoint {
+      &--mobile {
+        display: none;
+      }
+      &--tablet {
+        display: contents;
+        display: flex;
+        justify-content: flex-end;
+        gap: 0.5rem;
+      }
+    }
+  }
+  &__infotitle {
+    @include mobile-tablet-labels-buttons-text-style;
+    color: $secondary-slate;
+  }
+  &__data {
+    @include mobile-tablet-labels-buttons-text-style;
+
+    &--highlight {
+      color: $primary-indigo;
+    }
+  }
+  &__infoboxdiv {
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+  }
+  &__datatablet {
+    @include mobile-tablet-labels-buttons-text-style;
+    width: 20%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    &--highlight {
+      color: $primary-indigo;
+    }
+  }
+}
