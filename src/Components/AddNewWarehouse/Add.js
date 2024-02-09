@@ -53,6 +53,16 @@ const Add = () => {
       isValid = false;
     }
 
+    if (!contactName.trim()) {
+      errors.contactName = "Contact Name is required";
+      isValid = false;
+    }
+
+    if (!position.trim()) {
+      errors.position = "Position is required";
+      isValid = false;
+    }
+
     setFormErrors(errors);
     return isValid;
   };
@@ -84,7 +94,7 @@ const Add = () => {
             <label
               className="add__label"
               htmlFor="name"
-              autocomplete="warehouse-name"
+              autoComplete="warehouse-name"
             >
               Warehouse Name
             </label>
@@ -104,7 +114,7 @@ const Add = () => {
             <label
               className="add__label"
               htmlFor="address"
-              autocomplete="address"
+              autoComplete="address"
             >
               Street Address
             </label>
@@ -121,7 +131,7 @@ const Add = () => {
             )}
           </div>
           <div className="add__section">
-            <label className="add__label" htmlFor="city" autocomplete="city">
+            <label className="add__label" htmlFor="city" autoComplete="city">
               City
             </label>
             <input
@@ -137,7 +147,7 @@ const Add = () => {
             <label
               className="add__label"
               htmlFor="country"
-              autocomplete="country"
+              autoComplete="country"
             >
               Country
             </label>
@@ -158,7 +168,7 @@ const Add = () => {
             <label
               className="add__label"
               htmlFor="contactName"
-              autocomplete="contactName"
+              autoComplete="contactName"
             >
               Contact Name
             </label>
@@ -178,7 +188,7 @@ const Add = () => {
             <label
               className="add__label"
               htmlFor="position"
-              autocomplete="position"
+              autoComplete="position"
             >
               Position
             </label>
@@ -198,7 +208,7 @@ const Add = () => {
             <label
               className="add__label"
               htmlFor="phoneNumber"
-              autocomplete="phoneNumber"
+              autoComplete="phoneNumber"
             >
               Phone Number
             </label>
@@ -215,7 +225,7 @@ const Add = () => {
             )}
           </div>
           <div className="add__section">
-            <label className="add__label" htmlFor="email" autocomplete="email">
+            <label className="add__label" htmlFor="email" autoComplete="email">
               Email
             </label>
             <input
@@ -225,21 +235,22 @@ const Add = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email"
+              autocomplete="email"
             />
             {formErrors.email && (
               <span className="add__error">{formErrors.email}</span>
             )}
           </div>
         </div>
+        <div className="add__button--container">
+          <button className="add__button--cancel" type="button">
+            Cancel
+          </button>
+          <button className="add__button--add" type="submit">
+            + Add Warehouse
+          </button>
+        </div>
       </form>
-      <div className="add__button--container">
-        <button className="add__button--cancel" type="submit">
-          Cancel
-        </button>
-        <button className="add__button--add" type="submit">
-          + Add Warehouse
-        </button>
-      </div>
     </section>
   );
 };
