@@ -1,19 +1,61 @@
 import "./EditWarehouse.scss";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import BackArrow from "../../Assets/Icons/arrow_back-24px.svg";
 
 export default function EditWarehouse() {
   const location = useLocation();
   const navigate = useNavigate();
-
   const { warehouse } = location.state || {};
 
-  //   if (!warehouse) {
-  //     return <div>Error: Warehouse data not found.</div>;
-  //   }
+  const [formData, setFormData] = useState({
+    warehouse_name: "",
+    address: "",
+    city: "",
+    country: "",
+    contact_name: "",
+    contact_position: "",
+    contact_phone: "",
+    contact_email: "",
+  });
+
+  useEffect(() => {
+    if (warehouse) {
+      setFormData(warehouse);
+    }
+  }, [warehouse]);
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
   const handleCancel = () => {
     navigate("/");
+  };
+
+  const handleSave = async () => {
+    try {
+      const formattedDateTime = new Date()
+        .toISOString()
+        .slice(0, 19)
+        .replace("T", " ");
+
+      const updatedFormData = {
+        ...formData,
+        created_at: formattedDateTime,
+        updated_at: formattedDateTime,
+      };
+
+      await axios.put(
+        `http://localhost:8080/api/warehouses/${warehouse.id}`,
+        updatedFormData
+      );
+      navigate("/");
+    } catch (error) {
+      console.error("Error saving warehouse:", error);
+    }
   };
 
   return (
@@ -31,9 +73,10 @@ export default function EditWarehouse() {
           <input
             className="edit-warehouse__input"
             type="text"
-            id="warehouseName"
-            name="warehouseName"
-            value={warehouse.warehouse_name}
+            id="warehouse_name"
+            name="warehouse_name"
+            value={formData.warehouse_name}
+            onChange={handleInputChange}
           />
 
           <label className="edit-warehouse__label" htmlFor="streetAddress">
@@ -42,9 +85,10 @@ export default function EditWarehouse() {
           <input
             className="edit-warehouse__input"
             type="text"
-            id="streetAddress"
-            name="streetAddress"
-            value={warehouse.address}
+            id="address"
+            name="address"
+            value={formData.address}
+            onChange={handleInputChange}
           />
 
           <label className="edit-warehouse__label" htmlFor="city">
@@ -55,7 +99,8 @@ export default function EditWarehouse() {
             type="text"
             id="city"
             name="city"
-            value={warehouse.city}
+            value={formData.city}
+            onChange={handleInputChange}
           />
 
           <label className="edit-warehouse__label" htmlFor="country">
@@ -66,7 +111,8 @@ export default function EditWarehouse() {
             type="text"
             id="country"
             name="country"
-            value={warehouse.country}
+            value={formData.country}
+            onChange={handleInputChange}
           />
         </div>
         <div className="edit-warehouse__contact-details">
@@ -77,9 +123,10 @@ export default function EditWarehouse() {
           <input
             className="edit-warehouse__input"
             type="text"
-            id="contactName"
-            name="contactName"
-            value={warehouse.contact_name}
+            id="contact_name"
+            name="contact_name"
+            value={formData.contact_name}
+            onChange={handleInputChange}
           />
 
           <label className="edit-warehouse__label" htmlFor="position">
@@ -88,9 +135,10 @@ export default function EditWarehouse() {
           <input
             className="edit-warehouse__input"
             type="text"
-            id="position"
-            name="position"
-            value={warehouse.contact_position}
+            id="contact_position"
+            name="contact_position"
+            value={formData.contact_position}
+            onChange={handleInputChange}
           />
 
           <label className="edit-warehouse__label" htmlFor="phone">
@@ -99,9 +147,10 @@ export default function EditWarehouse() {
           <input
             className="edit-warehouse__input"
             type="text"
-            id="phone"
-            name="phone"
-            value={warehouse.contact_phone}
+            id="contact_phone"
+            name="contact_phone"
+            value={formData.contact_phone}
+            onChange={handleInputChange}
           />
 
           <label className="edit-warehouse__label" htmlFor="email">
@@ -110,9 +159,10 @@ export default function EditWarehouse() {
           <input
             className="edit-warehouse__input"
             type="text"
-            id="email"
-            name="email"
-            value={warehouse.contact_email}
+            id="contact_email"
+            name="contact_email"
+            value={formData.contact_email}
+            onChange={handleInputChange}
           />
         </div>
       </form>
@@ -124,7 +174,11 @@ export default function EditWarehouse() {
         >
           Cancel
         </button>
-        <button className="edit-warehouse__btn save-btn" type="submit">
+        <button
+          className="edit-warehouse__btn save-btn"
+          type="button"
+          onClick={handleSave}
+        >
           Save
         </button>
       </div>
