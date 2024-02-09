@@ -11,7 +11,6 @@ function App() {
     <div className="app">
       <BrowserRouter>
         <Header />
-        {/* <EditWarehouse /> */}
         <div className="app__content">
           <Routes>
             <Route path="/" element={<WarehousesPage />} />
