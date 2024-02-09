@@ -174,9 +174,7 @@ export default function WarehouseDetails() {
 
                 <div className="warehouses__datatablet">{inventory.status}</div>
                 <div className=" warehouses__infoboxdiv">
-                  <div className="warehouses__datatablet2">
-                    {inventory.quantity}
-                  </div>
+                  <p className="warehouses__datatablet">{inventory.quantity}</p>
                 </div>
                 <div className="warehouses__datatablet warehouses__actions--tablet">
                   <div className="warehouses__trash">
