@@ -1,0 +1,376 @@
+@use "../../Styles/partials/mixins" as *;
+@use "../../Styles/partials/variables" as *;
+@use "../../Styles/partials/typography" as *;
+
+.inventories {
+  margin: 0;
+  position: relative;
+  margin-top: -5rem;
+  background-color: $background-light-grey;
+  // background-color: rgba(0, 0, 0, 0);
+  //z-index: 10;
+  // padding-left: 1rem;
+  // padding-right: 1rem;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-left: 1rem;
+  margin-right: 1rem;
+  //border: 1px solid red;
+  @include tablet-breakpoint {
+    margin-top: -5rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    // padding-left: 1rem;
+    // padding-right: 1rem;
+  }
+
+  &__title {
+    padding-top: 1rem;
+    @include mobile-tablet-pageheader-text-style;
+  }
+  &__wrapper {
+    padding: 0 1rem;
+    padding-bottom: 1.5rem;
+
+    @include tablet-breakpoint {
+      padding-bottom: 0;
+      padding-left: 2rem;
+      padding-right: 2rem;
+
+      display: flex;
+      flex-direction: row;
+      align-self: center;
+      justify-content: space-between;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: $m-padding-space;
+    @include tablet-breakpoint {
+      gap: $t-padding-space;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  &__search {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+  }
+  &__input {
+    margin: 0;
+    width: 100%;
+    background-color: $background-light-grey;
+    border: $form-border-default;
+    height: $form-height-mobile;
+    border-radius: $form-border-radius;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    &:focus {
+      border: $form-border-active;
+    }
+  }
+  &__iconbox {
+    position: absolute;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__button {
+    // @include mobile-tablet-labels-buttons-text-style;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $m-btn-width;
+    height: $m-btn-height;
+    border-radius: 20px;
+    border: none;
+    background-color: #2e66e5;
+    color: #f7f8f9;
+
+    @include tablet-breakpoint {
+      width: auto;
+      white-space: nowrap;
+      @include t-btn-width;
+    }
+    // @include desktop-breakpoint {
+    //   margin-right: 1rem;
+    // }
+    &:hover {
+      background-color: #13182c;
+      color: #f7f8f9;
+      cursor: pointer;
+    }
+  }
+  &__options {
+    display: none;
+
+    @include tablet-breakpoint {
+      @include mobile-tablet-labels-buttons-text-style;
+      color: $secondary-slate;
+      background-color: $background-light-grey;
+      margin: 0;
+      width: 100%;
+      padding-bottom: 0.5rem;
+      padding-top: 0.5rem;
+      padding-left: $m-padding-sides;
+      padding-right: $m-padding-sides;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      border: 2px solid pink;
+    }
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    //border: 2px solid brown;
+    width: 20%;
+  }
+  &__boxflex {
+    display: flex;
+    width: 20%;
+    justify-content: flex-end;
+  }
+  &__list {
+    width: 100%;
+    height: auto;
+    // padding-left: $m-padding-sides;
+    // padding-right: $m-padding-sides;
+  }
+  &__card {
+    width: auto;
+    display: flex;
+    padding-top: $m-padding-top;
+    padding-bottom: $m-padding-top;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    flex-direction: column;
+    border-top: 0.1rem solid $secondary-cloud;
+
+    //border: 2px solid red;
+    @include tablet-breakpoint {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+
+      //gap: 0.5rem;
+      border: 2px solid red;
+    }
+  }
+
+  &__mobiledetails {
+    //padding: 0 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    padding-bottom: 1rem;
+    //border: 2px solid green;
+    @include tablet-breakpoint {
+      display: none;
+    }
+  }
+
+  &__mobilebox2 {
+    display: flex;
+    flex-direction: column;
+    //flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    //border: 2px solid blue;
+    @include tablet-breakpoint {
+      display: none;
+    }
+  }
+
+  &__tabletinfo {
+    display: none;
+    @include tablet-breakpoint {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  &__infobox {
+    width: 10rem;
+    display: inline-block;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+  &__infotitle {
+    display: contents;
+    @include tablet-breakpoint {
+      display: none;
+    }
+  }
+
+  &__infodata-wrap {
+    display: flex;
+    gap: 0.2rem;
+  }
+
+  &__arrowicon {
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+  }
+
+  &__data-name {
+    @include mobile-tablet-labels-buttons-text-style;
+    color: $primary-indigo;
+    font-weight: $semibold-txt;
+  }
+
+  &__data--in-stock {
+    @include mobile-tablet-labels-buttons-text-style;
+    color: $supporting-green;
+    text-transform: uppercase;
+    background-color: lighten($supporting-green, 60%);
+    padding: 0.4rem;
+    border-radius: 20px;
+    width: max-content;
+  }
+
+  &__data--out-of-stock {
+    @include mobile-tablet-labels-buttons-text-style;
+    font-size: 10px;
+    color: $supporting-red;
+    text-transform: uppercase;
+    background-color: lighten($supporting-red, 50%);
+    padding: 4px 8px;
+    border-radius: 20px;
+    width: max-content;
+  }
+
+  // &__stockdata {
+  //   width: max-content;
+  //   padding: 0.4rem;
+  //   border-radius: 25px;
+  //   background-color: lighten($supporting-green, 60%);
+  //   color: $supporting-green;
+  //   text-transform: uppercase;
+  // }
+  // &__actions {
+  //   &--mobile {
+  //     width: auto;
+  //     display: flex;
+  //     flex-direction: row;
+  //     justify-content: space-between;
+  //   }
+  //   &--tablet {
+  //     display: none;
+  //   }
+  //   @include tablet-breakpoint {
+  //     &--mobile {
+  //       display: none;
+  //     }
+  //     &--tablet {
+  //       display: contents;
+  //       display: flex;
+  //       justify-content: flex-end;
+  //     }
+  //   }
+
+  &__actions {
+    &--mobile {
+      // padding: 0 0.5rem;
+      // padding-left: 1rem;
+      // padding-right: 1rem;
+      width: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      //border: 1px solid red;
+    }
+    &--tablet {
+      display: none;
+    }
+
+    &__trashicon,
+    &__editicon {
+      width: 2rem;
+      height: 2rem;
+      cursor: pointer;
+      padding-left: 0.5rem;
+    }
+
+    @include tablet-breakpoint {
+      &--mobile {
+        display: none;
+      }
+      &--tablet {
+        display: contents;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &__infotitle {
+    @include mobile-tablet-labels-buttons-text-style;
+    color: $secondary-slate;
+  }
+  &__data {
+    @include mobile-tablet-labels-buttons-text-style;
+
+    &--highlight {
+      color: $primary-indigo;
+    }
+  }
+
+  &__infoboxdiv {
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    // border: 2px solid yellow;
+  }
+  &__datatablet {
+    // border: 2px solid blue;
+    @include mobile-tablet-labels-buttons-text-style;
+    width: 20%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    &--highlight {
+      color: $primary-indigo;
+    }
+  }
+
+  &__datatablet--in-stock {
+    @include mobile-tablet-labels-buttons-text-style;
+    color: $supporting-green;
+    text-transform: uppercase;
+    background-color: lighten($supporting-green, 60%);
+    padding: 0.4rem;
+    border-radius: 25px;
+    width: max-content;
+  }
+
+  &__datatablet--out-of-stock {
+    @include mobile-tablet-labels-buttons-text-style;
+    color: $supporting-red;
+    text-transform: uppercase;
+    background-color: lighten($supporting-red, 50%);
+    padding: 0.4rem;
+    border-radius: 25px;
+    width: max-content;
+  }
+}
