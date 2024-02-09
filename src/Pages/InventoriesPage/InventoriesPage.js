@@ -114,7 +114,14 @@ export default function InventoriesPage() {
               <div className="inventories__mobilebox1">
                 <div className="inventories__infobox">
                   <div className="inventories__infotitle">INVENTORY ITEM</div>
-                  <div className="inventories__data">{inventory.item_name}</div>
+                  <div className="inventories__data-name">
+                    {inventory.item_name}
+                    <img
+                      className="inventories__arrowicon"
+                      src={arrowIcon}
+                      alt="arrow icon"
+                    />
+                  </div>
                 </div>
 
                 <div className="inventories__infobox">

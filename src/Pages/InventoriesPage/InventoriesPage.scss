@@ -16,6 +16,13 @@
   margin-left: 1rem;
   margin-right: 1rem;
   //border: 1px solid red;
+  @include tablet-breakpoint {
+    margin-top: -5rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    // padding-left: 1rem;
+    // padding-right: 1rem;
+  }
 
   &__title {
     padding-top: 1rem;
@@ -27,6 +34,9 @@
 
     @include tablet-breakpoint {
       padding-bottom: 0;
+      padding-left: 2rem;
+      padding-right: 2rem;
+
       display: flex;
       flex-direction: row;
       align-self: center;
@@ -206,6 +216,12 @@
     @include tablet-breakpoint {
       display: none;
     }
+  }
+
+  &__data-name {
+    @include mobile-tablet-labels-buttons-text-style;
+    color: $primary-indigo;
+    font-weight: $semibold-txt;
   }
 
   &__data--in-stock {
