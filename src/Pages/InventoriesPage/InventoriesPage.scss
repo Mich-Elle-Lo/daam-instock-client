@@ -157,6 +157,7 @@
     padding-right: 1rem;
     flex-direction: column;
     border-top: 0.1rem solid $secondary-cloud;
+
     //border: 2px solid red;
     @include tablet-breakpoint {
       width: 100%;
@@ -216,6 +217,17 @@
     @include tablet-breakpoint {
       display: none;
     }
+  }
+
+  &__infodata-wrap {
+    display: flex;
+    gap: 0.2rem;
+  }
+
+  &__arrowicon {
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
   }
 
   &__data-name {
