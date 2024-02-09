@@ -6,12 +6,12 @@
   background-color: $background-graphite;
   padding-bottom: 5rem;
 
-  @include tablet {
+  @include tablet-breakpoint {
     @include flex-default(center, space-between);
     padding: 0 $t-padding-sides 6rem;
   }
 
-  @include desktop {
+  @include desktop-breakpoint {
     padding: 2rem 8.125rem 7.5rem;
   }
 
@@ -27,7 +27,7 @@
     margin-bottom: $m-padding-sides;
     margin-top: 0;
 
-    @include tablet {
+    @include tablet-breakpoint {
       margin-bottom: 0;
       padding: 0;
       gap: $m-padding-sides;
@@ -56,7 +56,7 @@
       color: $primary-white;
     }
 
-    @include tablet {
+    @include tablet-breakpoint {
       padding: 0.5rem $m-padding-sides;
       height: $t-btn-height;
       font-size: $d-font-size-h3;

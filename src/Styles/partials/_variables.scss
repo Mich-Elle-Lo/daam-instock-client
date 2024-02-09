@@ -33,6 +33,7 @@ $mobile-gutter: 1rem; //16px
 
 $regular-txt: 400;
 $semibold-txt: 600;
+$bold-txt: 700;
 
 // TEXT STYLES
 $letter-spacing: 0.011rem;
@@ -108,6 +109,8 @@ $t-padding-sides: 1.5rem; //24px
 $side-padding-increment: 0.5rem; //8px
 $padding-space-title: 0.25rem; //4px between title and paragraph
 
+$base-padding: 1rem;
+
 // //LOGO
 $logo-height-1: 1.75rem; //28px
 $logo-width-1: 8.0625rem; //129px
@@ -120,15 +123,15 @@ $btn-border-radius: 1.25rem; //20px
 $btn-chevron-spacing: 0.25rem; //4px
 
 ////mobile
-$m-btn-width: 10.1875rem; //163px
+$m-btn-width: 100%; //163px
 $m-btn-height: 2.25rem; //36px
 
 ////tablet
-$t-btn-width: 6.6875rem; //107px
+
 $t-btn-height: 2.375rem; //38px
 
 ////desktop
-$d-btn-width: 6.6875rem; //107px
+
 $d-btn-height: 2.375rem; //38px
 
 //CTA BUTTON VARIABLES
@@ -137,7 +140,7 @@ $d-cta-btn-padding: 0.5rem, 1rem, 0.5rem, 1rem; // 8px, 16px, 8px, 16p
 
 ////desktop and tablet
 /////// Primary Default/Hover
-$d-cta-btn-width: 6.125rem; //98px
+
 $d-cta-btn-height: 2.375rem; //38px
 
 //// mobile
@@ -186,4 +189,4 @@ $icon-height: 1.5rem; //24px
 
 //selection controls
 $label-radio-spacing: 0.25rem; // 4px spacing between a label and radio button group,
-$radio-text-spacing: 0.5rem; // 8px spacing between a radio button and text.
+$letter-spacing: 0.05rem; // 8px spacing between a radio button and text.

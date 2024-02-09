@@ -69,146 +69,154 @@ const Add = () => {
   };
 
   return (
-    <div className="add">
-      <h1 className="add__title">
-        <ArrowBack className="add__icon" alt="arrow back" />
-        Add New Warehouse
-      </h1>
-      <hr className="add__separator" />
+    <section className="add">
+      <div className="add__title--container">
+        <h1 className="add__title">
+          <ArrowBack className="add__icon" alt="arrow back" />
+          Add New Warehouse
+        </h1>
+      </div>
+
       <form className="add__form" onSubmit={handleSubmit}>
-        <div className="add__section">
-          <h2 className="add__section-title">Warehouse Details</h2>
-          <label className="add__label" htmlFor="name">
-            Warehouse Name
-          </label>
-          <input
-            className="add__input"
-            type="text"
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Warehouse Name"
-          />
-          {formErrors.name && (
-            <span className="add__error">{formErrors.name}</span>
-          )}
+        <div>
+          <div className="add__section">
+            <h2 className="add__section-title">Warehouse Details</h2>
+            <label className="add__label" htmlFor="name">
+              Warehouse Name
+            </label>
+            <input
+              className="add__input"
+              type="text"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Warehouse Name"
+            />
+            {formErrors.name && (
+              <span className="add__error">{formErrors.name}</span>
+            )}
+          </div>
+          <div className="add__section">
+            <label className="add__label" htmlFor="address">
+              Street Address
+            </label>
+            <input
+              className="add__input"
+              type="text"
+              id="address"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+              placeholder="Street Address"
+            />
+            {formErrors.address && (
+              <span className="add__error">{formErrors.address}</span>
+            )}
+          </div>
+          <div className="add__section">
+            <label className="add__label" htmlFor="city">
+              City
+            </label>
+            <input
+              className="add__input"
+              type="text"
+              id="city"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              placeholder="City"
+            />
+          </div>
+          <div className="add__section">
+            <label className="add__label" htmlFor="country">
+              Country
+            </label>
+            <input
+              className="add__input"
+              type="text"
+              id="country"
+              value={country}
+              onChange={(e) => setCountry(e.target.value)}
+              placeholder="Country"
+            />
+          </div>
+          <div className="add__separator"></div>
         </div>
-        <div className="add__section">
-          <label className="add__label" htmlFor="address">
-            Street Address
-          </label>
-          <input
-            className="add__input"
-            type="text"
-            id="address"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-            placeholder="Street Address"
-          />
-          {formErrors.address && (
-            <span className="add__error">{formErrors.address}</span>
-          )}
+        <div>
+          <div className="add__section">
+            <h2 className="add__section-title">Contact Details</h2>
+            <label className="add__label" htmlFor="contactName">
+              Contact Name
+            </label>
+            <input
+              className="add__input"
+              type="text"
+              id="contactName"
+              value={contactName}
+              onChange={(e) => setContactName(e.target.value)}
+              placeholder="Contact Name"
+            />
+            {formErrors.contactName && (
+              <span className="add__error">{formErrors.contactName}</span>
+            )}
+          </div>
+          <div className="add__section">
+            <label className="add__label" htmlFor="position">
+              Position
+            </label>
+            <input
+              className="add__input"
+              type="text"
+              id="position"
+              value={position}
+              onChange={(e) => setPosition(e.target.value)}
+              placeholder="Position"
+            />
+            {formErrors.position && (
+              <span className="add__error">{formErrors.position}</span>
+            )}
+          </div>
+          <div className="add__section">
+            <label className="add__label" htmlFor="phoneNumber">
+              Phone Number
+            </label>
+            <input
+              className="add__input"
+              type="text"
+              id="phoneNumber"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              placeholder="Phone Number"
+            />
+            {formErrors.phoneNumber && (
+              <span className="add__error">{formErrors.phoneNumber}</span>
+            )}
+          </div>
+          <div className="add__section">
+            <label className="add__label" htmlFor="email">
+              Email
+            </label>
+            <input
+              className="add__input"
+              type="text"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
+            />
+            {formErrors.email && (
+              <span className="add__error">{formErrors.email}</span>
+            )}
+          </div>
         </div>
-        <div className="add__section">
-          <label className="add__label" htmlFor="city">
-            City
-          </label>
-          <input
-            className="add__input"
-            type="text"
-            id="city"
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-            placeholder="City"
-          />
+        <div className="add__button--container">
+          <button className="add__button--cancel" type="submit">
+            Cancel
+          </button>
+          <button className="add__button--add" type="submit">
+            + Add Warehouse
+          </button>
         </div>
-        <div className="add__section">
-          <label className="add__label" htmlFor="country">
-            Country
-          </label>
-          <input
-            className="add__input"
-            type="text"
-            id="country"
-            value={country}
-            onChange={(e) => setCountry(e.target.value)}
-            placeholder="Country"
-          />
-        </div>
-        <hr className="add__separator" />
-        <div className="add__section">
-          <h2 className="add__section-title">Contact Details</h2>
-          <label className="add__label" htmlFor="contactName">
-            Contact Name
-          </label>
-          <input
-            className="add__input"
-            type="text"
-            id="contactName"
-            value={contactName}
-            onChange={(e) => setContactName(e.target.value)}
-            placeholder="Contact Name"
-          />
-          {formErrors.contactName && (
-            <span className="add__error">{formErrors.contactName}</span>
-          )}
-        </div>
-        <div className="add__section">
-          <label className="add__label" htmlFor="position">
-            Position
-          </label>
-          <input
-            className="add__input"
-            type="text"
-            id="position"
-            value={position}
-            onChange={(e) => setPosition(e.target.value)}
-            placeholder="Position"
-          />
-          {formErrors.position && (
-            <span className="add__error">{formErrors.position}</span>
-          )}
-        </div>
-        <div className="add__section">
-          <label className="add__label" htmlFor="phoneNumber">
-            Phone Number
-          </label>
-          <input
-            className="add__input"
-            type="text"
-            id="phoneNumber"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-            placeholder="Phone Number"
-          />
-          {formErrors.phoneNumber && (
-            <span className="add__error">{formErrors.phoneNumber}</span>
-          )}
-        </div>
-        <div className="add__section">
-          <label className="add__label" htmlFor="email">
-            Email
-          </label>
-          <input
-            className="add__input"
-            type="text"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
-          />
-          {formErrors.email && (
-            <span className="add__error">{formErrors.email}</span>
-          )}
-        </div>
-        <button className="add__button--cancel" type="submit">
-          Cancel
-        </button>
-        <button className="add__button--add" type="submit">
-          + Add Warehouse
-        </button>
       </form>
-    </div>
+    </section>
   );
 };
 

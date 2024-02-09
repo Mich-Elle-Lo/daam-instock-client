@@ -2,22 +2,177 @@
 @use "../../Styles/partials/mixins" as *;
 @use "../../Styles/partials/typography" as *;
 
-// add - Wrapper class for the entire component.
-// add__title - Title section.
-// add__icon - Icon within the title section.
-// add__separator - Separator line.
-// add__form - Form wrapper.
-// add__section - Sections within the form.
-// add__section-title - Titles within sections.
-// add__label - Labels for form inputs.
-// add__input - Form input fields.
-// add__error - Error messages for form validation.
-// add__button--cancel - Cancel button.
-// add__button--add - Add warehouse button.
-
 .add {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
+  background-color: $primary-white;
+  margin: -4rem 1rem 2.5rem;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
+  font-family: "TitilliumWeb-Regular", sans-serif;
+
+  @include tablet-breakpoint {
+    margin: -5.75rem 2rem 2.5rem;
+  }
+
+  @include desktop-breakpoint {
+    margin: -6rem 8.125rem 2.5rem;
+  }
+
+  &__form {
+    width: 80%;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: $d-font-size-h1;
+    line-height: $d-line-height-h1;
+    font-weight: $semibold-txt;
+    color: $primary-black;
+    margin-bottom: $base-padding;
+
+    @include tablet-breakpoint {
+      font-size: $d-font-size-h1;
+      line-height: $d-line-height-h1;
+    }
+
+    @include mobile-breakpoint {
+      font-size: $m-font-size-h1;
+      line-height: $m-line-height-h1;
+    }
+
+    @include mobile-tablet-pageheader-text-style;
+    margin: 5rem, 0;
+
+    &--container {
+      border-bottom: 1px solid $secondary-cloud;
+      width: 100%;
+    }
+  }
+
+  &__icon {
+    padding-right: 0.25rem;
+    margin-right: $base-padding;
+  }
+
+  &__form {
+    margin-top: $base-padding;
+
+    @include tablet-breakpoint {
+      margin-top: $base-padding;
+      display: flex;
+      width: 90%;
+    }
+  }
+
+  &__separator {
+    padding-top: 1rem;
+    border-bottom: 1px solid $secondary-cloud;
+    width: 113%; //
+  }
+
+  &__section {
+    margin-bottom: $base-padding;
+  }
+
+  &__section-title {
+    font-size: $d-font-size-h2;
+    line-height: $d-line-height-h2;
+    font-weight: $semibold-txt;
+    color: $primary-black;
+    margin-bottom: $base-padding;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: $form-label-spacing;
+    font-size: $m-font-size-h3;
+    font-weight: $semibold-txt;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    padding: $form-padding;
+    border-radius: $form-border-radius;
+    border: $form-border-default;
+    font-size: $d-font-size-p2;
+    margin-bottom: 1rem;
+    font-family: "TitilliumWeb-Regular", sans-serif;
+    font-weight: 400;
+    background-color: $primary-white;
+  }
+
+  &::placeholder {
+    color: $secondary-slate;
+  }
+
+  &:focus {
+    border-color: $primary-indigo;
+    outline: none;
+  }
+
+  &__error {
+    font-size: $d-font-size-p3;
+    line-height: $d-line-height-p3;
+    font-weight: $regular-txt;
+    color: $supporting-red;
+  }
+  &__button {
+    padding: $d-cta-btn-padding;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &--container {
+      display: flex;
+      gap: 1.0625rem;
+      padding: 1rem 1.5rem;
+      margin-top: 1.5rem;
+      background-color: $background-light-grey;
+    }
+
+    &--cancel {
+      font-family: "TitilliumWeb-SemiBold", sans-serif;
+      background-color: $primary-white;
+      color: $secondary-slate;
+      border: none;
+      border-radius: $btn-border-radius;
+      height: 2.25rem;
+      border: 1px solid $secondary-cloud;
+      font-weight: $semibold-txt;
+      font-size: $m-font-size-h3;
+      width: 100%;
+
+      &:hover {
+        background-color: darken($primary-indigo, 10%);
+        font-family: "TitilliumWeb-SemiBold", sans-serif;
+        color: $primary-white;
+      }
+    }
+
+    &--add {
+      font-family: "TitilliumWeb-SemiBold", sans-serif;
+      background-color: $primary-white;
+      color: $secondary-slate;
+      border-radius: $btn-border-radius;
+      height: 2.25rem;
+      font-weight: $semibold-txt;
+      font-size: $m-font-size-h3;
+      width: 100%;
+      border: 1px solid $secondary-cloud;
+
+      &:hover {
+        background-color: darken($primary-indigo, 10%);
+        font-family: "TitilliumWeb-SemiBold", sans-serif;
+        color: $primary-white;
+      }
+    }
+  }
 }
