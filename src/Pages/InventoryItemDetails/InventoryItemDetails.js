@@ -3,6 +3,7 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Arrow from "../../Assets/Icons/arrow_back-24px.svg";
 import Edit from "../../Assets/Icons/edit-24px.svg";
+import "./InventoryItemDetails.scss";
 
 export default function InventoryItemDetails() {
   const [singleItem, setSingleItem] = useState({
