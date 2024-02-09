@@ -81,7 +81,11 @@ const Add = () => {
         <div>
           <div className="add__section">
             <h2 className="add__section-title">Warehouse Details</h2>
-            <label className="add__label" htmlFor="name">
+            <label
+              className="add__label"
+              htmlFor="name"
+              autocomplete="warehouse-name"
+            >
               Warehouse Name
             </label>
             <input
@@ -97,7 +101,11 @@ const Add = () => {
             )}
           </div>
           <div className="add__section">
-            <label className="add__label" htmlFor="address">
+            <label
+              className="add__label"
+              htmlFor="address"
+              autocomplete="address"
+            >
               Street Address
             </label>
             <input
@@ -113,7 +121,7 @@ const Add = () => {
             )}
           </div>
           <div className="add__section">
-            <label className="add__label" htmlFor="city">
+            <label className="add__label" htmlFor="city" autocomplete="city">
               City
             </label>
             <input
@@ -126,7 +134,11 @@ const Add = () => {
             />
           </div>
           <div className="add__section">
-            <label className="add__label" htmlFor="country">
+            <label
+              className="add__label"
+              htmlFor="country"
+              autocomplete="country"
+            >
               Country
             </label>
             <input
@@ -143,7 +155,11 @@ const Add = () => {
         <div>
           <div className="add__section">
             <h2 className="add__section-title">Contact Details</h2>
-            <label className="add__label" htmlFor="contactName">
+            <label
+              className="add__label"
+              htmlFor="contactName"
+              autocomplete="contactName"
+            >
               Contact Name
             </label>
             <input
@@ -159,7 +175,11 @@ const Add = () => {
             )}
           </div>
           <div className="add__section">
-            <label className="add__label" htmlFor="position">
+            <label
+              className="add__label"
+              htmlFor="position"
+              autocomplete="position"
+            >
               Position
             </label>
             <input
@@ -175,7 +195,11 @@ const Add = () => {
             )}
           </div>
           <div className="add__section">
-            <label className="add__label" htmlFor="phoneNumber">
+            <label
+              className="add__label"
+              htmlFor="phoneNumber"
+              autocomplete="phoneNumber"
+            >
               Phone Number
             </label>
             <input
@@ -191,7 +215,7 @@ const Add = () => {
             )}
           </div>
           <div className="add__section">
-            <label className="add__label" htmlFor="email">
+            <label className="add__label" htmlFor="email" autocomplete="email">
               Email
             </label>
             <input
