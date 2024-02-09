@@ -15,6 +15,14 @@
     @content;
   }
 }
+@mixin t-btn-width {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+@mixin t-form-padding {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
 @mixin background-cover {
   background-repeat: no-repeat;
   background-size: cover;
