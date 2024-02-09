@@ -5,7 +5,8 @@ import Footer from "./Components/Footer/Footer";
 import InventoriesPage from "./Pages/InventoriesPage/InventoriesPage";
 import WarehousesPage from "./Pages/WarehousePage/WarehousesPage";
 // import WarehouseModal from "./Components/Modal/WarehouseModal";
-import EditWarehouse from "./Components/EditWarehouse/EditWarehouse";
+import EditWarehouse from "./Pages/EditWarehouse/EditWarehouse";
+import EditInventory from "./Pages/EditInventory/EditInventory";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<WarehousesPage />} />
           <Route path="/edit-warehouse/:id" element={<EditWarehouse />} />
           <Route path="/inventories" element={<InventoriesPage />} />
+          <Route path="/edit-inventory" element={<EditInventory />} />
         </Routes>
 
         <Footer />
