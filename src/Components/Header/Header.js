@@ -1,43 +1,40 @@
 import "./Header.scss";
+import { useState } from "react";
 import logo from "../../Assets/Logo/InStock-Logo.svg";
 import { Link } from "react-router-dom";
 
-// export default function Header() {
-//   return (
-//     <header className="header">
-//       <div className="header__logo">
-//         <img src={logo} alt="InStock Logo" />
-//       </div>
-//       <nav>
-//         <ul className="header__nav-list">
-//           <li className="header__nav-item">
-//             <a href="/">Warehouses </a>
-//           </li>
-
-//           <li className="header__nav-item">
-//             <a href="/inventories">Inventory </a>
-//           </li>
-//         </ul>
-//       </nav>
-//     </header>
-//   );
-// }
-
 export default function Header() {
+  const [activeLink, setActiveLink] = useState("warehouses");
+
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
+  };
+
   return (
     <header className="header">
-      <div className="header__logo">
+      <Link to="/" className="header__logo">
         <img src={logo} alt="InStock Logo" />
-      </div>
+      </Link>
       <nav>
         <ul className="header__nav-list">
-          <li className="header__nav-item">
-            <Link to="/">Warehouses</Link>
-          </li>
-
-          <li className="header__nav-item">
-            <Link to="/inventories">Inventory</Link>
-          </li>
+          <Link
+            to="/"
+            className={`header__nav-item ${
+              activeLink === "warehouses" ? "header__nav-item--clicked" : ""
+            }`}
+            onClick={() => handleLinkClick("warehouses")}
+          >
+            <li>Warehouses</li>
+          </Link>
+          <Link
+            to="/inventories"
+            className={`header__nav-item ${
+              activeLink === "inventories" ? "header__nav-item--clicked" : ""
+            }`}
+            onClick={() => handleLinkClick("inventories")}
+          >
+            <li>Inventory</li>
+          </Link>
         </ul>
       </nav>
     </header>

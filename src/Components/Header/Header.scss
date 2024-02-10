@@ -5,11 +5,10 @@
 .header {
   background-color: $background-graphite;
   padding-bottom: 5rem;
-  z-index: -1;
 
   @include tablet-breakpoint {
     @include flex-default(center, space-between);
-    padding: 0 2rem 6rem;
+    padding: 0 $t-padding-sides 6rem;
   }
 
   @include desktop-breakpoint {
@@ -45,7 +44,9 @@
     flex: 1;
     background: none;
     height: $m-btn-height;
-    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
       text-decoration: underline;
@@ -53,7 +54,7 @@
       cursor: pointer;
     }
 
-    &--active {
+    &--clicked {
       background-color: $primary-black;
       color: $primary-white;
     }
