@@ -44,6 +44,9 @@
     flex: 1;
     background: none;
     height: $m-btn-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
       text-decoration: underline;

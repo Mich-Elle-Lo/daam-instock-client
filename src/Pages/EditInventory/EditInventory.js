@@ -1,7 +1,27 @@
 import "./EditInventory.scss";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import BackArrow from "../../Assets/Icons/arrow_back-24px.svg";
+import ErrorIcon from "../../Assets/Icons/error-24px.svg";
 
 export default function EditInventory() {
+  const { id } = useParams();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { warehouse } = location.state || {};
+
+  const [formData, setFormData] = useState({
+    item_name: "",
+    description: "",
+    category: "",
+    status: "",
+    quantity: "",
+    warehouse: "",
+  });
+
+  const [errors, setErrors] = useState({});
+
   return (
     <section className="edit-inventory">
       <div className="edit-inventory__title-container">
@@ -51,14 +71,20 @@ export default function EditInventory() {
           <label className="edit-inventory__label" htmlFor="category">
             Category
           </label>
-          <input
+          <select
+            label="Please select"
             className="edit-inventory__input"
-            type="dropdown"
             id="category"
             name="category"
             // value={formData.city}
             // onChange={handleInputChange}
-          />
+          >
+            <option value="Electronics">Electronics</option>
+            <option value="Gear">Gear</option>
+            <option value="Apparel">Apparel</option>
+            <option value="Accessories">Accessories</option>
+            <option value="Health">Health</option>
+          </select>
           {/* {errors.city && (
             <div className="edit-warehouse__error">
               <img src={ErrorIcon} className="error-icon" alt="Error Icon" />

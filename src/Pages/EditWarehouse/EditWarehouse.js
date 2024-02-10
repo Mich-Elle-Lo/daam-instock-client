@@ -77,7 +77,12 @@ export default function EditWarehouse() {
   return (
     <section className="edit-warehouse">
       <div className="edit-warehouse__title-container">
-        <img src={BackArrow} alt="Back Arrow" onClick={handleCancel} />
+        <img
+          src={BackArrow}
+          className="back-arrow"
+          alt="Back Arrow"
+          onClick={handleCancel}
+        />
         <h1 className="edit-warehouse__title">Edit Warehouse</h1>
       </div>
       <form className="edit-warehouse__form">

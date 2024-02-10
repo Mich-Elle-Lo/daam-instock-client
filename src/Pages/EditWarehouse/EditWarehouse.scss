@@ -76,6 +76,10 @@
     border-radius: $form-border-radius;
     border: $form-border-default;
     margin-bottom: 1rem;
+
+    &:focus {
+      outline: 1px solid $primary-indigo;
+    }
   }
 
   &__btn-container {
@@ -120,12 +124,21 @@
   background-color: $primary-indigo;
   color: $primary-white;
   border: none;
+
+  &:hover {
+    background-color: $background-graphite;
+  }
 }
 
 .cancel-btn {
   background-color: $primary-white;
   color: $secondary-slate;
   border: 1px solid $secondary-cloud;
+
+  &:hover {
+    border-color: $primary-indigo;
+    color: $primary-indigo;
+  }
 }
 
 .error-outline {
@@ -135,4 +148,8 @@
 .error-icon {
   width: 1rem;
   height: 1rem;
+}
+
+.back-arrow {
+  cursor: pointer;
 }

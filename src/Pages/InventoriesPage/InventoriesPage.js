@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./InventoriesPage.scss";
 import searchIcon from "../../Assets/Icons/search-24px.svg";
@@ -10,6 +11,8 @@ import arrowIcon from "../../Assets/Icons/chevron_right-24px.svg";
 export default function InventoriesPage() {
   const [warehouses, setWarehouses] = useState([]);
   const [inventories, setInventories] = useState([]);
+
+  const navigate = useNavigate();
 
   const baseUrl = "http://localhost:8080/";
 
@@ -207,7 +210,14 @@ export default function InventoriesPage() {
                   />
                 </div>
 
-                <div className="inventories__edit">
+                <div
+                  className="inventories__edit"
+                  onClick={() =>
+                    navigate(`/inventories/edit/${inventory.id}`, {
+                      state: { inventory },
+                    })
+                  }
+                >
                   <img
                     className="inventories__editicon"
                     src={editIcon}
