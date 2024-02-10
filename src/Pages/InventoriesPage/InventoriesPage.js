@@ -17,7 +17,6 @@ export default function InventoriesPage() {
   const [selectedInventory, setSelectedInventory] = useState(null);
   const navigate = useNavigate();
 
-  // Delete inventory
   const deleteInventory = (inventoryId) => {
     return axios
       .delete(`${baseUrl}api/inventories/${inventoryId}`)
@@ -38,8 +37,6 @@ export default function InventoriesPage() {
     setSelectedInventory(selectedInventory);
     setShowModal(true);
   };
-
-  // Fetch inventories
 
   useEffect(() => {
     const fetchInventories = async () => {
@@ -247,7 +244,7 @@ export default function InventoriesPage() {
                   <div
                     className="inventories__edit"
                     onClick={() =>
-                      navigate(`/edit-inventory/${inventory.id}`, {
+                      navigate(`/inventories/edit/${inventory.id}`, {
                         state: { inventory },
                       })
                     }
@@ -277,7 +274,7 @@ export default function InventoriesPage() {
                 <div
                   className="inventories__edit"
                   onClick={() =>
-                    navigate(`/edit-inventory/${inventory.id}`, {
+                    navigate(`/inventories/edit/${inventory.id}`, {
                       state: { inventory },
                     })
                   }

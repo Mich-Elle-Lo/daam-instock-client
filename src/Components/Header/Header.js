@@ -1,5 +1,7 @@
 import "./Header.scss";
+import { useState } from "react";
 import logo from "../../Assets/Logo/InStock-Logo.svg";
+<<<<<<< HEAD
 import { Link, useLocation } from "react-router-dom";
 
 export default function Header() {
@@ -20,10 +22,20 @@ export default function Header() {
       return "header__nav-item header__nav-item--active";
     }
     return "header__nav-item";
+=======
+import { Link } from "react-router-dom";
+
+export default function Header() {
+  const [activeLink, setActiveLink] = useState("warehouses");
+
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
+>>>>>>> develop
   };
 
   return (
     <header className="header">
+<<<<<<< HEAD
       <div className="header__logo">
         <Link className="header__link" to="/">
           <img src={logo} alt="InStock Logo" />
@@ -41,6 +53,31 @@ export default function Header() {
               Inventory
             </Link>
           </li>
+=======
+      <Link to="/" className="header__logo">
+        <img src={logo} alt="InStock Logo" />
+      </Link>
+      <nav>
+        <ul className="header__nav-list">
+          <Link
+            to="/"
+            className={`header__nav-item ${
+              activeLink === "warehouses" ? "header__nav-item--clicked" : ""
+            }`}
+            onClick={() => handleLinkClick("warehouses")}
+          >
+            <li>Warehouses</li>
+          </Link>
+          <Link
+            to="/inventories"
+            className={`header__nav-item ${
+              activeLink === "inventories" ? "header__nav-item--clicked" : ""
+            }`}
+            onClick={() => handleLinkClick("inventories")}
+          >
+            <li>Inventory</li>
+          </Link>
+>>>>>>> develop
         </ul>
       </nav>
     </header>
