@@ -14,15 +14,21 @@ export default function Header() {
   return (
     <header className="header">
       <div className="header__logo">
-        <img src={logo} alt="InStock Logo" />
+        <Link className="header__link" to="/">
+          <img src={logo} alt="InStock Logo" />
+        </Link>
       </div>
       <nav className="header__nav">
         <ul className="header__nav-list">
           <li className={getClassName("/")}>
-            <Link to="/">Warehouses</Link>
+            <Link className="header__nav-link" to="/">
+              Warehouses
+            </Link>
           </li>
           <li className={getClassName("/inventories")}>
-            <Link to="/inventories">Inventory</Link>
+            <Link className="header__nav-link" to="/inventories">
+              Inventory
+            </Link>
           </li>
         </ul>
       </nav>
