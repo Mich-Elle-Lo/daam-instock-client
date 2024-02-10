@@ -4,15 +4,9 @@ import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import InventoriesPage from "./Pages/InventoriesPage/InventoriesPage";
 import WarehousesPage from "./Pages/WarehousePage/WarehousesPage";
-<<<<<<< HEAD
-
-import EditWarehouse from "./Pages/EditWarehouse/EditWarehouse";
-import WarehouseDetails from "./Pages/WarehouseDetails/WarehouseDetails";
-import InventoryItemDetails from "./Pages/InventoryItemDetails/InventoryItemDetails";
-=======
 import EditWarehouse from "./Pages/EditWarehouse/EditWarehouse";
 import EditInventory from "./Pages/EditInventory/EditInventory";
->>>>>>> develop
+import WarehouseDetails from "./Pages/WarehouseDetails/WarehouseDetails";
 
 function App() {
   return (
