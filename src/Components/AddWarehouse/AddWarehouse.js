@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { ReactComponent as ArrowBack } from "../../Assets/Icons/arrow_back-24px.svg";
 import { ReactComponent as Error } from "../../Assets/Icons/error-24px.svg";
-import "./Add.scss";
+import "./AddWarehouse.scss";
 
-const Add = () => {
+const AddWarehouse = () => {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -291,4 +291,4 @@ const Add = () => {
   );
 };
 
-export default Add;
+export default AddWarehouse;
