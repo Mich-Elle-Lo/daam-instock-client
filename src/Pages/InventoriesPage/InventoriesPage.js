@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./InventoriesPage.scss";
+import InventoryModal from "../../Components/InventoryModal/InventoryModal";
 import searchIcon from "../../Assets/Icons/search-24px.svg";
 import sortIcon from "../../Assets/Icons/sort-24px.svg";
 import trashIcon from "../../Assets/Icons/delete_outline-24px.svg";
@@ -8,10 +10,36 @@ import editIcon from "../../Assets/Icons/edit-24px.svg";
 import arrowIcon from "../../Assets/Icons/chevron_right-24px.svg";
 
 export default function InventoriesPage() {
+  const baseUrl = "http://localhost:8080/";
   const [warehouses, setWarehouses] = useState([]);
   const [inventories, setInventories] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedInventory, setSelectedInventory] = useState(null);
+  const navigate = useNavigate();
 
-  const baseUrl = "http://localhost:8080/";
+  // Delete inventory
+  const deleteInventory = (inventoryId) => {
+    return axios
+      .delete(`${baseUrl}api/inventories/${inventoryId}`)
+      .then((response) => {
+        const updatedInventories = inventories.filter(
+          (inventory) => inventory.id !== inventoryId
+        );
+        setInventories(updatedInventories);
+      })
+      .catch((error) => {
+        console.error("Error error with deletion:", error);
+        throw error;
+      });
+  };
+
+  // Open modal
+  const handleOpenModal = (selectedInventory) => {
+    setSelectedInventory(selectedInventory);
+    setShowModal(true);
+  };
+
+  // Fetch inventories
 
   useEffect(() => {
     const fetchInventories = async () => {
@@ -40,6 +68,15 @@ export default function InventoriesPage() {
 
   return (
     <section className="inventories">
+      <InventoryModal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+        onDelete={deleteInventory}
+        // onConfirm={handleConfirm}
+        //warehouse={selectedWarehouse}
+        inventory={selectedInventory}
+      />
+
       <div className="inventories__wrapper">
         <h1 className="inventories__title">Inventory</h1>
         <form className="inventories__form">
@@ -164,42 +201,53 @@ export default function InventoriesPage() {
 
             {/* Tablet View */}
             <div className="inventories__tabletinfo">
-              <div className=" inventories__datatablet">
-                {inventory.item_name}
-                <img
-                  className="inventories__arrowicon"
-                  src={arrowIcon}
-                  alt="arrow icon"
-                />
+              <div className="inventories__datatablet-wrap">
+                <div className="inventories__datatablet-name-icon-wrap">
+                  <p className=" inventories__datatablet-name">
+                    {inventory.item_name}
+                  </p>
+                  <img
+                    className="inventories__arrowicon"
+                    src={arrowIcon}
+                    alt="arrow icon"
+                  />
+                </div>
               </div>
 
-              <div className="inventories__datatablet">
-                {inventory.category}
+              <div className="inventories__datatablet-wrap">
+                {" "}
+                <p className="inventories__datatablet">{inventory.category}</p>
               </div>
 
-              <div
-                className={`inventories__datatablet--${
-                  inventory.status.toLowerCase() === "in stock"
-                    ? "in-stock"
-                    : "out-of-stock"
-                }`}
-              >
-                {inventory.status}
+              <div className="inventories__datatablet-wrap">
+                <p
+                  className={`inventories__datatablet--${
+                    inventory.status.toLowerCase() === "in stock"
+                      ? "in-stock"
+                      : "out-of-stock"
+                  }`}
+                >
+                  {inventory.status}
+                </p>
               </div>
 
-              <div className="inventories__datatablet">
-                {inventory.quantity}
+              <div className="inventories__datatablet-wrap">
+                <p className="inventories__datatablet">{inventory.quantity}</p>
               </div>
 
-              <div className="inventories__datatablet">
-                {inventory.warehouse_name}
+              <div className="inventories__datatablet-wrap">
+                <p className="inventories__datatablet">
+                  {inventory.warehouse_name}
+                </p>
               </div>
             </div>
 
             <div className="inventories__actions">
-              {/* <div className="inventories__datatablet inventories__actions--tablet"> */}
               <div className="inventories__actions--tablet">
-                <div className="inventories__trash">
+                <div
+                  className="inventories__trash"
+                  onClick={() => handleOpenModal(inventory)}
+                >
                   <img
                     className="inventories__trashicon"
                     src={trashIcon}
@@ -207,7 +255,14 @@ export default function InventoriesPage() {
                   />
                 </div>
 
-                <div className="inventories__edit">
+                <div
+                  className="inventories__edit"
+                  onClick={() =>
+                    navigate(`/edit-inventory/${inventory.id}`, {
+                      state: { inventory },
+                    })
+                  }
+                >
                   <img
                     className="inventories__editicon"
                     src={editIcon}

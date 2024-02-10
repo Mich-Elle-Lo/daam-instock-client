@@ -4,8 +4,8 @@ import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import InventoriesPage from "./Pages/InventoriesPage/InventoriesPage";
 import WarehousesPage from "./Pages/WarehousePage/WarehousesPage";
-// import WarehouseModal from "./Components/Modal/WarehouseModal";
-import EditWarehouse from "./Components/EditWarehouse/EditWarehouse";
+import WarehouseModal from "./Components/Modal/WarehouseModal";
+import EditWarehouse from "./Pages/EditWarehouse/EditWarehouse";
 
 function App() {
   return (

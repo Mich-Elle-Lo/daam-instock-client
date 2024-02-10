@@ -111,7 +111,9 @@
     display: none;
 
     @include tablet-breakpoint {
-      @include mobile-tablet-labels-buttons-text-style;
+      //@include mobile-tablet-labels-buttons-text-style;
+      font-size: 12px;
+      font-weight: $semibold-txt;
       color: $secondary-slate;
       background-color: $background-light-grey;
       margin: 0;
@@ -127,7 +129,7 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      border: 2px solid pink;
+      //border: 2px solid pink;
     }
   }
 
@@ -135,7 +137,7 @@
     display: flex;
     align-items: center;
     //border: 2px solid brown;
-    width: 20%;
+    width: 30%;
   }
   &__boxflex {
     display: flex;
@@ -156,7 +158,7 @@
     padding-left: 1rem;
     padding-right: 1rem;
     flex-direction: column;
-    border-top: 0.1rem solid $secondary-cloud;
+    border-top: 1px solid $secondary-cloud;
 
     //border: 2px solid red;
     @include tablet-breakpoint {
@@ -165,7 +167,7 @@
       justify-content: space-between;
 
       //gap: 0.5rem;
-      border: 2px solid red;
+      //border: 2px solid red;
     }
   }
 
@@ -178,6 +180,18 @@
     width: 100%;
     padding-bottom: 1rem;
     //border: 2px solid green;
+    @include tablet-breakpoint {
+      display: none;
+    }
+  }
+
+  &__mobilebox1 {
+    display: flex;
+    flex-direction: column;
+    //flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    //border: 2px solid blue;
     @include tablet-breakpoint {
       display: none;
     }
@@ -214,6 +228,9 @@
   }
   &__infotitle {
     display: contents;
+    font-size: 12px;
+    font-weight: $semibold-txt;
+
     @include tablet-breakpoint {
       display: none;
     }
@@ -231,28 +248,32 @@
   }
 
   &__data-name {
-    @include mobile-tablet-labels-buttons-text-style;
+    //@include mobile-tablet-labels-buttons-text-style;
+    font-size: 12px;
     color: $primary-indigo;
     font-weight: $semibold-txt;
   }
 
   &__data--in-stock {
-    @include mobile-tablet-labels-buttons-text-style;
+    //@include mobile-tablet-labels-buttons-text-style;
+    font-size: 12px;
     color: $supporting-green;
+    font-weight: $semibold-txt;
     text-transform: uppercase;
-    background-color: lighten($supporting-green, 60%);
-    padding: 0.4rem;
+    background-color: rgba($supporting-green, 7%);
+    padding: 0.15rem 0.5rem;
     border-radius: 20px;
     width: max-content;
   }
 
   &__data--out-of-stock {
-    @include mobile-tablet-labels-buttons-text-style;
-    font-size: 10px;
+    //@include mobile-tablet-labels-buttons-text-style;
+    font-size: 12px;
+    font-weight: $semibold-txt;
     color: $supporting-red;
     text-transform: uppercase;
-    background-color: lighten($supporting-red, 50%);
-    padding: 4px 8px;
+    background-color: rgba($supporting-red, 7%);
+    padding: 0.15rem 0.5rem;
     border-radius: 20px;
     width: max-content;
   }
@@ -317,17 +338,18 @@
       &--tablet {
         display: contents;
         display: flex;
-        justify-content: space-between;
+        gap: 0.5rem;
       }
     }
   }
 
   &__infotitle {
-    @include mobile-tablet-labels-buttons-text-style;
+    //@include mobile-tablet-labels-buttons-text-style;
     color: $secondary-slate;
+    font-size: 12px;
   }
   &__data {
-    @include mobile-tablet-labels-buttons-text-style;
+    font-size: 12px;
 
     &--highlight {
       color: $primary-indigo;
@@ -342,7 +364,7 @@
   }
   &__datatablet {
     // border: 2px solid blue;
-    @include mobile-tablet-labels-buttons-text-style;
+    font-size: 14px;
     width: 20%;
     white-space: nowrap;
     overflow: hidden;
@@ -354,22 +376,36 @@
     }
   }
 
+  &__datatablet-name-icon-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  &__datatablet-name {
+    font-size: 14px;
+    font-weight: $semibold-txt;
+    color: $primary-indigo;
+  }
+
   &__datatablet--in-stock {
-    @include mobile-tablet-labels-buttons-text-style;
+    font-size: 12px;
+    font-weight: $semibold-txt;
     color: $supporting-green;
     text-transform: uppercase;
-    background-color: lighten($supporting-green, 60%);
-    padding: 0.4rem;
+    background-color: rgba($supporting-green, 7%);
+    padding: 0.25rem 0.5rem;
     border-radius: 25px;
     width: max-content;
   }
 
   &__datatablet--out-of-stock {
-    @include mobile-tablet-labels-buttons-text-style;
+    font-size: 12px;
+    font-weight: $semibold-txt;
     color: $supporting-red;
     text-transform: uppercase;
-    background-color: lighten($supporting-red, 50%);
-    padding: 0.4rem;
+    background-color: rgba($supporting-red, 7%);
+    padding: 0.25rem 0.5rem;
     border-radius: 25px;
     width: max-content;
   }
