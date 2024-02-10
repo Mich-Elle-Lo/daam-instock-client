@@ -17,8 +17,7 @@
   top: 140px;
   margin: 0 17px 100px 17px;
   &__header {
-    @include flex-direction(row);
-    justify-content: flex-start;
+    @include flex(row, 0, flex-start);
     border-bottom: 0.5px solid $secondary-cloud;
     padding: 15px 7%;
     margin: 0;
@@ -29,13 +28,22 @@
       padding: 15px 4%;
       margin: 0;
     }
+    &--back {
+      @include flex-direction(row);
+      gap: 16px;
+    }
+
     &--arrow {
       padding-right: 2%;
+      margin: 19px 0;
     }
     &--title {
       font-weight: 600;
       color: $primary-black;
       margin: 12px 0;
+
+      width: 119px;
+      height: auto;
 
       @include tablet-breakpoint {
         margin: 10px 0 0 0;
@@ -49,6 +57,7 @@
       border-radius: 20px;
       width: 36px;
       height: 36px;
+      margin: 13px 0;
       @include tablet-breakpoint {
         display: flex;
         flex-direction: row;
@@ -58,21 +67,16 @@
       }
     }
     &__buttonicon {
-      width: 15px;
-      height: 15px;
-      filter: brightness(4) sepia(0) hue-rotate(0deg) saturate(0);
+      width: 20px;
+      height: 20px;
+      filter: brightness(0) invert(1);
     }
-    &__buttontext {
+    &--buttontext {
       display: none;
-      color: $primary-white;
-
-      @include tablet-breakpoint {
-        display: flex;
-        flex-direction: row;
-        margin: 0;
-      }
+      @include tablet-breakpoint;
     }
   }
+
   &__container {
     padding: 5%;
 
@@ -95,7 +99,7 @@
       margin-right: 0;
       margin-bottom: 5%;
       color: $primary-black;
-      font-weight: 100;
+      font-weight: 400;
       width: 95%;
       font-size: $m-font-size-p2;
 

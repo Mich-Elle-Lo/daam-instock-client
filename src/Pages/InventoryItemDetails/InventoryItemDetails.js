@@ -43,18 +43,17 @@ export default function InventoryItemDetails() {
   return (
     <section className="itemdetails">
       <div className="itemdetails__header">
-        <Link to="/inventories" className="itemdetails__link">
-          <button className="itemdetails__header--back">
+        <div className="itemdetails__header--back">
+          <Link to="/inventories" className="itemdetails__header--link">
             <img
               className="itemdetails__header--arrow"
               src={Arrow}
               alt="Backarrow"
             />
-            <p className="itemdetails__header--backtext">Back</p>
-          </button>
-        </Link>
-        <h1 className="itemdetails__header--title">{singleItem.item_name}</h1>
-        <Link to="#" className="itemdetails__link">
+          </Link>
+          <h1 className="itemdetails__header--title">{singleItem.item_name}</h1>
+        </div>
+        <Link to="#" className="itemdetails__edit">
           <button className="itemdetails__header--button" onClick={editItem}>
             <img
               className="itemdetails__header--buttonicon"
