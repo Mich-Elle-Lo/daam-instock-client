@@ -23,33 +23,35 @@
 
   &__form {
     width: 100%;
+    margin-top: $base-padding;
+
+    @include tablet-breakpoint {
+      display: flex;
+      align-items: center;
+    }
   }
-  &__wd {
+
+  &__wd,
+  &__cd {
     padding: 0 1.5rem 1rem;
-    border-bottom: 1px solid $secondary-cloud;
-    width: 100%;
 
     @include tablet-breakpoint {
       border-bottom: none;
-      border-right: 1px solid $secondary-cloud;
-      width: 100%;
       flex: 1;
     }
   }
 
-  &__cd {
-    padding: 0 1.5rem 1rem;
+  &__wd {
+    border-bottom: 1px solid $secondary-cloud;
+
     @include tablet-breakpoint {
       border-bottom: none;
-      flex: 1;
+      border-right: 1px solid $secondary-cloud;
     }
   }
 
   &__title {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
     justify-content: center;
     align-items: center;
     font-size: $d-font-size-h1;
@@ -82,16 +84,6 @@
     margin-right: $base-padding;
   }
 
-  &__form {
-    margin-top: $base-padding;
-
-    @include tablet-breakpoint {
-      margin-top: $base-padding;
-      display: flex;
-      width: 100%;
-    }
-  }
-
   &__section {
     margin-bottom: $base-padding;
   }
@@ -122,15 +114,9 @@
     font-family: "TitilliumWeb-Regular", sans-serif;
     font-weight: 400;
     background-color: $primary-white;
-  }
-
-  &::placeholder {
-    color: $secondary-slate;
-  }
-
-  &:focus {
-    border-color: $primary-indigo;
-    outline: none;
+    &.error {
+      border-color: $supporting-red;
+    }
   }
 
   &__error {
@@ -142,7 +128,13 @@
     align-items: center;
     gap: 0.25rem;
     margin-top: -0.9rem;
+
+    &--icon {
+      width: 1rem;
+      height: 1rem;
+    }
   }
+
   &__button {
     padding: $d-cta-btn-padding;
     cursor: pointer;
@@ -176,9 +168,16 @@
         height: 10%;
         justify-content: flex-end;
       }
+      @include desktop-breakpoint {
+        margin: -5.75rem 2rem 2.5rem;
+        width: 30%;
+        height: 10%;
+        justify-content: flex-end;
+      }
     }
 
-    &--cancel {
+    &--cancel,
+    &--add {
       font-family: "TitilliumWeb-SemiBold", sans-serif;
       background-color: $primary-white;
       color: $secondary-slate;
@@ -188,10 +187,6 @@
       border: 1px solid $secondary-cloud;
       font-weight: $semibold-txt;
       font-size: $m-font-size-h3;
-      width: 8.6875rem;
-      @include tablet-breakpoint {
-        width: 4.5rem;
-      }
 
       &:hover {
         background-color: darken($primary-indigo, 10%);
@@ -200,24 +195,17 @@
       }
     }
 
+    &--cancel {
+      width: 8.6875rem;
+      @include tablet-breakpoint {
+        width: 4.5rem;
+      }
+    }
+
     &--add {
-      font-family: "TitilliumWeb-SemiBold", sans-serif;
-      background-color: $primary-white;
-      color: $secondary-slate;
-      border-radius: $btn-border-radius;
-      height: 2.25rem;
-      font-weight: $semibold-txt;
-      font-size: $m-font-size-h3;
       width: 8.625rem;
-      border: 1px solid $secondary-cloud;
       @include tablet-breakpoint {
         width: 8.625rem;
-      }
-
-      &:hover {
-        background-color: darken($primary-indigo, 10%);
-        font-family: "TitilliumWeb-SemiBold", sans-serif;
-        color: $primary-white;
       }
     }
   }

@@ -105,9 +105,9 @@ const Add = () => {
               Warehouse Name
             </label>
             <input
-              className="add__input"
+              className={`add__input ${formErrors.name ? "error" : ""}`}
               type="text"
-              id="name"
+              id="warehouse Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Warehouse Name"
@@ -129,7 +129,7 @@ const Add = () => {
               Street Address
             </label>
             <input
-              className="add__input"
+              className={`add__input ${formErrors.name ? "error" : ""}`}
               type="text"
               id="address"
               value={address}
@@ -149,7 +149,7 @@ const Add = () => {
               City
             </label>
             <input
-              className="add__input"
+              className={`add__input ${formErrors.name ? "error" : ""}`}
               type="text"
               id="city"
               value={city}
@@ -167,7 +167,7 @@ const Add = () => {
               Country
             </label>
             <input
-              className="add__input"
+              className={`add__input ${formErrors.name ? "error" : ""}`}
               type="text"
               id="country"
               value={country}
@@ -188,7 +188,7 @@ const Add = () => {
               Contact Name
             </label>
             <input
-              className="add__input"
+              className={`add__input ${formErrors.name ? "error" : ""}`}
               type="text"
               id="contactName"
               value={contactName}
@@ -212,7 +212,7 @@ const Add = () => {
               Position
             </label>
             <input
-              className="add__input"
+              className={`add__input ${formErrors.name ? "error" : ""}`}
               type="text"
               id="position"
               value={position}
@@ -236,7 +236,7 @@ const Add = () => {
               Phone Number
             </label>
             <input
-              className="add__input"
+              className={`add__input ${formErrors.name ? "error" : ""}`}
               type="text"
               id="phoneNumber"
               value={phoneNumber}
@@ -256,7 +256,7 @@ const Add = () => {
               Email
             </label>
             <input
-              className="add__input"
+              className={`add__input ${formErrors.name ? "error" : ""}`}
               type="text"
               id="email"
               value={email}
