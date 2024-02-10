@@ -46,16 +46,11 @@ export default function EditInventory() {
 
   const handleStatusChange = (event) => {
     const { name, value } = event.target;
+    console.log(formData);
     setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: value,
     }));
-    if (value === "Out of Stock") {
-      setFormData((prevFormData) => ({
-        ...prevFormData,
-        quantity: 0,
-      }));
-    }
   };
 
   useEffect(() => {
@@ -105,6 +100,10 @@ export default function EditInventory() {
         created_at: formattedDateTime,
         updated_at: formattedDateTime,
       };
+
+      if (formData.status === "Out of Stock") {
+        updatedFormData.quantity = 0;
+      }
 
       await axios.put(
         `http://localhost:8080/api/inventories/${inventory.id}`,
