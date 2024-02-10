@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import axios from "axios";
 import "./WarehouseDetails.scss";
-import WarehouseModal from "../../Components/Modal/WarehouseModal";
-import searchIcon from "../../Assets/Icons/search-24px.svg";
+import InventoryModal from "../../Components/InventoryModal/InventoryModal";
 import sortIcon from "../../Assets/Icons/sort-24px.svg";
 import trashIcon from "../../Assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../Assets/Icons/edit-24px.svg";
@@ -18,6 +17,29 @@ export default function WarehouseDetails() {
   const [inventories, setInventories] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [selectedInventory, setSelectedInventory] = useState(null);
+
+  const deleteInventory = (inventoryId) => {
+    return axios
+      .delete(`${baseUrl}api/inventories/${inventoryId}`)
+      .then((response) => {
+        const updatedInventories = inventories.filter(
+          (inventory) => inventory.id !== inventoryId
+        );
+        setInventories(updatedInventories);
+      })
+      .catch((error) => {
+        console.error("Error error with deletion:", error);
+        throw error;
+      });
+  };
+
+  // Open modal
+  const handleOpenModal = (selectedInventory) => {
+    setSelectedInventory(selectedInventory);
+    setShowModal(true);
+  };
 
   useEffect(() => {
     const fetchWarehouseDetails = async () => {
@@ -48,6 +70,12 @@ export default function WarehouseDetails() {
 
   return (
     <section className="warehouse">
+      <InventoryModal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+        onDelete={deleteInventory}
+        inventory={selectedInventory}
+      />
       <div className="warehouse__content">
         <div className="warehouse__wrapper">
           <h1 className="warehouse__title">
@@ -177,7 +205,10 @@ export default function WarehouseDetails() {
                 </div>
               </div>
               <div className="inventory__actions--mobile">
-                <div className="inventory__trash">
+                <div
+                  className="inventory__trash"
+                  onClick={() => handleOpenModal(inventory)}
+                >
                   <img
                     className="inventory__trashicon"
                     src={trashIcon}
@@ -226,7 +257,10 @@ export default function WarehouseDetails() {
                 </div>
 
                 <div className="inventory__dataaction inventory__actions--tablet">
-                  <div className="inventory__trash">
+                  <div
+                    className="inventory__trash"
+                    onClick={() => handleOpenModal(inventory)}
+                  >
                     <img
                       className="inventory__trashicon"
                       src={trashIcon}

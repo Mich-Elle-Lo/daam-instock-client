@@ -1,0 +1,203 @@
+@use "../../Styles/partials/variables" as *;
+@use "../../Styles/partials/mixins" as *;
+@use "../../Styles/partials/typography" as *;
+@use "../../Styles/global.scss" as *;
+
+.add-inventory {
+  background-color: $primary-white;
+  margin: -4rem 1rem 2.5rem;
+  z-index: 99;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
+
+  @include tablet-breakpoint {
+    margin: -5.75rem 2rem 2.5rem;
+  }
+
+  @include desktop-breakpoint {
+    margin: -6rem 8.125rem 2.5rem;
+  }
+
+  &__title-container {
+    padding: 2rem 1.5rem 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 1px solid $secondary-cloud;
+  }
+
+  &__title {
+    @include mobile-tablet-pageheader-text-style;
+    margin: 0;
+  }
+
+  &__section-title {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__item-details {
+    padding: 0 1.5rem 1.5rem;
+    border-bottom: 1px solid $secondary-cloud;
+
+    @include tablet-breakpoint {
+      border-bottom: none;
+      border-right: 1px solid $secondary-cloud;
+      flex: 1;
+    }
+  }
+
+  &__item-availability {
+    padding: 0 1.5rem;
+
+    @include tablet-breakpoint {
+      flex: 1;
+    }
+  }
+
+  &__form {
+    @include tablet-breakpoint {
+      display: flex;
+      width: 100%;
+    }
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: $form-label-spacing;
+    font-size: $m-font-size-h3;
+    font-weight: $semibold-txt;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    height: $form-height-mobile;
+    padding: $form-padding;
+    border-radius: $form-border-radius;
+    border: $form-border-default;
+    margin-bottom: 1rem;
+    outline-color: $primary-indigo;
+  }
+
+  &__dropdown {
+    width: 100%;
+    height: $form-height-mobile;
+    padding-left: 1rem;
+    border-radius: $form-border-radius;
+    border: $form-border-default;
+    outline-color: $primary-indigo;
+  }
+
+  &__textarea {
+    display: block;
+    width: 100%;
+    padding: $form-padding;
+    border-radius: $form-border-radius;
+    border: $form-border-default;
+    margin-bottom: 1rem;
+    resize: none;
+    outline-color: $primary-indigo;
+    font-family: "TitilliumWeb-Regular", sans-serif;
+  }
+
+  &__status-options {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    font-size: $m-font-size-p2;
+    margin-bottom: 1rem;
+  }
+
+  &__status-label {
+    display: flex;
+    align-items: center;
+  }
+
+  &__radio-btn {
+    margin-left: 0;
+    margin-right: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  &__btn-container {
+    display: flex;
+    gap: 1.0625rem;
+    padding: 1rem 1.5rem;
+    margin-top: 1.5rem;
+    background-color: $background-light-grey;
+
+    @include tablet-breakpoint {
+      justify-content: flex-end;
+    }
+  }
+
+  &__btn {
+    border-radius: $btn-border-radius;
+    height: 2.25rem;
+    font-weight: $semibold-txt;
+    font-size: $m-font-size-h3;
+    width: 100%;
+
+    @include tablet-breakpoint {
+      width: 15%;
+    }
+
+    @include desktop-breakpoint {
+      width: 10%;
+    }
+  }
+
+  &__error {
+    color: $supporting-red;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.8rem;
+    margin-top: -0.9rem;
+  }
+}
+
+.save-btn {
+  background-color: $primary-indigo;
+  color: $primary-white;
+  border: none;
+}
+
+.cancel-btn {
+  background-color: $primary-white;
+  color: $secondary-slate;
+  border: 1px solid $secondary-cloud;
+}
+
+.error-outline {
+  border: $form-border-error;
+}
+
+.error-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.dropdown-container {
+  .arrow-icon {
+    position: absolute;
+    right: 10px;
+    top: 40%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 1rem;
+    background-image: url("../../Assets/Icons/arrow_drop_down-24px.svg");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+}
