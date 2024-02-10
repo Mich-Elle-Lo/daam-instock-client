@@ -9,7 +9,7 @@
   align-items: center;
   background-color: $primary-white;
   margin: -4rem 1rem 2.5rem;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
   font-family: "TitilliumWeb-Regular", sans-serif;
 
@@ -22,26 +22,27 @@
   }
 
   &__form {
-    width: 80%;
+    width: 100%;
   }
   &__wd {
     padding: 0 1.5rem 1rem;
     border-bottom: 1px solid $secondary-cloud;
+    width: 100%;
+
     @include tablet-breakpoint {
-      padding-right: 5rem;
+      border-bottom: none;
+      border-right: 1px solid $secondary-cloud;
+      width: 100%;
       flex: 1;
     }
   }
 
   &__cd {
+    padding: 0 1.5rem 1rem;
     @include tablet-breakpoint {
       border-bottom: none;
-      border-right: 1px solid $secondary-cloud;
       flex: 1;
     }
-  }
-
-  &__section {
   }
 
   &__title {
@@ -87,14 +88,8 @@
     @include tablet-breakpoint {
       margin-top: $base-padding;
       display: flex;
-      width: 90%;
+      width: 100%;
     }
-  }
-
-  &__separator {
-    padding-top: 1rem;
-    border-bottom: 1px solid $secondary-cloud;
-    width: 113%; //
   }
 
   &__section {
@@ -143,11 +138,28 @@
     line-height: $d-line-height-p3;
     font-weight: $regular-txt;
     color: $supporting-red;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-top: -0.9rem;
   }
   &__button {
     padding: $d-cta-btn-padding;
     cursor: pointer;
+    border-radius: $btn-border-radius;
+    height: 2.25rem;
+    font-weight: $semibold-txt;
+    font-size: $m-font-size-h3;
+    width: 100%;
     transition: background-color 0.3s ease;
+
+    @include tablet-breakpoint {
+      width: 10%;
+    }
+
+    @include desktop-breakpoint {
+      width: 7%;
+    }
 
     &--container {
       display: flex;
@@ -156,12 +168,13 @@
       gap: 1.0625rem;
       width: 100%;
       padding: 1rem 1.5rem;
+      margin-top: 1.5rem;
       background-color: $background-light-grey;
       @include tablet-breakpoint {
         margin: -5.75rem 2rem 2.5rem;
         width: 30%;
         height: 10%;
-        flex: 0;
+        justify-content: flex-end;
       }
     }
 

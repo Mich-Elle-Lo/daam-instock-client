@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ReactComponent as ArrowBack } from "../../Assets/Icons/arrow_back-24px.svg";
+import { ReactComponent as Error } from "../../Assets/Icons/error-24px.svg";
 import "./Add.scss";
 
 const Add = () => {
@@ -113,7 +114,10 @@ const Add = () => {
               autoComplete="warehouse-name"
             />
             {formErrors.name && (
-              <span className="add__error">{formErrors.name}</span>
+              <span className="add__error">
+                <Error className="add__error--icon" alt="Error" />
+                {formErrors.name}
+              </span>
             )}
           </div>
           <div className="add__section">
@@ -134,7 +138,10 @@ const Add = () => {
               autoComplete="address"
             />
             {formErrors.address && (
-              <span className="add__error">{formErrors.address}</span>
+              <span className="add__error">
+                <Error className="add__error--icon" alt="Error" />
+                {formErrors.address}
+              </span>
             )}
           </div>
           <div className="add__section">
@@ -169,7 +176,6 @@ const Add = () => {
               autoComplete="country"
             />
           </div>
-          <div className="add__separator"></div>
         </div>
         <div className="add__cd">
           <div className="add__section">
@@ -191,7 +197,10 @@ const Add = () => {
               autoComplete="contactName"
             />
             {formErrors.contactName && (
-              <span className="add__error">{formErrors.contactName}</span>
+              <span className="add__error">
+                <Error className="add__error--icon" alt="Error" />
+                {formErrors.contactName}
+              </span>
             )}
           </div>
           <div className="add__section">
@@ -212,7 +221,10 @@ const Add = () => {
               autocomplete="Position"
             />
             {formErrors.position && (
-              <span className="add__error">{formErrors.position}</span>
+              <span className="add__error">
+                <Error className="add__error--icon" alt="Error" />
+                {formErrors.position}
+              </span>
             )}
           </div>
           <div className="add__section">
@@ -233,7 +245,10 @@ const Add = () => {
               autocomplete="PhoneNumber"
             />
             {formErrors.phoneNumber && (
-              <span className="add__error">{formErrors.phoneNumber}</span>
+              <span className="add__error">
+                <Error className="add__error--icon" alt="Error" />
+                {formErrors.phoneNumber}
+              </span>
             )}
           </div>
           <div className="add__section">
@@ -250,7 +265,10 @@ const Add = () => {
               autocomplete="email"
             />
             {formErrors.email && (
-              <span className="add__error">{formErrors.email}</span>
+              <span className="add__error">
+                <Error className="add__error--icon" alt="Error" />
+                {formErrors.email}
+              </span>
             )}
           </div>
         </div>
