@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ReactComponent as ArrowBack } from "../../Assets/Icons/arrow_back-24px.svg";
 import { ReactComponent as Error } from "../../Assets/Icons/error-24px.svg";
 import "./AddWarehouse.scss";
 
 const AddWarehouse = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -80,7 +82,7 @@ const AddWarehouse = () => {
   };
 
   const handleCancel = () => {
-    // Implement cancel action here
+    navigate("/inventories");
     console.log("Cancel action triggered");
   };
 
@@ -88,7 +90,11 @@ const AddWarehouse = () => {
     <section className="add">
       <div className="add__title--container">
         <h1 className="add__title">
-          <ArrowBack className="add__icon" alt="arrow back" />
+          <ArrowBack
+            className="add__icon"
+            alt="arrow back"
+            onClick={handleCancel}
+          />
           Add New Warehouse
         </h1>
       </div>
