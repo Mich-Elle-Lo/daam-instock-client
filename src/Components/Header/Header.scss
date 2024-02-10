@@ -19,9 +19,13 @@
     padding: $m-padding-top 0;
     @include flex(default, center, center);
   }
+  &__link {
+    cursor: pointer;
+  }
 
   &__nav-list {
-    @include flex(default, center, between);
+    width: 100%;
+    @include flex(row, center, center);
     list-style-type: none;
     padding: 0 $m-padding-sides;
     margin-bottom: $m-padding-sides;
@@ -34,11 +38,15 @@
     }
   }
 
-  &__nav-item {
+  &__nav-item,
+  &__nav-link {
+    @include flex(row, center, center);
     font-family: "TitilliumWeb-SemiBold", sans-serif;
     font-weight: $semibold-txt;
     font-size: $m-font-size-h3;
+    text-decoration: none;
     color: $secondary-cloud;
+    height: $m-btn-height;
     border-radius: $btn-border-radius;
     border: none;
     flex: 1;
@@ -57,12 +65,19 @@
     &--clicked {
       background-color: $primary-black;
       color: $primary-white;
+      // height: $m-btn-height;
     }
 
     @include tablet-breakpoint {
       padding: 0.5rem $m-padding-sides;
       height: $t-btn-height;
       font-size: $d-font-size-h3;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      color: $primary-white;
+      cursor: pointer;
     }
   }
 }
