@@ -6,19 +6,25 @@
   margin: 0;
   position: relative;
   margin-top: -6rem;
+  margin-bottom: 5rem;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0);
-  margin-left: 1rem;
-  margin-right: 1rem;
-  @include tablet-breakpoint {
-    // margin-top: -5rem;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+
   &__content {
     background-color: $primary-white;
     box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
     border-radius: 0.2rem;
+    width: 90%;
+    @include tablet-breakpoint {
+      margin-top: 5vh;
+      height: 95%;
+      width: 95%;
+    }
   }
   &__title {
     padding-top: 1rem;
@@ -94,9 +100,6 @@
       white-space: nowrap;
       @include t-btn-width;
     }
-    // @include desktop-breakpoint {
-    //   margin-right: 1rem;
-    // }
     &:hover {
       background-color: #13182c;
       color: #f7f8f9;

@@ -32,7 +32,6 @@ export default function InventoriesPage() {
       });
   };
 
-  // Open modal
   const handleOpenModal = (selectedInventory) => {
     setSelectedInventory(selectedInventory);
     setShowModal(true);
@@ -43,7 +42,6 @@ export default function InventoriesPage() {
       try {
         const response = await axios.get(`${baseUrl}api/inventories`);
         setInventories(response.data);
-        console.log("response", response.data);
       } catch (error) {
         console.error("error error", error);
       }
@@ -52,7 +50,7 @@ export default function InventoriesPage() {
     const fetchWarehouses = async () => {
       try {
         const response = await axios.get(`${baseUrl}api/warehouses`);
-        console.log("response", response.data);
+
         setWarehouses(response.data);
       } catch (error) {
         console.error("error error", error);
