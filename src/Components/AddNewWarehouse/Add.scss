@@ -5,7 +5,6 @@
 .add {
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
   align-items: center;
   background-color: $primary-white;
   margin: -4rem 1rem 2.5rem;
@@ -22,31 +21,43 @@
   }
 
   &__form {
+    display: flex; // Ensure flex-direction is row for form
+    flex-wrap: wrap;
     width: 100%;
     margin-top: $base-padding;
 
+    @include mobile-breakpoint {
+      display: flex; // Ensure flex-direction is row for form
+      flex-direction: column;
+    }
     @include tablet-breakpoint {
-      display: flex;
-      align-items: center;
+      justify-content: center; // Adjust alignment for tablet
     }
   }
 
   &__wd,
   &__cd {
+    @include mobile-breakpoint {
+      width: 100%;
+    }
     padding: 0 1.5rem 1rem;
+    width: 50%;
 
     @include tablet-breakpoint {
       border-bottom: none;
-      flex: 1;
+      order: 1; // Adjust order for tablet
     }
   }
 
   &__wd {
-    border-bottom: 1px solid $secondary-cloud;
+    @include mobile-breakpoint {
+      border-bottom: 1px solid $secondary-cloud;
+    }
 
     @include tablet-breakpoint {
       border-bottom: none;
       border-right: 1px solid $secondary-cloud;
+      flex-direction: column;
     }
   }
 
@@ -58,6 +69,7 @@
     line-height: $d-line-height-h1;
     font-weight: $semibold-txt;
     color: $primary-black;
+    padding-bottom: 1rem;
     margin-bottom: $base-padding;
 
     @include tablet-breakpoint {
@@ -135,6 +147,27 @@
     }
   }
 
+  &__button--container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1.0625rem;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    margin-top: 1.5rem;
+    background-color: $background-light-grey;
+
+    @include tablet-breakpoint {
+      order: 2;
+      justify-content: flex-end;
+    }
+
+    @include desktop-breakpoint {
+      order: 2; // Adjust order for desktop
+      justify-content: flex-end;
+    }
+  }
+
   &__button {
     padding: $d-cta-btn-padding;
     cursor: pointer;
@@ -151,29 +184,6 @@
 
     @include desktop-breakpoint {
       width: 7%;
-    }
-
-    &--container {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      gap: 1.0625rem;
-      width: 100%;
-      padding: 1rem 1.5rem;
-      margin-top: 1.5rem;
-      background-color: $background-light-grey;
-      @include tablet-breakpoint {
-        margin: -5.75rem 2rem 2.5rem;
-        width: 30%;
-        height: 10%;
-        justify-content: flex-end;
-      }
-      @include desktop-breakpoint {
-        margin: -5.75rem 2rem 2.5rem;
-        width: 30%;
-        height: 10%;
-        justify-content: flex-end;
-      }
     }
 
     &--cancel,

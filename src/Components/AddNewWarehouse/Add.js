@@ -107,7 +107,7 @@ const Add = () => {
             <input
               className={`add__input ${formErrors.name ? "error" : ""}`}
               type="text"
-              id="warehouse Name"
+              id="warehouse-name"
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Warehouse Name"
@@ -129,7 +129,7 @@ const Add = () => {
               Street Address
             </label>
             <input
-              className={`add__input ${formErrors.name ? "error" : ""}`}
+              className={`add__input ${formErrors.address ? "error" : ""}`}
               type="text"
               id="address"
               value={address}
@@ -137,6 +137,7 @@ const Add = () => {
               placeholder="Street Address"
               autoComplete="address"
             />
+
             {formErrors.address && (
               <span className="add__error">
                 <Error className="add__error--icon" alt="Error" />
@@ -149,7 +150,7 @@ const Add = () => {
               City
             </label>
             <input
-              className={`add__input ${formErrors.name ? "error" : ""}`}
+              className={`add__input ${formErrors.city ? "error" : ""}`}
               type="text"
               id="city"
               value={city}
@@ -167,7 +168,7 @@ const Add = () => {
               Country
             </label>
             <input
-              className={`add__input ${formErrors.name ? "error" : ""}`}
+              className={`add__input ${formErrors.country ? "error" : ""}`}
               type="text"
               id="country"
               value={country}
@@ -188,7 +189,7 @@ const Add = () => {
               Contact Name
             </label>
             <input
-              className={`add__input ${formErrors.name ? "error" : ""}`}
+              className={`add__input ${formErrors.contactName ? "error" : ""}`}
               type="text"
               id="contactName"
               value={contactName}
@@ -212,13 +213,13 @@ const Add = () => {
               Position
             </label>
             <input
-              className={`add__input ${formErrors.name ? "error" : ""}`}
+              className={`add__input ${formErrors.position ? "error" : ""}`}
               type="text"
               id="position"
               value={position}
               onChange={(e) => setPosition(e.target.value)}
               placeholder="Position"
-              autocomplete="Position"
+              autoComplete="Position"
             />
             {formErrors.position && (
               <span className="add__error">
@@ -236,14 +237,15 @@ const Add = () => {
               Phone Number
             </label>
             <input
-              className={`add__input ${formErrors.name ? "error" : ""}`}
+              className={`add__input ${formErrors.phoneNumber ? "error" : ""}`}
               type="text"
               id="phoneNumber"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
               placeholder="Phone Number"
-              autocomplete="PhoneNumber"
+              autoComplete="PhoneNumber"
             />
+
             {formErrors.phoneNumber && (
               <span className="add__error">
                 <Error className="add__error--icon" alt="Error" />
@@ -256,13 +258,13 @@ const Add = () => {
               Email
             </label>
             <input
-              className={`add__input ${formErrors.name ? "error" : ""}`}
+              className={`add__input ${formErrors.email ? "error" : ""}`}
               type="text"
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email"
-              autocomplete="email"
+              autoComplete="email"
             />
             {formErrors.email && (
               <span className="add__error">
