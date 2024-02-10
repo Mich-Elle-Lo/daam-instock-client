@@ -72,172 +72,197 @@ export default function InventoriesPage() {
         show={showModal}
         onClose={() => setShowModal(false)}
         onDelete={deleteInventory}
-        // onConfirm={handleConfirm}
-        //warehouse={selectedWarehouse}
         inventory={selectedInventory}
       />
-
-      <div className="inventories__wrapper">
-        <h1 className="inventories__title">Inventory</h1>
-        <form className="inventories__form">
-          <div className="inventories__search">
-            <input
-              type="text"
-              placeholder="Search..."
-              id="searchBar"
-              className="inventories__input"
-            />
-            <div className="inventories__iconbox">
-              <img
-                className="inventories__searchicon"
-                src={searchIcon}
-                alt="search icon"
+      <article className="inventories__content">
+        <div className="inventories__wrapper">
+          <h1 className="inventories__title">Inventory</h1>
+          <form className="inventories__form">
+            <div className="inventories__search">
+              <input
+                type="text"
+                placeholder="Search..."
+                id="searchBar"
+                className="inventories__input"
               />
+              <div className="inventories__iconbox">
+                <img
+                  className="inventories__searchicon"
+                  src={searchIcon}
+                  alt="search icon"
+                />
+              </div>
             </div>
+            <button className="inventories__button"> +Add New Item</button>
+          </form>
+        </div>
+
+        <div className="inventories__options">
+          <div className="inventories__box">
+            INVENTORY ITEM
+            <img
+              className="inventories__sorticon"
+              src={sortIcon}
+              alt="sort icon"
+            />
           </div>
-          <button className="inventories__button"> +Add New Item</button>
-        </form>
-      </div>
+          <div className="inventories__box">
+            CATEGORY
+            <img
+              className="inventories__sorticon"
+              src={sortIcon}
+              alt="sort icon"
+            />
+          </div>
+          <div className="inventories__box">
+            STATUS
+            <img
+              className="inventories__sorticon"
+              src={sortIcon}
+              alt="sort icon"
+            />
+          </div>
+          <div className="inventories__box">
+            QTY
+            <img
+              className="inventories__sorticon"
+              src={sortIcon}
+              alt="sort icon"
+            />
+          </div>
+          <div className="inventories__box">
+            WAREHOUSE
+            <img
+              className="inventories__sorticon"
+              src={sortIcon}
+              alt="sort icon"
+            />
+          </div>
+          <div className="inventories__boxflex">ACTIONS</div>
+        </div>
 
-      <div className="inventories__options">
-        <div className="inventories__box">
-          INVENTORY ITEM
-          <img
-            className="inventories__sorticon"
-            src={sortIcon}
-            alt="sort icon"
-          />
-        </div>
-        <div className="inventories__box">
-          CATEGORY
-          <img
-            className="inventories__sorticon"
-            src={sortIcon}
-            alt="sort icon"
-          />
-        </div>
-        <div className="inventories__box">
-          STATUS
-          <img
-            className="inventories__sorticon"
-            src={sortIcon}
-            alt="sort icon"
-          />
-        </div>
-        <div className="inventories__box">
-          QTY
-          <img
-            className="inventories__sorticon"
-            src={sortIcon}
-            alt="sort icon"
-          />
-        </div>
-        <div className="inventories__box">
-          WAREHOUSE
-          <img
-            className="inventories__sorticon"
-            src={sortIcon}
-            alt="sort icon"
-          />
-        </div>
-        <div className="inventories__boxflex">ACTIONS</div>
-      </div>
-
-      <div className="inventories__list">
-        {inventories.map((inventory) => (
-          <div key={inventory.id} className="inventories__card">
-            {/* Mobile View */}
-            <div className="inventories__mobiledetails">
-              <div className="inventories__mobilebox1">
-                <div className="inventories__infobox">
-                  <div className="inventories__infotitle">INVENTORY ITEM</div>
-                  <div className="inventories__infodata-wrap">
-                    <div className="inventories__data-name">
-                      {inventory.item_name}
+        <div className="inventories__list">
+          {inventories.map((inventory) => (
+            <div key={inventory.id} className="inventories__card">
+              {/* Mobile View */}
+              <div className="inventories__mobiledetails">
+                <div className="inventories__mobilebox1">
+                  <div className="inventories__infobox">
+                    <div className="inventories__infotitle">INVENTORY ITEM</div>
+                    <div className="inventories__infodata-wrap">
+                      <div className="inventories__data-name">
+                        {inventory.item_name}
+                      </div>
+                      <img
+                        className="inventories__arrowicon"
+                        src={arrowIcon}
+                        alt="arrow icon"
+                      />
                     </div>
+                  </div>
+
+                  <div className="inventories__infobox">
+                    <div className="inventories__infotitle">CATEGORY</div>
+                    <div className="inventories__data">
+                      {inventory.category}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="inventories__mobilebox2">
+                  <div className="inventories__infobox">
+                    <div className="inventories__infotitle">STATUS</div>
+                    <div className="inventories__stockdata">
+                      <div
+                        className={`inventories__data--${
+                          inventory.status.toLowerCase() === "in stock"
+                            ? "in-stock"
+                            : "out-of-stock"
+                        }`}
+                      >
+                        {inventory.status}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="inventories__infobox">
+                    <div className="inventories__infotitle">QTY</div>
+                    <div className="inventories__data">
+                      {inventory.quantity}
+                    </div>
+                  </div>
+
+                  <div className="inventories__infobox">
+                    <div className="inventories__infotitle">WAREHOUSE</div>
+                    <div className="inventories__data">
+                      {inventory.warehouse_name}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Tablet View */}
+              <div className="inventories__tabletinfo">
+                <div className="inventories__datatablet">
+                  <p className=" inventories__datatablet-name">
+                    {inventory.item_name}
+                  </p>
+                  <img
+                    className="inventories__arrowicon"
+                    src={arrowIcon}
+                    alt="arrow icon"
+                  />
+                </div>
+                <div className="inventories__datatablet">
+                  {inventory.category}
+                </div>
+                <div className="inventories__datatablet">
+                  <p
+                    className={`inventories__datatablet--${
+                      inventory.status.toLowerCase() === "in stock"
+                        ? "in-stock"
+                        : "out-of-stock"
+                    }`}
+                  >
+                    {inventory.status}
+                  </p>
+                </div>
+                <div className="inventories__datatablet">
+                  {inventory.quantity}
+                </div>
+                <div className="inventories__datatablet">
+                  {inventory.warehouse_name}
+                </div>
+                <div className="inventories__actions inventories__actions--tablet">
+                  <div
+                    className="inventories__trash"
+                    onClick={() => handleOpenModal(inventory)}
+                  >
                     <img
-                      className="inventories__arrowicon"
-                      src={arrowIcon}
-                      alt="arrow icon"
+                      className="inventories__trashicon"
+                      src={trashIcon}
+                      alt="trash icon"
+                    />
+                  </div>
+                  <div
+                    className="inventories__edit"
+                    onClick={() =>
+                      navigate(`/edit-inventory/${inventory.id}`, {
+                        state: { inventory },
+                      })
+                    }
+                  >
+                    <img
+                      className="inventories__editicon"
+                      src={editIcon}
+                      alt="edit icon"
                     />
                   </div>
                 </div>
-
-                <div className="inventories__infobox">
-                  <div className="inventories__infotitle">CATEGORY</div>
-                  <div className="inventories__data">{inventory.category}</div>
-                </div>
               </div>
 
-              <div className="inventories__mobilebox2">
-                <div className="inventories__infobox">
-                  <div className="inventories__infotitle">STATUS</div>
-                  <div className="inventories__stockdata">
-                    <div
-                      className={`inventories__data--${
-                        inventory.status.toLowerCase() === "in stock"
-                          ? "in-stock"
-                          : "out-of-stock"
-                      }`}
-                    >
-                      {inventory.status}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="inventories__infobox">
-                  <div className="inventories__infotitle">QTY</div>
-                  <div className="inventories__data">{inventory.quantity}</div>
-                </div>
-
-                <div className="inventories__infobox">
-                  <div className="inventories__infotitle">WAREHOUSE</div>
-                  <div className="inventories__data">
-                    {inventory.warehouse_name}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Tablet View */}
-            <div className="inventories__tabletinfo">
-              <div className="inventories__datatablet">
-                {/* <div className="inventories__datatablet-name-icon-wrap"> */}
-                <p className=" inventories__datatablet-name">
-                  {inventory.item_name}
-                </p>
-                <img
-                  className="inventories__arrowicon"
-                  src={arrowIcon}
-                  alt="arrow icon"
-                />
-                {/* </div> */}
-              </div>
-
-              <div className="inventories__datatablet">
-                {inventory.category}
-              </div>
-
-              <div className="inventories__datatablet">
-                <p
-                  className={`inventories__datatablet--${
-                    inventory.status.toLowerCase() === "in stock"
-                      ? "in-stock"
-                      : "out-of-stock"
-                  }`}
-                >
-                  {inventory.status}
-                </p>
-              </div>
-
-              <div className="inventories__datatablet">
-                {inventory.quantity}
-              </div>
-
-              <div className="inventories__datatablet">
-                {inventory.warehouse_name}
-              </div>
-              <div className="inventories__actions inventories__actions--tablet">
+              {/* mobile buttons */}
+              <div className=" inventories__actions inventories__actions--mobile">
                 <div
                   className="inventories__trash"
                   onClick={() => handleOpenModal(inventory)}
@@ -265,31 +290,9 @@ export default function InventoriesPage() {
                 </div>
               </div>
             </div>
-
-            {/* mobile buttons */}
-            <div className=" inventories__actions inventories__actions--mobile">
-              <div
-                className="inventories__trash"
-                onClick={() => handleOpenModal(inventory)}
-              >
-                <img
-                  className="inventories__trashicon"
-                  src={trashIcon}
-                  alt="trash icon"
-                />
-              </div>
-
-              <div className="inventories__edit">
-                <img
-                  className="inventories__editicon"
-                  src={editIcon}
-                  alt="edit icon"
-                />
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </article>
     </section>
   );
 }

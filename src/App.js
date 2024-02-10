@@ -12,12 +12,13 @@ function App() {
     <div className="app">
       <BrowserRouter>
         <Header />
-        <Routes>
-          <Route path="/" element={<WarehousesPage />} />
-          <Route path="/edit-warehouse/:id" element={<EditWarehouse />} />
-          <Route path="/inventories" element={<InventoriesPage />} />
-        </Routes>
-
+        <section className="app__content">
+          <Routes>
+            <Route path="/" element={<WarehousesPage />} />
+            <Route path="/edit-warehouse/:id" element={<EditWarehouse />} />
+            <Route path="/inventories" element={<InventoriesPage />} />
+          </Routes>
+        </section>
         <Footer />
       </BrowserRouter>
     </div>
