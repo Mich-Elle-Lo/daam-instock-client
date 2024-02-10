@@ -8,6 +8,7 @@ import EditWarehouse from "./Pages/EditWarehouse/EditWarehouse";
 import EditInventory from "./Pages/EditInventory/EditInventory";
 import AddInventory from "./Pages/AddInventory/AddInventory";
 import WarehouseDetails from "./Pages/WarehouseDetails/WarehouseDetails";
+import AddWarehouse from "./Pages/AddWarehouse/AddWarehouse";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/inventories" element={<InventoriesPage />} />
             <Route path="/inventories/edit/:id" element={<EditInventory />} />
             <Route path="/inventories/add" element={<AddInventory />} />
+            <Route path="/warehouse/add" element={<AddWarehouse />} />
           </Routes>
         </section>
         <Footer />
