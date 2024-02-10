@@ -6,6 +6,7 @@ import InventoriesPage from "./Pages/InventoriesPage/InventoriesPage";
 import WarehousesPage from "./Pages/WarehousePage/WarehousesPage";
 import EditWarehouse from "./Pages/EditWarehouse/EditWarehouse";
 import EditInventory from "./Pages/EditInventory/EditInventory";
+import AddInventory from "./Pages/AddInventory/AddInventory";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/edit-warehouse/:id" element={<EditWarehouse />} />
             <Route path="/inventories" element={<InventoriesPage />} />
             <Route path="/inventories/edit/:id" element={<EditInventory />} />
+            <Route path="/inventories/add" element={<AddInventory />} />
           </Routes>
         </section>
         <Footer />
