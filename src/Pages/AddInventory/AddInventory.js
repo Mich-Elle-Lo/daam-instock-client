@@ -1,23 +1,23 @@
 import "./AddInventory.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import BackArrow from "../../Assets/Icons/arrow_back-24px.svg";
 import ErrorIcon from "../../Assets/Icons/error-24px.svg";
 
 export default function EditInventory() {
-  const location = useLocation();
   const navigate = useNavigate();
-  const { inventory } = location.state || {};
   const [warehouses, setWarehouses] = useState([]);
   const [formData, setFormData] = useState({
     item_name: "",
     description: "",
     category: "",
-    status: "",
-    quantity: "",
+    status: "In Stock",
+    quantity: 0,
     warehouse_id: "",
   });
+
+  const [errors, setErrors] = useState({});
 
   useEffect(() => {
     axios
@@ -28,21 +28,7 @@ export default function EditInventory() {
       .catch((error) => {
         console.error("Error fetching warehouses:", error);
       });
-
-    if (inventory) {
-      setFormData({
-        ...formData,
-        item_name: inventory.item_name,
-        description: inventory.description,
-        category: inventory.category,
-        status: inventory.status,
-        quantity: inventory.quantity,
-        warehouse_id: inventory.warehouse_id.toString(),
-      });
-    }
-  }, [inventory]);
-
-  const [errors, setErrors] = useState({});
+  }, []);
 
   const handleStatusChange = (event) => {
     const { name, value } = event.target;
@@ -52,12 +38,6 @@ export default function EditInventory() {
       [name]: value,
     }));
   };
-
-  useEffect(() => {
-    if (inventory) {
-      setFormData(inventory);
-    }
-  }, [inventory]);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -95,45 +75,43 @@ export default function EditInventory() {
         .slice(0, 19)
         .replace("T", " ");
 
-      const updatedFormData = {
+      const newInventory = {
         ...formData,
         created_at: formattedDateTime,
         updated_at: formattedDateTime,
       };
 
       if (formData.status === "Out of Stock") {
-        updatedFormData.quantity = 0;
+        newInventory.quantity = 0;
       }
 
-      await axios.put(
-        `http://localhost:8080/api/inventories/${inventory.id}`,
-        updatedFormData
-      );
+      await axios.post("http://localhost:8080/api/inventories", newInventory);
       navigate("/inventories");
     } catch (error) {
-      console.error("Error saving inventory:", error);
+      console.error("Error adding inventory:", error);
     }
   };
 
   return (
-    <section className="edit-inventory">
-      <div className="edit-inventory__title-container">
+    <section className="add-inventory">
+      <div className="add-inventory__title-container">
         <img
           src={BackArrow}
           className="back-arrow"
           alt="Back Arrow"
           onClick={handleCancel}
         />
-        <h1 className="edit-inventory__title">Edit Inventory Item</h1>
+        <h1 className="add-inventory__title">Add New Inventory Item</h1>
       </div>
-      <form className="edit-inventory__form">
-        <div className="edit-inventory__item-details">
-          <h2 className="edit-inventory__section-title">Item Details</h2>
-          <label className="edit-inventory__label" htmlFor="itemName">
+      <form className="add-inventory__form">
+        <div className="add-inventory__item-details">
+          <h2 className="add-inventory__section-title">Item Details</h2>
+          <label className="add-inventory__label" htmlFor="itemName">
             Item Name
           </label>
           <input
-            className="edit-inventory__input"
+            placeholder="Item Name"
+            className="add-inventory__input"
             type="text"
             id="item_name"
             name="item_name"
@@ -141,16 +119,17 @@ export default function EditInventory() {
             onChange={handleInputChange}
           />
           {errors.item_name && (
-            <div className="edit-warehouse__error">
+            <div className="add-inventory__error">
               <img src={ErrorIcon} className="error-icon" alt="Error Icon" />
               {errors.item_name}
             </div>
           )}
-          <label className="edit-inventory__label" htmlFor="description">
+          <label className="add-inventory__label" htmlFor="description">
             Description
           </label>
           <textarea
-            className="edit-inventory__textarea"
+            placeholder="Please enter a brief item description..."
+            className="add-inventory__textarea"
             rows={5}
             type="text"
             id="description"
@@ -159,17 +138,17 @@ export default function EditInventory() {
             onChange={handleInputChange}
           ></textarea>
           {errors.description && (
-            <div className="edit-warehouse__error">
+            <div className="add-inventory__error">
               <img src={ErrorIcon} className="error-icon" alt="Error Icon" />
               {errors.description}
             </div>
           )}
-          <label className="edit-inventory__label" htmlFor="category">
+          <label className="add-inventory__label" htmlFor="category">
             Category
           </label>
           <div className="dropdown-container">
             <select
-              className="edit-inventory__dropdown"
+              className="add-inventory__dropdown"
               id="category"
               name="category"
               value={formData.category}
@@ -184,19 +163,19 @@ export default function EditInventory() {
             </select>
           </div>
           {errors.category && (
-            <div className="edit-warehouse__error">
+            <div className="add-inventory__error">
               <img src={ErrorIcon} className="error-icon" alt="Error Icon" />
               {errors.category}
             </div>
           )}
         </div>
-        <div className="edit-inventory__item-availability">
-          <h2 className="edit-inventory__section-title">Item Availability</h2>
-          <label className="edit-inventory__label">Status</label>
-          <div className="edit-inventory__status-options">
-            <label className="edit-inventory__status-label">
+        <div className="add-inventory__item-availability">
+          <h2 className="add-inventory__section-title">Item Availability</h2>
+          <label className="add-inventory__label">Status</label>
+          <div className="add-inventory__status-options">
+            <label className="add-inventory__status-label">
               <input
-                className="edit-inventory__radio-btn"
+                className="add-inventory__radio-btn"
                 type="radio"
                 name="status"
                 value="In Stock"
@@ -205,9 +184,9 @@ export default function EditInventory() {
               />
               In Stock
             </label>
-            <label className="edit-inventory__status-label">
+            <label className="add-inventory__status-label">
               <input
-                className="edit-inventory__radio-btn"
+                className="add-inventory__radio-btn"
                 type="radio"
                 name="status"
                 value="Out of Stock"
@@ -218,12 +197,12 @@ export default function EditInventory() {
             </label>
           </div>
           {formData.status === "In Stock" && (
-            <div className="edit-inventory__quantity">
-              <label className="edit-inventory__label" htmlFor="quantity">
+            <div className="add-inventory__quantity">
+              <label className="add-inventory__label" htmlFor="quantity">
                 Quantity
               </label>
               <input
-                className="edit-inventory__input"
+                className="add-inventory__input"
                 type="text"
                 id="quantity"
                 name="quantity"
@@ -232,13 +211,19 @@ export default function EditInventory() {
               />
             </div>
           )}
+          {errors.quantity && (
+            <div className="add-inventory__error">
+              <img src={ErrorIcon} className="error-icon" alt="Error Icon" />
+              {errors.quantity}
+            </div>
+          )}
 
-          <label className="edit-inventory__label" htmlFor="category">
+          <label className="add-inventory__label" htmlFor="category">
             Warehouse
           </label>
           <div className="dropdown-container">
             <select
-              className="edit-inventory__dropdown"
+              className="add-inventory__dropdown"
               id="warehouse"
               name="warehouse_id"
               value={formData.warehouse_id}
@@ -252,22 +237,28 @@ export default function EditInventory() {
               ))}
             </select>
           </div>
+          {errors.warehouse_id && (
+            <div className="add-inventory__error">
+              <img src={ErrorIcon} className="error-icon" alt="Error Icon" />
+              {errors.warehouse_id}
+            </div>
+          )}
         </div>
       </form>
-      <div className="edit-inventory__btn-container">
+      <div className="add-inventory__btn-container">
         <button
-          className="edit-inventory__btn cancel-btn"
+          className="add-inventory__btn cancel-btn"
           type="button"
           onClick={handleCancel}
         >
           Cancel
         </button>
         <button
-          className="edit-inventory__btn save-btn"
+          className="add-inventory__btn save-btn"
           type="button"
           onClick={handleSave}
         >
-          Save
+          + Add Item
         </button>
       </div>
     </section>
