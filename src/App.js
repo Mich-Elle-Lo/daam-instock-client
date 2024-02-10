@@ -19,7 +19,6 @@ function App() {
           <Route path="/inventories" element={<InventoriesPage />} />
           <Route path="/Inventories/:id" element={<InventoryItemDetails />} />
         </Routes>
-
         <Footer />
       </BrowserRouter>
     </div>
