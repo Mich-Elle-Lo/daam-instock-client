@@ -146,7 +146,7 @@ export default function InventoriesPage() {
             <div
               key={inventory.id}
               className="inventories__card"
-              onClick={() => navigateToInventoryDetails(inventory)}
+              //onClick={() => navigateToInventoryDetails(inventory)}
             >
               {/* Mobile View */}
               <div className="inventories__mobiledetails">
