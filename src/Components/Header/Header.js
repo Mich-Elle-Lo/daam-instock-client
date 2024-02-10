@@ -1,10 +1,20 @@
 import "./Header.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logo from "../../Assets/Logo/InStock-Logo.svg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Header() {
   const [activeLink, setActiveLink] = useState("warehouses");
+  const location = useLocation();
+
+  useEffect(() => {
+    const pathname = location.pathname;
+    if (pathname === "/") {
+      setActiveLink("warehouses");
+    } else if (pathname === "/inventories") {
+      setActiveLink("inventories");
+    }
+  }, [location.pathname]);
 
   const handleLinkClick = (link) => {
     setActiveLink(link);
