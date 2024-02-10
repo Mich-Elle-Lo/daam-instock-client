@@ -36,23 +36,73 @@
     @include mobile-tablet-pageheader-text-style;
   }
   &__contact {
+    padding: 1rem;
+    font-size: 0.75rem;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     @include tablet-breakpoint {
+      gap: 3rem;
       flex-direction: row;
+      font-size: 14px;
     }
   }
+  //WarehouseAddress
+  //Mobile
   &__contact-box {
     width: 100%;
     display: flex;
     justify-content: space-between;
+
+    @include tablet-breakpoint {
+      padding: 0 2rem;
+      border-left: 1px solid $secondary-cloud;
+    }
     // flex-direction: column;
   }
-  &__contact-info {
+  &__contact-mobile-address {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    @include tablet-breakpoint {
+      display: none;
+    }
+  }
+
+  &__contact-info {
+    @include tablet-breakpoint {
+      padding-left: 1rem;
+      width: 50%;
+      //padding-right: 4rem;
+    }
+    // display: flex;
+    // flex-direction: column;
+  }
+
+  &__contact-tablet-address {
+    display: none;
+    @include tablet-breakpoint {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 45%;
+    }
+  }
+
+  &__contact-title {
+    font-size: 10px;
+    font-weight: $semibold-txt;
+    color: $secondary-slate;
+    margin-bottom: 0.2rem;
+    @include tablet-breakpoint {
+      font-size: 12px;
+    }
+  }
+  &__contact-details {
+    margin: 0;
   }
   &__wrapper {
     padding-left: 1rem;
