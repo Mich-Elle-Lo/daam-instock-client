@@ -1,11 +1,12 @@
 import "./EditWarehouse.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import BackArrow from "../../Assets/Icons/arrow_back-24px.svg";
 import ErrorIcon from "../../Assets/Icons/error-24px.svg";
 
 export default function EditWarehouse() {
+  const { id } = useParams();
   const location = useLocation();
   const navigate = useNavigate();
   const { warehouse } = location.state || {};
@@ -76,7 +77,12 @@ export default function EditWarehouse() {
   return (
     <section className="edit-warehouse">
       <div className="edit-warehouse__title-container">
-        <img src={BackArrow} alt="Back Arrow" onClick={handleCancel} />
+        <img
+          src={BackArrow}
+          className="back-arrow"
+          alt="Back Arrow"
+          onClick={handleCancel}
+        />
         <h1 className="edit-warehouse__title">Edit Warehouse</h1>
       </div>
       <form className="edit-warehouse__form">
