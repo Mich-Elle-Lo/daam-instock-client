@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import "./WarehousesPage.scss";
 import WarehouseModal from "../../Components/Modal/WarehouseModal";
@@ -15,8 +15,14 @@ export default function WareHousesPage() {
 
   const [showModal, setShowModal] = useState(false);
   const [selectedWarehouse, setSelectedWarehouse] = useState(null);
+
   const navigate = useNavigate();
 
+  const navigateToWarehouseDetails = (warehouse) => {
+    navigate(`/warehouse/${warehouse.id}`, { state: { warehouse } });
+  };
+
+  //DELETE WAREHOUSE FUNC
   const deleteWarehouse = (warehouseId) => {
     return axios
       .delete(`http://localhost:8080/api/warehouses/${warehouseId}`)
@@ -32,6 +38,7 @@ export default function WareHousesPage() {
       });
   };
 
+  //MODAL FUNC
   const handleOpenModal = (selectedWarehouse) => {
     setSelectedWarehouse(selectedWarehouse);
     setShowModal(true);
@@ -118,7 +125,11 @@ export default function WareHousesPage() {
 
         <div className="warehouses__list">
           {warehouses.map((warehouse) => (
-            <div key={warehouse.id} className="warehouses__card">
+            <div
+              key={warehouse.id}
+              className="warehouses__card"
+              onClick={() => navigateToWarehouseDetails(warehouse)}
+            >
               <div className="warehouses__details">
                 <div className="warehouses__mobilebox">
                   <div className="warehouses__infobox">
@@ -185,7 +196,10 @@ export default function WareHousesPage() {
                   <div className="warehouses__datatablet warehouses__actions--tablet">
                     <div
                       className="warehouses__trash"
-                      onClick={() => handleOpenModal(warehouse)}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleOpenModal(warehouse);
+                      }}
                     >
                       <img
                         className="warehouses__trashicon"
@@ -213,7 +227,10 @@ export default function WareHousesPage() {
                 <div className="warehouses__actions--mobile">
                   <div
                     className="warehouses__trash"
-                    onClick={() => handleOpenModal(warehouse)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleOpenModal(warehouse);
+                    }}
                   >
                     <img
                       className="warehouses__trashicon"

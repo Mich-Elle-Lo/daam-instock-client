@@ -5,8 +5,8 @@ export default function InventoryModal({
   show,
   onClose,
   onDelete,
-  onConfirm,
-  warehouse,
+  //onConfirm,
+  inventory,
 }) {
   const handleDelete = () => {
     onDelete(inventory.id)
