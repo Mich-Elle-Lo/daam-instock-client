@@ -120,23 +120,30 @@ export default function WarehouseDetails() {
                 <div className="inventory__mobilebox">
                   <div className="inventory__infobox">
                     <p className="inventory__infotitle">INVENTORY ITEM</p>
-                    <p className="warehouses__data">{inventory.item_name}</p>
+                    <div className="inventory__data">
+                      {inventory.item_name}{" "}
+                      <img
+                        className="inventory__arrowicon"
+                        src={arrowIcon}
+                        alt="arrow icon"
+                      />
+                    </div>
                   </div>
 
                   <div className="inventory__infobox">
                     <p className="inventory__infotitle">CATEGORY</p>
-                    <p className="warehouses__data">{inventory.category}</p>
+                    <p className="inventory__data">{inventory.category}</p>
                   </div>
                 </div>
                 <div className="inventory__mobilebox">
                   <div className="inventory__infobox">
                     <div className="inventory__infotitle">STATUS</div>
-                    <p className="warehouses__data">{inventory.status}</p>
+                    <p className="inventory__data">{inventory.status}</p>
                   </div>
 
                   <div className="inventory__infobox">
                     <p className="inventory__infotitle">QTY</p>
-                    <p className="warehouses__data">{inventory.quantity}</p>
+                    <p className="inventory__data">{inventory.quantity}</p>
                   </div>
                 </div>
               </div>
@@ -156,37 +163,38 @@ export default function WarehouseDetails() {
                   />
                 </div>
               </div>
-              <div className="warehouses__tabletinfo">
-                <div className="warehouses__datatablet">
-                  <p className="warehouses__datatablet--highlight">
+              {/* TABLET VIEW */}
+              <div className="inventory__tabletinfo">
+                <div className="inventory__datatablet">
+                  <p className="inventory__datatablet--highlight">
                     {inventory.item_name}
                   </p>
                   <img
-                    className="warehouses__arrowicon"
+                    className="inventory__arrowicon"
                     src={arrowIcon}
                     alt="arrow icon"
                   />
                 </div>
 
-                <div className="warehouses__datatablet">
+                <div className="inventory__datatablet">
                   {inventory.category}
                 </div>
 
-                <div className="warehouses__datatablet">{inventory.status}</div>
-                <div className=" warehouses__infoboxdiv">
-                  <p className="warehouses__datatablet">{inventory.quantity}</p>
+                <div className="inventory__datatablet">{inventory.status}</div>
+                <div className=" inventory__infoboxdiv">
+                  <p className="inventory__datatablet">{inventory.quantity}</p>
                 </div>
-                <div className="warehouses__datatablet warehouses__actions--tablet">
-                  <div className="warehouses__trash">
+                <div className="inventory__datatablet inventory__actions--tablet">
+                  <div className="inventory__trash">
                     <img
-                      className="warehouses__trashicon"
+                      className="inventory__trashicon"
                       src={trashIcon}
                       alt="trash icon"
                     />
                   </div>
-                  <div className="warehouses__edit">
+                  <div className="inventory__edit">
                     <img
-                      className="warehouses__editicon"
+                      className="inventory__editicon"
                       src={editIcon}
                       alt="edit icon"
                     />
