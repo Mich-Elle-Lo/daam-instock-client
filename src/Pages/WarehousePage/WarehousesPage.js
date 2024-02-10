@@ -84,7 +84,7 @@ export default function WareHousesPage() {
                 />
               </div>
             </div>
-            <button className="warehouses__button"> +Add New Warehouse</button>
+            <button className="warehouses__button"> + Add New Warehouse</button>
           </form>
         </div>
         <div className="warehouses__options">

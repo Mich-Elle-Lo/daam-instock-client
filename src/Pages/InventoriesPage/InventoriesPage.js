@@ -92,7 +92,7 @@ export default function InventoriesPage() {
               className="inventories__button"
               onClick={() => navigate("/inventories/add")}
             >
-              +Add New Item
+              + Add New Item
             </button>
           </form>
         </div>
@@ -143,7 +143,11 @@ export default function InventoriesPage() {
 
         <div className="inventories__list">
           {inventories.map((inventory) => (
-            <div key={inventory.id} className="inventories__card">
+            <div
+              key={inventory.id}
+              className="inventories__card"
+              onClick={() => navigateToInventoryDetails(inventory)}
+            >
               {/* Mobile View */}
               <div className="inventories__mobiledetails">
                 <div className="inventories__mobilebox1">
@@ -236,7 +240,10 @@ export default function InventoriesPage() {
                 <div className="inventories__actions inventories__actions--tablet">
                   <div
                     className="inventories__trash"
-                    onClick={() => handleOpenModal(inventory)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleOpenModal(inventory);
+                    }}
                   >
                     <img
                       className="inventories__trashicon"
@@ -246,11 +253,12 @@ export default function InventoriesPage() {
                   </div>
                   <div
                     className="inventories__edit"
-                    onClick={() =>
+                    onClick={(e) => {
+                      e.stopPropagation();
                       navigate(`/inventories/edit/${inventory.id}`, {
                         state: { inventory },
-                      })
-                    }
+                      });
+                    }}
                   >
                     <img
                       className="inventories__editicon"
@@ -265,7 +273,10 @@ export default function InventoriesPage() {
               <div className=" inventories__actions inventories__actions--mobile">
                 <div
                   className="inventories__trash"
-                  onClick={() => handleOpenModal(inventory)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleOpenModal(inventory);
+                  }}
                 >
                   <img
                     className="inventories__trashicon"
@@ -276,11 +287,12 @@ export default function InventoriesPage() {
 
                 <div
                   className="inventories__edit"
-                  onClick={() =>
+                  onClick={(e) => {
+                    e.stopPropagation();
                     navigate(`/inventories/edit/${inventory.id}`, {
                       state: { inventory },
-                    })
-                  }
+                    });
+                  }}
                 >
                   <img
                     className="inventories__editicon"
