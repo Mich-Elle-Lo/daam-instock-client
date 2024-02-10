@@ -111,8 +111,8 @@
     display: none;
 
     @include tablet-breakpoint {
-      //@include mobile-tablet-labels-buttons-text-style;
-      font-size: 12px;
+      @include mobile-tablet-labels-buttons-text-style;
+
       font-weight: $semibold-txt;
       color: $secondary-slate;
       background-color: $background-light-grey;
@@ -129,14 +129,12 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      //border: 2px solid pink;
     }
   }
 
   &__box {
     display: flex;
     align-items: center;
-    //border: 2px solid brown;
     width: 35%;
   }
   &__boxflex {
@@ -147,8 +145,6 @@
   &__list {
     width: 100%;
     height: auto;
-    // padding-left: $m-padding-sides;
-    // padding-right: $m-padding-sides;
   }
   &__card {
     width: 100%;
@@ -160,26 +156,20 @@
     flex-direction: column;
     border-top: 1px solid $secondary-cloud;
 
-    //border: 2px solid red;
     @include tablet-breakpoint {
       width: 100%;
       flex-direction: row;
       justify-content: space-between;
-
-      //gap: 0.5rem;
-      //border: 2px solid red;
     }
   }
 
   &__mobiledetails {
-    //padding: 0 0.5rem;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
     width: 100%;
     padding-bottom: 1rem;
-    //border: 2px solid green;
     @include tablet-breakpoint {
       display: none;
     }
@@ -188,10 +178,8 @@
   &__mobilebox1 {
     display: flex;
     flex-direction: column;
-    //flex-direction: row;
     justify-content: space-between;
     width: 50%;
-    //border: 2px solid blue;
     @include tablet-breakpoint {
       display: none;
     }
@@ -200,10 +188,8 @@
   &__mobilebox2 {
     display: flex;
     flex-direction: column;
-    //flex-direction: row;
     justify-content: space-between;
     width: 50%;
-    //border: 2px solid blue;
     @include tablet-breakpoint {
       display: none;
     }
@@ -248,15 +234,14 @@
   }
 
   &__data-name {
-    //@include mobile-tablet-labels-buttons-text-style;
-    font-size: 12px;
+    @include mobile-tablet-labels-buttons-text-style;
     color: $primary-indigo;
     font-weight: $semibold-txt;
   }
 
   &__data--in-stock {
-    //@include mobile-tablet-labels-buttons-text-style;
-    font-size: 12px;
+    @include mobile-tablet-labels-buttons-text-style;
+
     color: $supporting-green;
     font-weight: $semibold-txt;
     text-transform: uppercase;
@@ -267,10 +252,9 @@
   }
 
   &__data--out-of-stock {
-    //@include mobile-tablet-labels-buttons-text-style;
-    font-size: 12px;
-    font-weight: $semibold-txt;
+    @include mobile-tablet-labels-buttons-text-style;
     color: $supporting-red;
+    font-weight: $semibold-txt;
     text-transform: uppercase;
     background-color: rgba($supporting-red, 7%);
     padding: 0.15rem 0.5rem;
@@ -278,46 +262,12 @@
     width: max-content;
   }
 
-  // &__stockdata {
-  //   width: max-content;
-  //   padding: 0.4rem;
-  //   border-radius: 25px;
-  //   background-color: lighten($supporting-green, 60%);
-  //   color: $supporting-green;
-  //   text-transform: uppercase;
-  // }
-  // &__actions {
-  //   &--mobile {
-  //     width: auto;
-  //     display: flex;
-  //     flex-direction: row;
-  //     justify-content: space-between;
-  //   }
-  //   &--tablet {
-  //     display: none;
-  //   }
-  //   @include tablet-breakpoint {
-  //     &--mobile {
-  //       display: none;
-  //     }
-  //     &--tablet {
-  //       display: contents;
-  //       display: flex;
-  //       justify-content: flex-end;
-  //     }
-  //   }
-
   &__actions {
     &--mobile {
-      // padding: 0 0.5rem;
-      // padding-left: 1rem;
-      // padding-right: 1rem;
       width: auto;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-
-      //border: 1px solid red;
     }
 
     &--tablet {
@@ -336,22 +286,17 @@
         gap: 0.5rem;
       }
     }
-    // &__trashicon,
-    // &__editicon {
-    //   width: 2rem;
-    //   height: 2rem;
-    //   cursor: pointer;
-    //   padding-left: 0.5rem;
-    // }
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &__infotitle {
-    //@include mobile-tablet-labels-buttons-text-style;
+    @include mobile-tablet-labels-buttons-text-style;
     color: $secondary-slate;
-    font-size: 12px;
   }
   &__data {
-    font-size: 12px;
+    @include mobile-tablet-labels-buttons-text-style;
 
     &--highlight {
       color: $primary-indigo;
@@ -362,11 +307,10 @@
     display: flex;
     width: 20%;
     flex-direction: column;
-    // border: 2px solid yellow;
   }
   &__datatablet {
-    // border: 2px solid blue;
-    font-size: 14px;
+    @include mobile-tablet-labels-buttons-text-style;
+
     width: 35%;
     white-space: nowrap;
     overflow: hidden;
