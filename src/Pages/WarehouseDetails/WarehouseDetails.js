@@ -55,26 +55,44 @@ export default function WarehouseDetails() {
           </h1>
         </div>
         <article className="warehouse__contact">
-          <div className="warehouse__contact-box">
-            <div>
-              <p>WAREHOUSE ADDRESS:</p>
-              <p>{warehouse.address}</p>
-            </div>
+          {/* //<div className="warehouse__contact-box warehouse__contact-box--tablet"> */}
+          <div className="warehouse__contact-mobile-address">
+            <p className="warehouse__contact-title">WAREHOUSE ADDRESS:</p>
+            <p className="warehouse__contact-details ">
+              {warehouse.address}, {warehouse.city}, {warehouse.country}
+            </p>
           </div>
+          <div className="warehouse__contact-tablet-address">
+            <p className="warehouse__contact-title">WAREHOUSE ADDRESS:</p>
+            <p className="warehouse__contact-details ">{warehouse.address}</p>
+            <p className="warehouse__contact-details">
+              {warehouse.city}, {warehouse.country}
+            </p>
+          </div>
+          {/* </div> */}
           <div className="warehouse__contact-box">
             <div className="warehouse__contact-info">
               {" "}
-              <p>CONTACT NAME:</p>
-              <br></br>
-              <p>{warehouse.contact_name}</p>
+              <p className="warehouse__contact-title">CONTACT NAME:</p>
+              {/* <br></br> */}
+              <p className="warehouse__contact-details">
+                {warehouse.contact_name}
+              </p>
+              <p className="warehouse__contact-details">
+                {warehouse.contact_position}
+              </p>
             </div>
 
             <div className="warehouse__contact-info">
               {" "}
-              <p>CONTACT INFORMATION:</p>
-              <br></br>
-              <p>{warehouse.contact_phone}</p>
-              <p>{warehouse.contact_email}</p>
+              <p className="warehouse__contact-title">CONTACT INFORMATION:</p>
+              {/* <br></br> */}
+              <p className="warehouse__contact-details">
+                {warehouse.contact_phone}
+              </p>
+              <p className="warehouse__contact-details">
+                {warehouse.contact_email}
+              </p>
             </div>
           </div>
         </article>
@@ -136,9 +154,20 @@ export default function WarehouseDetails() {
                   </div>
                 </div>
                 <div className="inventory__mobilebox">
-                  <div className="inventory__infobox">
+                  <div className="inventory__infobox ">
                     <div className="inventory__infotitle">STATUS</div>
-                    <p className="inventory__data">{inventory.status}</p>
+                    <div className="inventory__data inventory__status">
+                      {inventory.status === "In Stock" && (
+                        <div className="inventory__status--instock">
+                          IN STOCK
+                        </div>
+                      )}
+                      {inventory.status === "Out of Stock" && (
+                        <div className="inventory__status--outofstock">
+                          OUT OF STOCK
+                        </div>
+                      )}
+                    </div>
                   </div>
 
                   <div className="inventory__infobox">
@@ -180,11 +209,23 @@ export default function WarehouseDetails() {
                   {inventory.category}
                 </div>
 
-                <div className="inventory__datatablet">{inventory.status}</div>
-                <div className=" inventory__infoboxdiv">
-                  <p className="inventory__datatablet">{inventory.quantity}</p>
+                <div className="inventory__datatablet inventory__status">
+                  {" "}
+                  {inventory.status === "In Stock" && (
+                    <div className="inventory__status--instock">IN STOCK</div>
+                  )}
+                  {inventory.status === "Out of Stock" && (
+                    <div className="inventory__status--outofstock">
+                      OUT OF STOCK
+                    </div>
+                  )}
                 </div>
-                <div className="inventory__datatablet inventory__actions--tablet">
+
+                <div className="inventory__datatablet">
+                  {inventory.quantity}
+                </div>
+
+                <div className="inventory__dataaction inventory__actions--tablet">
                   <div className="inventory__trash">
                     <img
                       className="inventory__trashicon"
