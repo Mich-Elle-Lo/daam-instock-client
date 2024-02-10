@@ -137,7 +137,7 @@
     display: flex;
     align-items: center;
     //border: 2px solid brown;
-    width: 30%;
+    width: 35%;
   }
   &__boxflex {
     display: flex;
@@ -151,12 +151,12 @@
     // padding-right: $m-padding-sides;
   }
   &__card {
-    width: auto;
+    width: 100%;
     display: flex;
     padding-top: $m-padding-top;
     padding-bottom: $m-padding-top;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: $m-padding-sides;
+    padding-right: $m-padding-sides;
     flex-direction: column;
     border-top: 1px solid $secondary-cloud;
 
@@ -319,19 +319,14 @@
 
       //border: 1px solid red;
     }
+
     &--tablet {
       display: none;
     }
-
-    &__trashicon,
-    &__editicon {
-      width: 2rem;
-      height: 2rem;
-      cursor: pointer;
-      padding-left: 0.5rem;
-    }
-
     @include tablet-breakpoint {
+      width: 20%;
+      display: flex;
+      justify-content: flex-end;
       &--mobile {
         display: none;
       }
@@ -341,6 +336,13 @@
         gap: 0.5rem;
       }
     }
+    // &__trashicon,
+    // &__editicon {
+    //   width: 2rem;
+    //   height: 2rem;
+    //   cursor: pointer;
+    //   padding-left: 0.5rem;
+    // }
   }
 
   &__infotitle {
@@ -365,7 +367,7 @@
   &__datatablet {
     // border: 2px solid blue;
     font-size: 14px;
-    width: 20%;
+    width: 35%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

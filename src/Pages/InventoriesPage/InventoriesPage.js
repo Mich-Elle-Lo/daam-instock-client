@@ -201,25 +201,24 @@ export default function InventoriesPage() {
 
             {/* Tablet View */}
             <div className="inventories__tabletinfo">
-              <div className="inventories__datatablet-wrap">
-                <div className="inventories__datatablet-name-icon-wrap">
-                  <p className=" inventories__datatablet-name">
-                    {inventory.item_name}
-                  </p>
-                  <img
-                    className="inventories__arrowicon"
-                    src={arrowIcon}
-                    alt="arrow icon"
-                  />
-                </div>
+              <div className="inventories__datatablet">
+                {/* <div className="inventories__datatablet-name-icon-wrap"> */}
+                <p className=" inventories__datatablet-name">
+                  {inventory.item_name}
+                </p>
+                <img
+                  className="inventories__arrowicon"
+                  src={arrowIcon}
+                  alt="arrow icon"
+                />
+                {/* </div> */}
               </div>
 
-              <div className="inventories__datatablet-wrap">
-                {" "}
-                <p className="inventories__datatablet">{inventory.category}</p>
+              <div className="inventories__datatablet">
+                {inventory.category}
               </div>
 
-              <div className="inventories__datatablet-wrap">
+              <div className="inventories__datatablet">
                 <p
                   className={`inventories__datatablet--${
                     inventory.status.toLowerCase() === "in stock"
@@ -231,19 +230,14 @@ export default function InventoriesPage() {
                 </p>
               </div>
 
-              <div className="inventories__datatablet-wrap">
-                <p className="inventories__datatablet">{inventory.quantity}</p>
+              <div className="inventories__datatablet">
+                {inventory.quantity}
               </div>
 
-              <div className="inventories__datatablet-wrap">
-                <p className="inventories__datatablet">
-                  {inventory.warehouse_name}
-                </p>
+              <div className="inventories__datatablet">
+                {inventory.warehouse_name}
               </div>
-            </div>
-
-            <div className="inventories__actions">
-              <div className="inventories__actions--tablet">
+              <div className="inventories__actions inventories__actions--tablet">
                 <div
                   className="inventories__trash"
                   onClick={() => handleOpenModal(inventory)}
@@ -270,24 +264,27 @@ export default function InventoriesPage() {
                   />
                 </div>
               </div>
+            </div>
 
-              {/* mobile buttons */}
-              <div className="inventories__actions--mobile">
-                <div className="inventories__trash">
-                  <img
-                    className="inventories__trashicon"
-                    src={trashIcon}
-                    alt="trash icon"
-                  />
-                </div>
+            {/* mobile buttons */}
+            <div className=" inventories__actions inventories__actions--mobile">
+              <div
+                className="inventories__trash"
+                onClick={() => handleOpenModal(inventory)}
+              >
+                <img
+                  className="inventories__trashicon"
+                  src={trashIcon}
+                  alt="trash icon"
+                />
+              </div>
 
-                <div className="inventories__edit">
-                  <img
-                    className="inventories__editicon"
-                    src={editIcon}
-                    alt="edit icon"
-                  />
-                </div>
+              <div className="inventories__edit">
+                <img
+                  className="inventories__editicon"
+                  src={editIcon}
+                  alt="edit icon"
+                />
               </div>
             </div>
           </div>
