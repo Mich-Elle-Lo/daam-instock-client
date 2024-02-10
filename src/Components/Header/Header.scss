@@ -40,6 +40,7 @@
     font-weight: $semibold-txt;
     font-size: $m-font-size-h3;
     color: $secondary-cloud;
+    height: $m-btn-height;
     border-radius: $btn-border-radius;
     border: none;
     flex: 1;
@@ -47,21 +48,22 @@
     height: $m-btn-height;
     text-decoration: none;
 
-    &:hover {
-      text-decoration: underline;
-      color: $primary-white;
-      cursor: pointer;
-    }
-
     &--active {
+      height: $m-btn-height;
       background-color: $primary-black;
       color: $primary-white;
+      height: $m-btn-height;
     }
 
     @include tablet-breakpoint {
       padding: 0.5rem $m-padding-sides;
       height: $t-btn-height;
       font-size: $d-font-size-h3;
+    }
+    &:hover {
+      text-decoration: underline;
+      color: $primary-white;
+      cursor: pointer;
     }
   }
 }

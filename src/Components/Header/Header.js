@@ -1,41 +1,27 @@
 import "./Header.scss";
 import logo from "../../Assets/Logo/InStock-Logo.svg";
-import { Link } from "react-router-dom";
-
-// export default function Header() {
-//   return (
-//     <header className="header">
-//       <div className="header__logo">
-//         <img src={logo} alt="InStock Logo" />
-//       </div>
-//       <nav>
-//         <ul className="header__nav-list">
-//           <li className="header__nav-item">
-//             <a href="/">Warehouses </a>
-//           </li>
-
-//           <li className="header__nav-item">
-//             <a href="/inventories">Inventory </a>
-//           </li>
-//         </ul>
-//       </nav>
-//     </header>
-//   );
-// }
+import { Link, useLocation } from "react-router-dom";
 
 export default function Header() {
+  const location = useLocation();
+
+  const getClassName = (path) => {
+    return location.pathname === path
+      ? "header__nav-item header__nav-item--active"
+      : "header__nav-item";
+  };
+
   return (
     <header className="header">
       <div className="header__logo">
         <img src={logo} alt="InStock Logo" />
       </div>
-      <nav>
+      <nav className="header__nav">
         <ul className="header__nav-list">
-          <li className="header__nav-item">
+          <li className={getClassName("/")}>
             <Link to="/">Warehouses</Link>
           </li>
-
-          <li className="header__nav-item">
+          <li className={getClassName("/inventories")}>
             <Link to="/inventories">Inventory</Link>
           </li>
         </ul>
