@@ -31,7 +31,9 @@ export default function Modal({
           />
         </div>
         <div className="modal__header">
-          <h2 className="modal__title">Delete {warehouse.warehouse_name}?</h2>
+          <h2 className="modal__title">
+            Delete {warehouse.warehouse_name} warehouse?
+          </h2>
           <img
             className="modal__close--tablet"
             onClick={onClose}

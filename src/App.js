@@ -5,21 +5,25 @@ import Footer from "./Components/Footer/Footer";
 import InventoriesPage from "./Pages/InventoriesPage/InventoriesPage";
 import WarehousesPage from "./Pages/WarehousePage/WarehousesPage";
 import EditWarehouse from "./Pages/EditWarehouse/EditWarehouse";
+import EditInventory from "./Pages/EditInventory/EditInventory";
+import AddInventory from "./Pages/AddInventory/AddInventory";
 import WarehouseDetails from "./Pages/WarehouseDetails/WarehouseDetails";
-import InventoryItemDetails from "./Pages/InventoryItemDetails/InventoryItemDetails";
 
 function App() {
   return (
     <div className="app">
       <BrowserRouter>
         <Header />
-        <Routes>
-          <Route path="/" element={<WarehousesPage />} />
-          <Route path="/edit-warehouse/:id" element={<EditWarehouse />} />
-          <Route path="/warehouse/:id" element={<WarehouseDetails />} />
-          <Route path="/inventories" element={<InventoriesPage />} />
-          <Route path="/Inventories/:id" element={<InventoryItemDetails />} />
-        </Routes>
+        <section className="app__content">
+          <Routes>
+            <Route path="/" element={<WarehousesPage />} />
+            <Route path="/warehouse/:id" element={<WarehouseDetails />} />
+            <Route path="/edit-warehouse/:id" element={<EditWarehouse />} />
+            <Route path="/inventories" element={<InventoriesPage />} />
+            <Route path="/inventories/edit/:id" element={<EditInventory />} />
+            <Route path="/inventories/add" element={<AddInventory />} />
+          </Routes>
+        </section>
         <Footer />
       </BrowserRouter>
     </div>

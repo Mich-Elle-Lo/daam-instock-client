@@ -209,11 +209,13 @@ export default function WareHousesPage() {
                     </div>
                     <div
                       className="warehouses__edit"
-                      onClick={() =>
+                      onClick={(e) => {
+                        e.stopPropagation();
+
                         navigate(`/edit-warehouse/${warehouse.id}`, {
                           state: { warehouse },
-                        })
-                      }
+                        });
+                      }}
                     >
                       <img
                         className="warehouses__editicon"
@@ -240,11 +242,13 @@ export default function WareHousesPage() {
                   </div>
                   <div
                     className="warehouses__edit"
-                    onClick={() =>
+                    onClick={(e) => {
+                      e.stopPropagation();
+
                       navigate(`/edit-warehouse/${warehouse.id}`, {
                         state: { warehouse },
-                      })
-                    }
+                      });
+                    }}
                   >
                     <img
                       className="warehouses__editicon"

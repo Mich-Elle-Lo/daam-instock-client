@@ -36,23 +36,73 @@
     @include mobile-tablet-pageheader-text-style;
   }
   &__contact {
+    padding: 1rem;
+    font-size: 0.75rem;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     @include tablet-breakpoint {
+      gap: 3rem;
       flex-direction: row;
+      font-size: 14px;
     }
   }
+  //WarehouseAddress
+  //Mobile
   &__contact-box {
     width: 100%;
     display: flex;
     justify-content: space-between;
+
+    @include tablet-breakpoint {
+      padding: 0 2rem;
+      border-left: 1px solid $secondary-cloud;
+    }
     // flex-direction: column;
   }
-  &__contact-info {
+  &__contact-mobile-address {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    @include tablet-breakpoint {
+      display: none;
+    }
+  }
+
+  &__contact-info {
+    @include tablet-breakpoint {
+      padding-left: 1rem;
+      width: 50%;
+      //padding-right: 4rem;
+    }
+    // display: flex;
+    // flex-direction: column;
+  }
+
+  &__contact-tablet-address {
+    display: none;
+    @include tablet-breakpoint {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 45%;
+    }
+  }
+
+  &__contact-title {
+    font-size: 10px;
+    font-weight: $semibold-txt;
+    color: $secondary-slate;
+    margin-bottom: 0.2rem;
+    @include tablet-breakpoint {
+      font-size: 12px;
+    }
+  }
+  &__contact-details {
+    margin: 0;
   }
   &__wrapper {
     padding-left: 1rem;
@@ -94,7 +144,7 @@
     display: flex;
     align-items: center;
 
-    width: 30%;
+    width: 50%;
   }
   &__boxflex {
     display: flex;
@@ -204,19 +254,20 @@
   }
   &__data {
     @include mobile-tablet-labels-buttons-text-style;
-
+    display: flex;
+    align-items: center;
     &--highlight {
       color: $primary-indigo;
     }
   }
   &__infoboxdiv {
     display: flex;
-    width: 20%;
+    width: auto;
     flex-direction: column;
   }
   &__datatablet {
     @include mobile-tablet-labels-buttons-text-style;
-    width: 30%;
+    width: 50%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -225,5 +276,29 @@
     &--highlight {
       color: $primary-indigo;
     }
+  }
+  &__dataaction {
+    width: 20%;
+  }
+
+  &__status--instock,
+  &__status--outofstock {
+    display: flex;
+    border-radius: $border-radius;
+    padding: 0.25rem 0.5rem;
+    width: auto;
+    align-items: center;
+    height: $height-mobile;
+    @include tablet-breakpoint {
+      height: $height-desktop;
+    }
+  }
+  &__status--instock {
+    color: $supporting-green;
+    background-color: rgba($supporting-green, $opacity);
+  }
+  &__status--outofstock {
+    color: $supporting-red;
+    background-color: rgba($supporting-red, $opacity);
   }
 }

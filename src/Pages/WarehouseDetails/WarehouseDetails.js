@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import axios from "axios";
 import "./WarehouseDetails.scss";
-import WarehouseModal from "../../Components/Modal/WarehouseModal";
-import searchIcon from "../../Assets/Icons/search-24px.svg";
+import InventoryModal from "../../Components/InventoryModal/InventoryModal";
 import sortIcon from "../../Assets/Icons/sort-24px.svg";
 import trashIcon from "../../Assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../Assets/Icons/edit-24px.svg";
@@ -18,6 +17,29 @@ export default function WarehouseDetails() {
   const [inventories, setInventories] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [selectedInventory, setSelectedInventory] = useState(null);
+
+  const deleteInventory = (inventoryId) => {
+    return axios
+      .delete(`${baseUrl}api/inventories/${inventoryId}`)
+      .then((response) => {
+        const updatedInventories = inventories.filter(
+          (inventory) => inventory.id !== inventoryId
+        );
+        setInventories(updatedInventories);
+      })
+      .catch((error) => {
+        console.error("Error error with deletion:", error);
+        throw error;
+      });
+  };
+
+  // Open modal
+  const handleOpenModal = (selectedInventory) => {
+    setSelectedInventory(selectedInventory);
+    setShowModal(true);
+  };
 
   useEffect(() => {
     const fetchWarehouseDetails = async () => {
@@ -48,6 +70,12 @@ export default function WarehouseDetails() {
 
   return (
     <section className="warehouse">
+      <InventoryModal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+        onDelete={deleteInventory}
+        inventory={selectedInventory}
+      />
       <div className="warehouse__content">
         <div className="warehouse__wrapper">
           <h1 className="warehouse__title">
@@ -55,26 +83,44 @@ export default function WarehouseDetails() {
           </h1>
         </div>
         <article className="warehouse__contact">
-          <div className="warehouse__contact-box">
-            <div>
-              <p>WAREHOUSE ADDRESS:</p>
-              <p>{warehouse.address}</p>
-            </div>
+          {/* //<div className="warehouse__contact-box warehouse__contact-box--tablet"> */}
+          <div className="warehouse__contact-mobile-address">
+            <p className="warehouse__contact-title">WAREHOUSE ADDRESS:</p>
+            <p className="warehouse__contact-details ">
+              {warehouse.address}, {warehouse.city}, {warehouse.country}
+            </p>
           </div>
+          <div className="warehouse__contact-tablet-address">
+            <p className="warehouse__contact-title">WAREHOUSE ADDRESS:</p>
+            <p className="warehouse__contact-details ">{warehouse.address}</p>
+            <p className="warehouse__contact-details">
+              {warehouse.city}, {warehouse.country}
+            </p>
+          </div>
+          {/* </div> */}
           <div className="warehouse__contact-box">
             <div className="warehouse__contact-info">
               {" "}
-              <p>CONTACT NAME:</p>
-              <br></br>
-              <p>{warehouse.contact_name}</p>
+              <p className="warehouse__contact-title">CONTACT NAME:</p>
+              {/* <br></br> */}
+              <p className="warehouse__contact-details">
+                {warehouse.contact_name}
+              </p>
+              <p className="warehouse__contact-details">
+                {warehouse.contact_position}
+              </p>
             </div>
 
             <div className="warehouse__contact-info">
               {" "}
-              <p>CONTACT INFORMATION:</p>
-              <br></br>
-              <p>{warehouse.contact_phone}</p>
-              <p>{warehouse.contact_email}</p>
+              <p className="warehouse__contact-title">CONTACT INFORMATION:</p>
+              {/* <br></br> */}
+              <p className="warehouse__contact-details">
+                {warehouse.contact_phone}
+              </p>
+              <p className="warehouse__contact-details">
+                {warehouse.contact_email}
+              </p>
             </div>
           </div>
         </article>
@@ -136,9 +182,20 @@ export default function WarehouseDetails() {
                   </div>
                 </div>
                 <div className="inventory__mobilebox">
-                  <div className="inventory__infobox">
+                  <div className="inventory__infobox ">
                     <div className="inventory__infotitle">STATUS</div>
-                    <p className="inventory__data">{inventory.status}</p>
+                    <div className="inventory__data inventory__status">
+                      {inventory.status === "In Stock" && (
+                        <div className="inventory__status--instock">
+                          IN STOCK
+                        </div>
+                      )}
+                      {inventory.status === "Out of Stock" && (
+                        <div className="inventory__status--outofstock">
+                          OUT OF STOCK
+                        </div>
+                      )}
+                    </div>
                   </div>
 
                   <div className="inventory__infobox">
@@ -148,7 +205,10 @@ export default function WarehouseDetails() {
                 </div>
               </div>
               <div className="inventory__actions--mobile">
-                <div className="inventory__trash">
+                <div
+                  className="inventory__trash"
+                  onClick={() => handleOpenModal(inventory)}
+                >
                   <img
                     className="inventory__trashicon"
                     src={trashIcon}
@@ -180,12 +240,27 @@ export default function WarehouseDetails() {
                   {inventory.category}
                 </div>
 
-                <div className="inventory__datatablet">{inventory.status}</div>
-                <div className=" inventory__infoboxdiv">
-                  <p className="inventory__datatablet">{inventory.quantity}</p>
+                <div className="inventory__datatablet inventory__status">
+                  {" "}
+                  {inventory.status === "In Stock" && (
+                    <div className="inventory__status--instock">IN STOCK</div>
+                  )}
+                  {inventory.status === "Out of Stock" && (
+                    <div className="inventory__status--outofstock">
+                      OUT OF STOCK
+                    </div>
+                  )}
                 </div>
-                <div className="inventory__datatablet inventory__actions--tablet">
-                  <div className="inventory__trash">
+
+                <div className="inventory__datatablet">
+                  {inventory.quantity}
+                </div>
+
+                <div className="inventory__dataaction inventory__actions--tablet">
+                  <div
+                    className="inventory__trash"
+                    onClick={() => handleOpenModal(inventory)}
+                  >
                     <img
                       className="inventory__trashicon"
                       src={trashIcon}
