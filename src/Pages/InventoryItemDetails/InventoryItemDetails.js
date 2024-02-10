@@ -37,7 +37,7 @@ export default function InventoryItemDetails() {
   }, [id]);
 
   const editItem = () => {
-    navigate(`/inventories/edititem/${singleItem.id}`);
+    navigate(`/inventories/edit/${singleItem.id}`);
   };
 
   return (

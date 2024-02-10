@@ -61,6 +61,10 @@ export default function InventoriesPage() {
     fetchWarehouses();
   }, []);
 
+  const navigateToInventoryDetails = (inventory) => {
+    navigate(`/inventories/${inventory.id}`, { state: { inventory } });
+  };
+
   return (
     <section className="inventories">
       <InventoryModal
@@ -143,7 +147,11 @@ export default function InventoriesPage() {
 
         <div className="inventories__list">
           {inventories.map((inventory) => (
-            <div key={inventory.id} className="inventories__card">
+            <div
+              key={inventory.id}
+              className="inventories__card"
+              onClick={() => navigateToInventoryDetails(inventory)}
+            >
               {/* Mobile View */}
               <div className="inventories__mobiledetails">
                 <div className="inventories__mobilebox1">

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./WarehouseDetails.scss";
 import InventoryModal from "../../Components/InventoryModal/InventoryModal";
@@ -12,6 +12,7 @@ export default function WarehouseDetails() {
   const baseUrl = "http://localhost:8080/";
   const { id } = useParams();
   const { state } = useLocation();
+  const navigate = useNavigate();
 
   const [warehouse, setWarehouse] = useState(state?.warehouse);
   const [inventories, setInventories] = useState([]);
@@ -67,6 +68,10 @@ export default function WarehouseDetails() {
 
     fetchWarehouseDetails();
   }, [id, warehouse]);
+
+  const navigateToInventoryDetails = (inventory) => {
+    navigate(`/inventories/${inventory.id}`, { state: { inventory } });
+  };
 
   return (
     <section className="warehouse">
@@ -161,7 +166,11 @@ export default function WarehouseDetails() {
         </div>
         <section className="inventory">
           {inventories.map((inventory) => (
-            <div key={inventory.id} className="inventory__card">
+            <div
+              key={inventory.id}
+              className="inventory__card"
+              onClick={() => navigateToInventoryDetails(inventory)}
+            >
               <div className="inventory__details">
                 <div className="inventory__mobilebox">
                   <div className="inventory__infobox">
