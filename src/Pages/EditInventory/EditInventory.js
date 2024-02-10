@@ -37,7 +37,7 @@ export default function EditInventory() {
         category: inventory.category,
         status: inventory.status,
         quantity: inventory.quantity,
-        warehouse: inventory.warehouse_id.toString(),
+        warehouse_id: inventory.warehouse_id.toString(),
       });
     }
   }, [inventory]);
@@ -46,7 +46,16 @@ export default function EditInventory() {
 
   const handleStatusChange = (event) => {
     const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+    if (value === "Out of Stock") {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        quantity: 0,
+      }));
+    }
   };
 
   useEffect(() => {
@@ -57,8 +66,16 @@ export default function EditInventory() {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-    setErrors({ ...errors, [name]: "" });
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+    if (errors[name]) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [name]: "",
+      }));
+    }
   };
 
   const handleCancel = () => {
@@ -224,7 +241,7 @@ export default function EditInventory() {
             <select
               className="edit-inventory__dropdown"
               id="warehouse"
-              name="warehouse"
+              name="warehouse_id"
               value={formData.warehouse_id}
               onChange={handleInputChange}
             >
