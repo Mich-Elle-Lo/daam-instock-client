@@ -78,6 +78,11 @@ const Add = () => {
     }
   };
 
+  const handleCancel = () => {
+    // Implement cancel action here
+    console.log("Cancel action triggered");
+  };
+
   return (
     <section className="add">
       <div className="add__title--container">
@@ -88,13 +93,13 @@ const Add = () => {
       </div>
 
       <form className="add__form" onSubmit={handleSubmit}>
-        <div>
+        <div className="add__wd">
           <div className="add__section">
             <h2 className="add__section-title">Warehouse Details</h2>
             <label
               className="add__label"
               htmlFor="name"
-              autoComplete="warehouse-name"
+              autoComplete="warehouseName"
             >
               Warehouse Name
             </label>
@@ -105,6 +110,7 @@ const Add = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Warehouse Name"
+              autoComplete="warehouse-name"
             />
             {formErrors.name && (
               <span className="add__error">{formErrors.name}</span>
@@ -114,7 +120,7 @@ const Add = () => {
             <label
               className="add__label"
               htmlFor="address"
-              autoComplete="address"
+              autoComplete="streetAddress"
             >
               Street Address
             </label>
@@ -125,6 +131,7 @@ const Add = () => {
               value={address}
               onChange={(e) => setAddress(e.target.value)}
               placeholder="Street Address"
+              autoComplete="address"
             />
             {formErrors.address && (
               <span className="add__error">{formErrors.address}</span>
@@ -141,6 +148,7 @@ const Add = () => {
               value={city}
               onChange={(e) => setCity(e.target.value)}
               placeholder="City"
+              autoComplete="city"
             />
           </div>
           <div className="add__section">
@@ -158,11 +166,12 @@ const Add = () => {
               value={country}
               onChange={(e) => setCountry(e.target.value)}
               placeholder="Country"
+              autoComplete="country"
             />
           </div>
           <div className="add__separator"></div>
         </div>
-        <div>
+        <div className="add__cd">
           <div className="add__section">
             <h2 className="add__section-title">Contact Details</h2>
             <label
@@ -179,6 +188,7 @@ const Add = () => {
               value={contactName}
               onChange={(e) => setContactName(e.target.value)}
               placeholder="Contact Name"
+              autoComplete="contactName"
             />
             {formErrors.contactName && (
               <span className="add__error">{formErrors.contactName}</span>
@@ -199,6 +209,7 @@ const Add = () => {
               value={position}
               onChange={(e) => setPosition(e.target.value)}
               placeholder="Position"
+              autocomplete="Position"
             />
             {formErrors.position && (
               <span className="add__error">{formErrors.position}</span>
@@ -219,6 +230,7 @@ const Add = () => {
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
               placeholder="Phone Number"
+              autocomplete="PhoneNumber"
             />
             {formErrors.phoneNumber && (
               <span className="add__error">{formErrors.phoneNumber}</span>
@@ -243,7 +255,11 @@ const Add = () => {
           </div>
         </div>
         <div className="add__button--container">
-          <button className="add__button--cancel" type="button">
+          <button
+            className="add__button--cancel"
+            type="button"
+            onClick={handleCancel}
+          >
             Cancel
           </button>
           <button className="add__button--add" type="submit">
