@@ -9,6 +9,7 @@ import EditInventory from "./Pages/EditInventory/EditInventory";
 import AddInventory from "./Pages/AddInventory/AddInventory";
 import WarehouseDetails from "./Pages/WarehouseDetails/WarehouseDetails";
 import AddWarehouse from "./Pages/AddWarehouse/AddWarehouse";
+import InventoryItemDetails from "./Pages/InventoryItemDetails/InventoryItemDetails";
 
 function App() {
   return (
