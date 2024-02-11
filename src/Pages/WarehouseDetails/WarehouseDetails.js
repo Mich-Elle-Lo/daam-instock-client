@@ -59,7 +59,7 @@ export default function WarehouseDetails() {
     };
 
     fetchWarehouseDetails();
-  }, [id, warehouse]);
+  }, [id, state?.warehouse]);
 
   const navigateToInventoryDetails = (inventory) => {
     navigate(`/inventories/${inventory.id}`, { state: { inventory } });
@@ -93,7 +93,7 @@ export default function WarehouseDetails() {
           <div className="warehouse__contact-mobile-address">
             <p className="warehouse__contact-title">WAREHOUSE ADDRESS:</p>
             <p className="warehouse__contact-details ">
-              {warehouse.address}, {warehouse.city}, {warehouse.country}
+              {warehouse?.address}, {warehouse?.city}, {warehouse?.country}
             </p>
           </div>
           <div className="warehouse__contact-tablet-address">
@@ -228,7 +228,17 @@ export default function WarehouseDetails() {
                     alt="trash icon"
                   />
                 </div>
-                <div className="inventory__edit">
+                <div
+                  className="inventory__edit"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (inventory && inventory.id) {
+                      navigate(`/inventories/edit/${inventory.id}`, {
+                        state: { inventory },
+                      });
+                    }
+                  }}
+                >
                   <img
                     className="inventory__editicon"
                     src={editIcon}
@@ -283,7 +293,17 @@ export default function WarehouseDetails() {
                       alt="trash icon"
                     />
                   </div>
-                  <div className="inventory__edit">
+                  <div
+                    className="inventory__edit"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (inventory && inventory.id) {
+                        navigate(`/inventories/edit/${inventory.id}`, {
+                          state: { inventory },
+                        });
+                      }
+                    }}
+                  >
                     <img
                       className="inventory__editicon"
                       src={editIcon}

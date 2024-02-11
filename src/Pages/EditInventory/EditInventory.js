@@ -37,7 +37,7 @@ export default function EditInventory() {
         category: inventory.category,
         status: inventory.status,
         quantity: inventory.quantity,
-        warehouse_id: inventory.warehouse_id.toString(),
+        warehouse_id: inventory.warehouse_id,
       });
     }
   }, [inventory]);
@@ -74,7 +74,7 @@ export default function EditInventory() {
   };
 
   const handleCancel = () => {
-    navigate("/inventories");
+    navigate(-1);
   };
 
   const handleSave = async () => {
