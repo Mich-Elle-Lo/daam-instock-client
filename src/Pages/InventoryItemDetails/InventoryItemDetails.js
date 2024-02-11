@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Arrow from "../../Assets/Icons/arrow_back-24px.svg";
 import Edit from "../../Assets/Icons/edit-24px.svg";

@@ -37,6 +37,7 @@
       margin: 19px 0;
     }
     &--title {
+      @include mobile-tablet-pageheader-text-style;
       font-weight: 600;
       color: $primary-black;
       margin: 16px 0;
@@ -58,6 +59,7 @@
     width: auto;
     height: 36px;
     margin: 16px 0;
+    border: none;
     @include tablet-breakpoint {
       @include flex-direction(row);
       margin-left: auto;
