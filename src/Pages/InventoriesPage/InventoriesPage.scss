@@ -7,7 +7,7 @@
   position: relative;
   margin-top: -6rem;
   margin-bottom: 5rem;
-  border-radius: 5px;
+  border-radius: 0.3125;
   background-color: rgba(0, 0, 0, 0);
   display: flex;
   justify-content: center;
@@ -17,7 +17,7 @@
 
   &__content {
     background-color: $primary-white;
-    box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
+    box-shadow: 0rem 0.125rem 0.3125rem 0rem rgba(19, 24, 44, 0.1);
     border-radius: 0.2rem;
     width: 90%;
     @include tablet-breakpoint {
@@ -90,7 +90,7 @@
     justify-content: center;
     width: $m-btn-width;
     height: $m-btn-height;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     border: none;
     background-color: #2e66e5;
     color: #f7f8f9;
@@ -250,7 +250,7 @@
     text-transform: uppercase;
     background-color: rgba($supporting-green, 7%);
     padding: 0.15rem 0.5rem;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     width: max-content;
   }
 
@@ -261,7 +261,7 @@
     text-transform: uppercase;
     background-color: rgba($supporting-red, 7%);
     padding: 0.15rem 0.5rem;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     width: max-content;
   }
 
@@ -338,24 +338,24 @@
   }
 
   &__datatablet--in-stock {
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: $semibold-txt;
     color: $supporting-green;
     text-transform: uppercase;
     background-color: rgba($supporting-green, 7%);
     padding: 0.25rem 0.5rem;
-    border-radius: 25px;
+    border-radius: 1.5625rem;
     width: max-content;
   }
 
   &__datatablet--out-of-stock {
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: $semibold-txt;
     color: $supporting-red;
     text-transform: uppercase;
     background-color: rgba($supporting-red, 7%);
     padding: 0.25rem 0.5rem;
-    border-radius: 25px;
+    border-radius: 1.5625rem;
     width: max-content;
   }
 }
