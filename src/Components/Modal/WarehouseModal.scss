@@ -18,13 +18,16 @@
     padding: 1.5rem;
     border-radius: 0.2rem;
     height: 50%;
-    max-width: 45%;
-    margin-top: 15vh;
+    margin-top: 60%;
+    @include mobile-breakpoint {
+      max-width: 75%;
+    }
     @include tablet-breakpoint {
       margin-top: 20vh;
       min-height: 15rem;
       max-height: 20%;
       max-width: 38rem;
+      margin-top: 40%;
     }
   }
   &__closebox {

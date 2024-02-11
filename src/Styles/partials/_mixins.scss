@@ -26,6 +26,9 @@
   height: auto;
   background-color: rgba(0, 0, 0, 0);
   z-index: 10;
+  @include tablet-breakpoint() {
+    margin-top: -7rem;
+  }
 }
 
 @mixin component-content {
@@ -38,7 +41,7 @@
   margin-top: 5vh;
 
   @include tablet-breakpoint {
-    margin-top: 5vh;
+    margin-top: 0.75rem;
     height: 95%;
     width: 95%;
   }
