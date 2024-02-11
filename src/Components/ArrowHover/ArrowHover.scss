@@ -1,0 +1,13 @@
+img.warehouses__arrowicon {
+  transition: transform 1s ease-in-out;
+  &:hover {
+    transform: translateX(4px);
+  }
+}
+
+img.inventories__arrowicon {
+  transition: transform 1s ease-in-out;
+  &:hover {
+    transform: translateX(4px);
+  }
+}

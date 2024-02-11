@@ -8,6 +8,7 @@ import sortIcon from "../../Assets/Icons/sort-24px.svg";
 import trashIcon from "../../Assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../Assets/Icons/edit-24px.svg";
 import arrowIcon from "../../Assets/Icons/chevron_right-24px.svg";
+import "../../Components/ArrowHover/ArrowHover.scss";
 
 export default function InventoriesPage() {
   const baseUrl = "http://localhost:8080/";
