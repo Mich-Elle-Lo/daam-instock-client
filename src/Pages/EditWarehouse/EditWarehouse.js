@@ -43,8 +43,9 @@ export default function EditWarehouse() {
   const handleSave = async () => {
     const newErrors = {};
 
-    if (!/^\d{10}$/.test(formData.contact_phone)) {
-      newErrors.contact_phone = "Invalid Phone Number";
+    if (!/^\+\d{1,2}\s\(\d{3}\)\s\d{3}-\d{4}$/.test(formData.contact_phone)) {
+      newErrors.contact_phone =
+        "Invalid Phone Number. Must be in the format +1 (XXX) XXX-XXXX";
     }
 
     if (!/\S+@\S+\.\S+/.test(formData.contact_email)) {
@@ -62,14 +63,6 @@ export default function EditWarehouse() {
       return;
     }
 
-    const formattedPhone = `+1 (${formData.contact_phone.substring(
-      0,
-      3
-    )}) ${formData.contact_phone.substring(
-      3,
-      6
-    )}-${formData.contact_phone.substring(6)}`;
-
     try {
       const formattedDateTime = new Date()
         .toISOString()
@@ -78,7 +71,6 @@ export default function EditWarehouse() {
 
       const updatedFormData = {
         ...formData,
-        contact_phone: formattedPhone,
         created_at: formattedDateTime,
         updated_at: formattedDateTime,
       };
