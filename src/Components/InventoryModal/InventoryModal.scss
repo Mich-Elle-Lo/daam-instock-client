@@ -100,8 +100,8 @@
     cursor: pointer;
   }
   &__cancel {
-    color: $secondary-cloud;
-    border: 1px solid $secondary-slate;
+    color: $secondary-slate;
+    border: 0.063rem solid $secondary-slate;
     background: $primary-white;
     &:hover {
       border: 0.063rem solid $primary-indigo;
