@@ -44,7 +44,7 @@ export default function EditWarehouse() {
     const newErrors = {};
 
     if (!/^\d{10}$/.test(formData.contact_phone)) {
-      newErrors.contact_phone = "Invalid Phone Number";
+      newErrors.contact_phone = "Invalid Phone Number. Must be 10 digits";
     }
 
     if (!/\S+@\S+\.\S+/.test(formData.contact_email)) {
