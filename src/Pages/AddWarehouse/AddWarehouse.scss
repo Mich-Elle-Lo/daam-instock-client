@@ -1,0 +1,222 @@
+@use "../../Styles/partials/variables" as *;
+@use "../../Styles/partials/mixins" as *;
+@use "../../Styles/partials/typography" as *;
+
+.add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $primary-white;
+  margin: -4rem 1rem 2.5rem;
+  border-radius: 0.3125rem;
+  box-shadow: 0 0.125rem 0.3125rem 0 rgba(19, 24, 44, 0.1);
+  font-family: "TitilliumWeb-Regular", sans-serif;
+
+  @include tablet-breakpoint {
+    margin: -5.75rem 2rem 2.5rem;
+  }
+
+  @include desktop-breakpoint {
+    margin: -6rem 8.125rem 2.5rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: $base-padding;
+
+    @include mobile-breakpoint {
+      display: flex;
+      flex-direction: column;
+    }
+    @include tablet-breakpoint {
+      justify-content: center;
+    }
+  }
+
+  &__wd,
+  &__cd {
+    @include mobile-breakpoint {
+      width: 100%;
+    }
+    padding: 0 1.5rem 1rem;
+    width: 50%;
+
+    @include tablet-breakpoint {
+      border-bottom: none;
+      order: 1;
+    }
+  }
+
+  &__wd {
+    @include mobile-breakpoint {
+      border-bottom: 0.0625rem solid $secondary-cloud;
+    }
+
+    @include tablet-breakpoint {
+      border-bottom: none;
+      border-right: 0.0625rem solid $secondary-cloud;
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $d-font-size-h1;
+    line-height: $d-line-height-h1;
+    font-weight: $semibold-txt;
+    color: $primary-black;
+    padding-bottom: 1rem;
+    margin-bottom: $base-padding;
+
+    @include tablet-breakpoint {
+      font-size: $d-font-size-h1;
+      line-height: $d-line-height-h1;
+    }
+
+    @include mobile-breakpoint {
+      font-size: $m-font-size-h1;
+      line-height: $m-line-height-h1;
+    }
+
+    @include mobile-tablet-pageheader-text-style;
+    margin: 5rem, 0;
+
+    &--container {
+      border-bottom: 0.0625rem solid $secondary-cloud;
+      width: 100%;
+    }
+  }
+
+  &__icon {
+    padding-right: 0.25rem;
+    margin-right: $base-padding;
+  }
+
+  &__section {
+    margin-bottom: $base-padding;
+  }
+
+  &__section-title {
+    font-size: $d-font-size-h2;
+    line-height: $d-line-height-h2;
+    font-weight: $semibold-txt;
+    color: $primary-black;
+    margin-bottom: $base-padding;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: $form-label-spacing;
+    font-size: $m-font-size-h3;
+    font-weight: $semibold-txt;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    padding: $form-padding;
+    border-radius: $form-border-radius;
+    border: $form-border-default;
+    font-size: $d-font-size-p2;
+    margin-bottom: 1rem;
+    font-family: "TitilliumWeb-Regular", sans-serif;
+    font-weight: 400;
+    background-color: $primary-white;
+    &.error {
+      border-color: $supporting-red;
+    }
+  }
+
+  &__error {
+    font-size: $d-font-size-p3;
+    line-height: $d-line-height-p3;
+    font-weight: $regular-txt;
+    color: $supporting-red;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-top: -0.9rem;
+
+    &--icon {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  &__button--container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1.0625rem;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    margin-top: 1.5rem;
+    background-color: $background-light-grey;
+
+    @include tablet-breakpoint {
+      order: 2;
+      justify-content: flex-end;
+    }
+
+    @include desktop-breakpoint {
+      order: 2;
+      justify-content: flex-end;
+    }
+  }
+
+  &__button {
+    padding: $d-cta-btn-padding;
+    cursor: pointer;
+    border-radius: $btn-border-radius;
+    height: 2.25rem;
+    font-weight: $semibold-txt;
+    font-size: $m-font-size-h3;
+    width: 100%;
+    transition: background-color 0.3s ease;
+
+    @include tablet-breakpoint {
+      width: 10%;
+    }
+
+    @include desktop-breakpoint {
+      width: 7%;
+    }
+
+    &--cancel,
+    &--add {
+      font-family: "TitilliumWeb-SemiBold", sans-serif;
+      background-color: $primary-white;
+      color: $secondary-slate;
+      border: none;
+      border-radius: $btn-border-radius;
+      height: 2.25rem;
+      border: 0.0625rem solid $secondary-cloud;
+      font-weight: $semibold-txt;
+      font-size: $m-font-size-h3;
+
+      &:hover {
+        background-color: darken($primary-indigo, 10%);
+        font-family: "TitilliumWeb-SemiBold", sans-serif;
+        color: $primary-white;
+      }
+    }
+
+    &--cancel {
+      width: 8.6875rem;
+      @include tablet-breakpoint {
+        width: 4.5rem;
+      }
+    }
+
+    &--add {
+      width: 8.625rem;
+      @include tablet-breakpoint {
+        width: 8.625rem;
+      }
+    }
+  }
+}

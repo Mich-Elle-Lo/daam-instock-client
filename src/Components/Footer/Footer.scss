@@ -3,9 +3,15 @@
 @use "../../Styles/partials/typography" as *;
 
 footer {
-  background-color: $background-graphite;
+  background-color: $background-light-grey;
   width: 100%;
   height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 
   &__cr {
     font-family: "TitilliumWeb-Regular", sans-serif;

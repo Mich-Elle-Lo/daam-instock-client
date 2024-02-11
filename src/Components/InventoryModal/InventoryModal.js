@@ -1,15 +1,15 @@
-import "./WarehouseModal.scss";
+import "./InventoryModal.scss";
 import closeIcon from "../../Assets/Icons/close-24px.svg";
 
-export default function Modal({
+export default function InventoryModal({
   show,
   onClose,
   onDelete,
-  onConfirm,
-  warehouse,
+  //onConfirm,
+  inventory,
 }) {
   const handleDelete = () => {
-    onDelete(warehouse.id)
+    onDelete(inventory.id)
       .then(() => onClose())
       .catch((error) => {
         console.error("Deletion failed:", error);
@@ -32,7 +32,7 @@ export default function Modal({
         </div>
         <div className="modal__header">
           <h2 className="modal__title">
-            Delete {warehouse.warehouse_name} warehouse?
+            Delete {inventory.item_name} inventory item?
           </h2>
           <img
             className="modal__close--tablet"
@@ -43,9 +43,8 @@ export default function Modal({
         <div className="modal__wrapper">
           <div className="modal__body">
             <p className="modal__message">
-              Please confirm that you’d like to delete the{" "}
-              {warehouse.warehouse_name} from the list of warehouses. You won’t
-              be able to undo this action.
+              Please confirm that you'd like to delete the {inventory.item_name}{" "}
+              from the inventory list. You won't be able to undo this action.
             </p>
           </div>
           <div className="modal__footer">

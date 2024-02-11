@@ -4,7 +4,6 @@
 .modal {
   display: flex;
   justify-content: center;
-  //   align-items: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -18,10 +17,8 @@
     padding: 1.5rem;
     border-radius: 0.2rem;
     height: 50%;
-    margin-top: 60%;
-    @include mobile-breakpoint {
-      max-width: 75%;
-    }
+    max-width: 45%;
+    margin-top: 15vh;
     @include tablet-breakpoint {
       margin-top: 20vh;
       min-height: 15rem;
@@ -94,7 +91,7 @@
     height: $m-btn-height;
     border-radius: 1.25rem;
     border: none;
-    color: $secondary-cloud;
+    // color: $secondary-cloud;
     @include tablet-breakpoint {
       width: auto;
       white-space: nowrap;
