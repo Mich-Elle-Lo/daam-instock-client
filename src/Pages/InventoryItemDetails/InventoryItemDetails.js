@@ -36,10 +36,6 @@ export default function InventoryItemDetails() {
     fetchData();
   }, [id]);
 
-  // const editItem = () => {
-  //   navigate(`/inventories/edit/${singleItem.id}`);
-  // };
-
   return (
     <section className="itemdetails">
       <div className="itemdetails__header">
