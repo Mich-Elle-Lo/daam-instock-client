@@ -53,7 +53,7 @@ export default function InventoryItemDetails() {
           </Link>
           <h1 className="itemdetails__header--title">{singleItem.item_name}</h1>
         </div>
-        <Link to="#" className="itemdetails__edit">
+        <div to="#" className="itemdetails__edit">
           <button className="itemdetails__header--button" onClick={editItem}>
             <img
               className="itemdetails__header--buttonicon"
@@ -62,7 +62,7 @@ export default function InventoryItemDetails() {
             />
             <p className="itemdetails__header--buttontext">Edit</p>
           </button>
-        </Link>
+        </div>
       </div>
       <div className="itemdetails__container">
         <div className="itemdetails__description">
