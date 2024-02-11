@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as ArrowBack } from "../../Assets/Icons/arrow_back-24px.svg";
 import { ReactComponent as Error } from "../../Assets/Icons/error-24px.svg";
@@ -17,7 +18,7 @@ const AddWarehouse = () => {
   const [position, setPosition] = useState("");
 
   const validatePhoneNumber = (phoneNumber) => {
-    const phoneRegex = /^\d{10}$/;
+    const phoneRegex = /^\+1 \(\d{3}\) \d{3}-\d{4}$/;
     return phoneRegex.test(phoneNumber);
   };
 
@@ -70,12 +71,33 @@ const AddWarehouse = () => {
     return isValid;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (validateForm()) {
-      // Submit form to backend
-      console.log("Form submitted successfully");
+      const warehouseData = {
+        warehouse_name: name,
+        address,
+        city,
+        country,
+        contact_name: contactName,
+        contact_position: position,
+        contact_phone: phoneNumber,
+        contact_email: email,
+      };
+      try {
+        const response = await axios.post(
+          "http://localhost:8080/api/warehouses",
+          warehouseData
+        );
+        console.log("Warehouse added successfully", response.data);
+        navigate("/");
+      } catch (error) {
+        console.error(
+          "Error adding warehouse:",
+          error.response ? error.response.data : error.message
+        );
+      }
     } else {
       console.log("Form validation failed");
     }
