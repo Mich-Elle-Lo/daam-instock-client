@@ -53,16 +53,12 @@ export default function InventoryItemDetails() {
           </Link>
           <h1 className="itemdetails__header--title">{singleItem.item_name}</h1>
         </div>
-        <Link to="#" className="itemdetails__edit">
-          <button className="itemdetails__header--button" onClick={editItem}>
-            <img
-              className="itemdetails__header--buttonicon"
-              src={Edit}
-              alt="edit"
-            />
-            <p className="itemdetails__header--buttontext">Edit</p>
+        <div to="#" className="itemdetails__edit">
+          <button className="itemdetails__button" onClick={editItem}>
+            <img className="itemdetails__button--icon" src={Edit} alt="edit" />
+            <p className="itemdetails__button--text">Edit</p>
           </button>
-        </Link>
+        </div>
       </div>
       <div className="itemdetails__container">
         <div className="itemdetails__description">
