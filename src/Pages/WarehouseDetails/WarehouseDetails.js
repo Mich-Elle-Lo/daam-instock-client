@@ -77,7 +77,16 @@ export default function WarehouseDetails() {
           <h1 className="warehouse__title">
             {warehouse?.warehouse_name || "Loading warehouse details..."}
           </h1>
-          <div className="warehouse__header-edit">
+          <div
+            className="warehouse__header-edit"
+            onClick={(e) => {
+              e.stopPropagation();
+
+              navigate(`/edit-warehouse/${warehouse.id}`, {
+                state: { warehouse },
+              });
+            }}
+          >
             <img
               className="warehouse__header-editicon"
               src={editIcon}

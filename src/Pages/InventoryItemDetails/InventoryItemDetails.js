@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Arrow from "../../Assets/Icons/arrow_back-24px.svg";
 import Edit from "../../Assets/Icons/edit-24px.svg";
@@ -36,17 +36,20 @@ export default function InventoryItemDetails() {
     fetchData();
   }, [id]);
 
+  const handleCancel = () => {
+    navigate(-1);
+  };
+
   return (
     <section className="itemdetails">
       <div className="itemdetails__header">
         <div className="itemdetails__header--back">
-          <Link to="/inventories" className="itemdetails__header--link">
-            <img
-              className="itemdetails__header--arrow"
-              src={Arrow}
-              alt="Backarrow"
-            />
-          </Link>
+          <img
+            className="itemdetails__header--arrow"
+            src={Arrow}
+            alt="Backarrow"
+            onClick={handleCancel}
+          />
           <h1 className="itemdetails__header--title">{inventory.item_name}</h1>
         </div>
         <div to="#" className="itemdetails__edit">
