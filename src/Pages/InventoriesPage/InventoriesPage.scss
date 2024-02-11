@@ -126,7 +126,7 @@
     padding-left: $m-padding-sides;
     padding-right: $m-padding-sides;
     flex-direction: column;
-    border-top: 1px solid $secondary-cloud;
+    border-top: 0.0625rem solid $secondary-cloud;
 
     @include tablet-breakpoint {
       width: 100%;
@@ -190,7 +190,7 @@
   }
   &__infotitle {
     display: contents;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: $semibold-txt;
 
     @include tablet-breakpoint {
@@ -305,7 +305,7 @@
   }
 
   &__datatablet-name {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: $semibold-txt;
     color: $primary-indigo;
   }

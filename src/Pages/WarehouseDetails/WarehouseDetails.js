@@ -34,7 +34,6 @@ export default function WarehouseDetails() {
       });
   };
 
-  // Open modal
   const handleOpenModal = (selectedInventory) => {
     setSelectedInventory(selectedInventory);
     setShowModal(true);
@@ -89,7 +88,6 @@ export default function WarehouseDetails() {
         </div>
 
         <article className="warehouse__contact">
-          {/* //<div className="warehouse__contact-box warehouse__contact-box--tablet"> */}
           <div className="warehouse__contact-mobile-address">
             <p className="warehouse__contact-title">WAREHOUSE ADDRESS:</p>
             <p className="warehouse__contact-details ">
@@ -103,7 +101,7 @@ export default function WarehouseDetails() {
               {warehouse.city}, {warehouse.country}
             </p>
           </div>
-          {/* </div> */}
+
           <div className="warehouse__contact-box">
             <div className="warehouse__contact-info">
               {" "}
@@ -236,7 +234,7 @@ export default function WarehouseDetails() {
                   />
                 </div>
               </div>
-              {/* TABLET VIEW */}
+
               <div className="inventory__tabletinfo">
                 <div className="inventory__datatablet">
                   <p className="inventory__datatablet--highlight">
