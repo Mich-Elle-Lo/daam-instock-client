@@ -96,7 +96,7 @@ export default function InventoriesPage() {
               className="inventories__button"
               onClick={() => navigate("/inventories/add")}
             >
-              +Add New Item
+              + Add New Item
             </button>
           </form>
         </div>
