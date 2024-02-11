@@ -209,6 +209,10 @@
   &__data {
     @include mobile-tablet-labels-buttons-text-style;
     overflow: hidden;
+    width: 100%;
+    height: auto;
+    text-overflow: clip;
+    word-wrap: break-word;
     &--highlight {
       color: $primary-indigo;
       &:hover {

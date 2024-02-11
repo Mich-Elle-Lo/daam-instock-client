@@ -91,7 +91,7 @@
     height: $m-btn-height;
     border-radius: 1.25rem;
     border: none;
-    color: $secondary-cloud;
+    // color: $secondary-cloud;
     @include tablet-breakpoint {
       width: auto;
       white-space: nowrap;
@@ -101,16 +101,18 @@
   }
   &__cancel {
     color: $secondary-cloud;
-    border: 1px solid $secondary-cloud;
+    border: 1px solid $secondary-slate;
     background: $primary-white;
     &:hover {
-      border: 1px solid $primary-indigo;
+      border: 0.063rem solid $primary-indigo;
       color: $primary-indigo;
     }
   }
   &__delete {
+    color: $primary-white;
     background: $supporting-red;
     &:hover {
+      color: $primary-white;
       background: $background-graphite;
     }
   }
