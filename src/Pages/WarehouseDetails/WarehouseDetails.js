@@ -7,6 +7,7 @@ import sortIcon from "../../Assets/Icons/sort-24px.svg";
 import trashIcon from "../../Assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../Assets/Icons/edit-24px.svg";
 import arrowIcon from "../../Assets/Icons/chevron_right-24px.svg";
+import backIcon from "../../Assets/Icons/arrow_back-24px.svg";
 
 export default function WarehouseDetails() {
   const baseUrl = "http://localhost:8080/";
@@ -34,7 +35,6 @@ export default function WarehouseDetails() {
       });
   };
 
-  // Open modal
   const handleOpenModal = (selectedInventory) => {
     setSelectedInventory(selectedInventory);
     setShowModal(true);
@@ -75,9 +75,18 @@ export default function WarehouseDetails() {
       />
       <div className="warehouse__content">
         <div className="warehouse__header">
-          <h1 className="warehouse__title">
-            {warehouse?.warehouse_name || "Loading warehouse details..."}
-          </h1>
+          <div className="warehouse__header-title">
+            <img
+              src={backIcon}
+              className="back-arrow"
+              alt="Back Arrow"
+              onClick={() => navigate(-1)}
+            />
+            <h1 className="warehouse__title">
+              {warehouse?.warehouse_name || "Loading warehouse details..."}
+            </h1>
+          </div>
+
           <div
             className="warehouse__header-edit"
             onClick={(e) => {
@@ -98,7 +107,6 @@ export default function WarehouseDetails() {
         </div>
 
         <article className="warehouse__contact">
-          {/* //<div className="warehouse__contact-box warehouse__contact-box--tablet"> */}
           <div className="warehouse__contact-mobile-address">
             <p className="warehouse__contact-title">WAREHOUSE ADDRESS:</p>
             <p className="warehouse__contact-details ">
@@ -112,7 +120,7 @@ export default function WarehouseDetails() {
               {warehouse.city}, {warehouse.country}
             </p>
           </div>
-          {/* </div> */}
+
           <div className="warehouse__contact-box">
             <div className="warehouse__contact-info">
               {" "}
@@ -255,7 +263,7 @@ export default function WarehouseDetails() {
                   />
                 </div>
               </div>
-              {/* TABLET VIEW */}
+
               <div className="inventory__tabletinfo">
                 <div className="inventory__datatablet">
                   <p className="inventory__datatablet--highlight">

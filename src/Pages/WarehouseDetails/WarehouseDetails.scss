@@ -31,6 +31,11 @@
     justify-content: space-between;
     border-bottom: 0.1rem solid $secondary-cloud;
   }
+  &__header-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
   &__header-edit {
     @include mobile-tablet-labels-buttons-text-style;
     display: flex;
