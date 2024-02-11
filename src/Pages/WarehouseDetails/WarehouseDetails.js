@@ -16,8 +16,6 @@ export default function WarehouseDetails() {
 
   const [warehouse, setWarehouse] = useState(state?.warehouse);
   const [inventories, setInventories] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [selectedInventory, setSelectedInventory] = useState(null);
 
@@ -44,7 +42,6 @@ export default function WarehouseDetails() {
 
   useEffect(() => {
     const fetchWarehouseDetails = async () => {
-      setIsLoading(true);
       try {
         let warehouseData = state?.warehouse;
         if (!warehouseData) {
@@ -52,17 +49,12 @@ export default function WarehouseDetails() {
           warehouseData = response.data;
           setWarehouse(warehouseData);
         }
-
         const inventoryResponse = await axios.get(
           `${baseUrl}api/warehouses/${id}/inventories`
         );
-
         setInventories(inventoryResponse.data);
       } catch (error) {
         console.error("Error fetching data:", error);
-        setError("Failed to fetch data");
-      } finally {
-        setIsLoading(false);
       }
     };
 
