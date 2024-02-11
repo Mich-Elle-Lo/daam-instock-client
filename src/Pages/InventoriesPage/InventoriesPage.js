@@ -74,7 +74,7 @@ export default function InventoriesPage() {
         inventory={selectedInventory}
       />
       <article className="inventories__content">
-        <div className="inventories__wrapper">
+        <div className="inventories__header">
           <h1 className="inventories__title">Inventory</h1>
           <form className="inventories__form">
             <div className="inventories__search">

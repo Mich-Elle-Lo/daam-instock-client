@@ -3,47 +3,20 @@
 @use "../../Styles/partials/typography" as *;
 
 .inventories {
-  margin: 0;
-  position: relative;
-  margin-top: -6rem;
-  margin-bottom: 5rem;
-  border-radius: 0.3125;
-  background-color: rgba(0, 0, 0, 0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 100%;
+  @include component-overlay;
 
   &__content {
-    background-color: $primary-white;
-    box-shadow: 0rem 0.125rem 0.3125rem 0rem rgba(19, 24, 44, 0.1);
-    border-radius: 0.2rem;
-    width: 90%;
-    @include tablet-breakpoint {
-      margin-top: 5vh;
-      height: 95%;
-      width: 95%;
-    }
+    @include component-content;
   }
+
   &__title {
-    padding-top: 1rem;
     @include mobile-tablet-pageheader-text-style;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
-  &__wrapper {
-    padding: 0 1rem;
-    padding-bottom: 1.5rem;
-
-    @include tablet-breakpoint {
-      padding-bottom: 0;
-      padding-left: 2rem;
-      padding-right: 2rem;
-
-      display: flex;
-      flex-direction: row;
-      align-self: center;
-      justify-content: space-between;
-    }
+  &__header {
+    @include component-header;
+    padding-bottom: $m-padding-space;
   }
   &__form {
     display: flex;

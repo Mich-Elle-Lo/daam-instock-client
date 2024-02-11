@@ -74,11 +74,20 @@ export default function WarehouseDetails() {
         inventory={selectedInventory}
       />
       <div className="warehouse__content">
-        <div className="warehouse__wrapper">
+        <div className="warehouse__header">
           <h1 className="warehouse__title">
             {warehouse?.warehouse_name || "Loading warehouse details..."}
           </h1>
+          <div className="warehouse__header-edit">
+            <img
+              className="warehouse__header-editicon"
+              src={editIcon}
+              alt="edit icon"
+            />
+            <p className="warehouse__header-edittext">Edit</p>
+          </div>
         </div>
+
         <article className="warehouse__contact">
           {/* //<div className="warehouse__contact-box warehouse__contact-box--tablet"> */}
           <div className="warehouse__contact-mobile-address">
@@ -208,7 +217,10 @@ export default function WarehouseDetails() {
               <div className="inventory__actions--mobile">
                 <div
                   className="inventory__trash"
-                  onClick={() => handleOpenModal(inventory)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleOpenModal(inventory);
+                  }}
                 >
                   <img
                     className="inventory__trashicon"
@@ -260,7 +272,10 @@ export default function WarehouseDetails() {
                 <div className="inventory__dataaction inventory__actions--tablet">
                   <div
                     className="inventory__trash"
-                    onClick={() => handleOpenModal(inventory)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleOpenModal(inventory);
+                    }}
                   >
                     <img
                       className="inventory__trashicon"
