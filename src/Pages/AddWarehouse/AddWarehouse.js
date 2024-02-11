@@ -18,7 +18,7 @@ const AddWarehouse = () => {
   const [position, setPosition] = useState("");
 
   const validatePhoneNumber = (phoneNumber) => {
-    const phoneRegex = /^\d{10}$/;
+    const phoneRegex = /^\+1 \(\d{3}\) \d{3}-\d{4}$/;
     return phoneRegex.test(phoneNumber);
   };
 
