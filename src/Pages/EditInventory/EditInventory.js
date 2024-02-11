@@ -74,7 +74,7 @@ export default function EditInventory() {
   };
 
   const handleCancel = () => {
-    navigate("/inventories");
+    navigate(-1);
   };
 
   const handleSave = async () => {
