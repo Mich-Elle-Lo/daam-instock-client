@@ -15,6 +15,52 @@
     @content;
   }
 }
+@mixin component-overlay {
+  margin-top: -6rem;
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 10;
+  @include tablet-breakpoint() {
+    margin-top: -7rem;
+  }
+}
+
+@mixin component-content {
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
+  background: $primary-white;
+  border-radius: 0.2rem;
+  height: 70%;
+  width: 90%;
+  margin-top: 5vh;
+
+  @include tablet-breakpoint {
+    margin-top: 0.75rem;
+    height: 95%;
+    width: 95%;
+  }
+  @include desktop-breakpoint {
+    width: 86%;
+  }
+}
+
+@mixin component-header {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  @include tablet-breakpoint {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0;
+  }
+}
 @mixin t-btn-width {
   padding-right: 1rem;
   padding-left: 1rem;
