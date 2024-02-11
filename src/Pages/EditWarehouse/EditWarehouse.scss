@@ -33,6 +33,10 @@
   &__section-title {
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
+
+    @include tablet-breakpoint {
+      margin-top: 0;
+    }
   }
 
   &__warehouse-details {
@@ -43,6 +47,7 @@
       border-bottom: none;
       border-right: 1px solid $secondary-cloud;
       flex: 1;
+      margin-top: 1.5rem;
     }
   }
 
@@ -51,6 +56,7 @@
 
     @include tablet-breakpoint {
       flex: 1;
+      margin-top: 1.5rem;
     }
   }
 

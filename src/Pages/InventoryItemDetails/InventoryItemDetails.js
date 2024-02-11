@@ -6,7 +6,7 @@ import Edit from "../../Assets/Icons/edit-24px.svg";
 import "./InventoryItemDetails.scss";
 
 export default function InventoryItemDetails() {
-  const [singleItem, setSingleItem] = useState({
+  const [inventory, setInventory] = useState({
     id: "",
     warehouse_id: "",
     item_name: "",
@@ -22,12 +22,12 @@ export default function InventoryItemDetails() {
 
   useEffect(() => {
     const fetchData = async () => {
-      if (id !== singleItem.id) {
+      if (id !== inventory.id) {
         try {
           const response = await axios.get(
             `http://localhost:8080/api/inventories/${id}`
           );
-          setSingleItem(response.data);
+          setInventory(response.data);
         } catch (error) {
           console.log(error);
         }
@@ -35,10 +35,6 @@ export default function InventoryItemDetails() {
     };
     fetchData();
   }, [id]);
-
-  const editItem = () => {
-    navigate(`/inventories/edit/${singleItem.id}`);
-  };
 
   return (
     <section className="itemdetails">
@@ -51,10 +47,17 @@ export default function InventoryItemDetails() {
               alt="Backarrow"
             />
           </Link>
-          <h1 className="itemdetails__header--title">{singleItem.item_name}</h1>
+          <h1 className="itemdetails__header--title">{inventory.item_name}</h1>
         </div>
         <div to="#" className="itemdetails__edit">
-          <button className="itemdetails__button" onClick={editItem}>
+          <button
+            className="itemdetails__button"
+            onClick={() =>
+              navigate(`/inventories/edit/${inventory.id}`, {
+                state: { inventory },
+              })
+            }
+          >
             <img className="itemdetails__button--icon" src={Edit} alt="edit" />
             <p className="itemdetails__button--text">Edit</p>
           </button>
@@ -66,11 +69,11 @@ export default function InventoryItemDetails() {
             ITEM DESCRIPTION:
           </h3>
           <p className="itemdetails__description--description">
-            {singleItem.description}
+            {inventory.description}
           </p>
           <h3 className="itemdetails__description--header">CATEGORY:</h3>
           <p className="itemdetails__description--description">
-            {singleItem.category}
+            {inventory.category}
           </p>
         </div>
         <div className="itemdetails__line"></div>
@@ -78,24 +81,24 @@ export default function InventoryItemDetails() {
           <div className="itemdetails__logistics--detail">
             <div className="itemdetails__logistics--status">
               <h3 className="itemdetails__logistics--name">STATUS:</h3>
-              {singleItem.status === "In Stock" && (
+              {inventory.status === "In Stock" && (
                 <p className="itemdetails__logistics--instock">IN STOCK</p>
               )}
-              {singleItem.status === "Out of Stock" && (
+              {inventory.status === "Out of Stock" && (
                 <p className="itemdetails__logistics--outstock">OUT OF STOCK</p>
               )}
             </div>
             <div className="itemdetails__logistics--quantity">
               <h3 className="itemdetails__logistics--name">QUANTITY:</h3>
               <p className="itemdetails__logistics--value">
-                {singleItem.quantity}
+                {inventory.quantity}
               </p>
             </div>
           </div>
           <div className="itemdetails__logistics--warehouse">
             <h3 className="itemdetails__logistics--name">WAREHOUSE:</h3>
             <p className="itemdetails__logistics--value">
-              {singleItem.warehouse_name}
+              {inventory.warehouse_name}
             </p>
           </div>
         </div>
