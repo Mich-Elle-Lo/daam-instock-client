@@ -130,7 +130,7 @@
     }
     &:hover {
       cursor: pointer;
-      background-color: $background-light-grey;
+      background-color: rgba($primary-indigo, $opacity);
     }
   }
   &__details {
@@ -211,6 +211,10 @@
     overflow: hidden;
     &--highlight {
       color: $primary-indigo;
+      &:hover {
+        color: $primary-indigo;
+        text-decoration: underline;
+      }
     }
   }
   &__infoboxdiv {
@@ -228,6 +232,10 @@
     align-items: center;
     &--highlight {
       color: $primary-indigo;
+      &:hover {
+        color: $primary-indigo;
+        text-decoration: underline;
+      }
     }
   }
 }

@@ -53,11 +53,11 @@ const AddWarehouse = () => {
 
     if (!email.trim()) {
       errors.email =
-        "Email is required. Please following the format: user@domain.com";
+        "Email is required. Please following the format: username@domain.com";
       isValid = false;
     } else if (!validateEmail(email)) {
       errors.email =
-        "Invalid Email. Please following the format: user@domain.com";
+        "Invalid Email. Please following the format: username@domain.com";
       isValid = false;
     }
 
@@ -274,7 +274,7 @@ const AddWarehouse = () => {
               id="phoneNumber"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
-              placeholder="Phone Number format: +1 (123) 123-1234"
+              placeholder="Phone Number format +1 (123) 123-1234"
               autoComplete="PhoneNumber"
             />
 
@@ -295,7 +295,7 @@ const AddWarehouse = () => {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email format use@domain.com"
+              placeholder="Email format username@domain.com"
               autoComplete="email"
             />
             {formErrors.email && (

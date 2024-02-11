@@ -134,7 +134,7 @@
       justify-content: space-between;
     }
     &:hover {
-      background-color: $background-light-grey;
+      background-color: rgba($primary-indigo, $opacity);
       cursor: pointer;
     }
   }
