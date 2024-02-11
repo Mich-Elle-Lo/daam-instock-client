@@ -42,12 +42,10 @@ const AddWarehouse = () => {
     }
 
     if (!phoneNumber.trim()) {
-      errors.phoneNumber =
-        "Phone Number is required: Please follow the format +1 (000) 000-0000";
+      errors.phoneNumber = "Phone Number is required";
       isValid = false;
     } else if (!validatePhoneNumber(phoneNumber)) {
-      errors.phoneNumber =
-        "Invalid Phone Number: Please follow the format +1 (000) 000-0000";
+      errors.phoneNumber = "Invalid Phone Number";
       isValid = false;
     }
 
@@ -96,7 +94,7 @@ const AddWarehouse = () => {
         navigate("/");
       } catch (error) {
         console.error(
-          "Error adding warehouse. Please try again.",
+          "Error adding warehouse:",
           error.response ? error.response.data : error.message
         );
       }
