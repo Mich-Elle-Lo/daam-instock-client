@@ -244,7 +244,10 @@ export default function InventoriesPage() {
                 <div className="inventories__actions inventories__actions--tablet">
                   <div
                     className="inventories__trash"
-                    onClick={() => handleOpenModal(inventory)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleOpenModal(inventory);
+                    }}
                   >
                     <img
                       className="inventories__trashicon"
@@ -254,11 +257,12 @@ export default function InventoriesPage() {
                   </div>
                   <div
                     className="inventories__edit"
-                    onClick={() =>
+                    onClick={(e) => {
+                      e.stopPropagation();
                       navigate(`/inventories/edit/${inventory.id}`, {
                         state: { inventory },
-                      })
-                    }
+                      });
+                    }}
                   >
                     <img
                       className="inventories__editicon"
@@ -273,7 +277,10 @@ export default function InventoriesPage() {
               <div className=" inventories__actions inventories__actions--mobile">
                 <div
                   className="inventories__trash"
-                  onClick={() => handleOpenModal(inventory)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleOpenModal(inventory);
+                  }}
                 >
                   <img
                     className="inventories__trashicon"
@@ -284,11 +291,12 @@ export default function InventoriesPage() {
 
                 <div
                   className="inventories__edit"
-                  onClick={() =>
+                  onClick={(e) => {
+                    e.stopPropagation();
                     navigate(`/inventories/edit/${inventory.id}`, {
                       state: { inventory },
-                    })
-                  }
+                    });
+                  }}
                 >
                   <img
                     className="inventories__editicon"

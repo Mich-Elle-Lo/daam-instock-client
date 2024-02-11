@@ -3,51 +3,17 @@
 @use "../../Styles/partials/typography" as *;
 
 .warehouses {
-  margin-top: -6rem;
-  margin-bottom: 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  // top: 0;
-  // left: 0;
-  width: 100%;
-  height: auto;
-  background-color: rgba(0, 0, 0, 0);
-  z-index: 10;
+  @include component-overlay;
 
   &__content {
-    border-radius: 5px;
-    box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
-    background: $primary-white;
-    // padding: 1.5rem;
-    border-radius: 0.2rem;
-    height: 70%;
-    width: 90%;
-    margin-top: 5vh;
-
-    @include tablet-breakpoint {
-      margin-top: 5vh;
-      height: 95%;
-      width: 95%;
-    }
-    @include desktop-breakpoint {
-      width: 86%;
-    }
+    @include component-content;
   }
   &__title {
     @include mobile-tablet-pageheader-text-style;
   }
-  &__wrapper {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-bottom: $t-padding-space;
-    @include tablet-breakpoint {
-      display: flex;
-      flex-direction: row;
-      align-self: center;
-      justify-content: space-between;
-    }
+  &__header {
+    @include component-header;
+    padding-bottom: $m-padding-space;
   }
   &__form {
     display: flex;

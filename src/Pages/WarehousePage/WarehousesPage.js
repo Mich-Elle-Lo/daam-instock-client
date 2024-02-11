@@ -66,7 +66,7 @@ export default function WareHousesPage() {
           onDelete={deleteWarehouse}
           warehouse={selectedWarehouse}
         />
-        <div className="warehouses__wrapper">
+        <div className="warehouses__header">
           <h1 className="warehouses__title">Warehouses</h1>
           <form className="warehouses__form">
             <div className="warehouses__search">
