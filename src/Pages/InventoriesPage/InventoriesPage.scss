@@ -84,7 +84,7 @@
 
     @include tablet-breakpoint {
       @include mobile-tablet-labels-buttons-text-style;
-
+      font-size: 0.8125rem;
       font-weight: $semibold-txt;
       color: $secondary-slate;
       background-color: $background-light-grey;
