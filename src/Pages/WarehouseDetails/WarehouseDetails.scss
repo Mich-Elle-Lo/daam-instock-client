@@ -207,9 +207,9 @@
   &__mobilebox {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    width: auto;
+    width: 50%;
     padding-left: $m-padding-sides;
 
     @include tablet-breakpoint {
@@ -227,7 +227,7 @@
     }
   }
   &__infobox {
-    width: 15rem;
+    min-width: 10rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

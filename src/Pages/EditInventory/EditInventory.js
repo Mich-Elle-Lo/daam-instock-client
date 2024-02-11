@@ -1,11 +1,12 @@
 import "./EditInventory.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useParams, useLocation, useNavigate } from "react-router-dom";
 import BackArrow from "../../Assets/Icons/arrow_back-24px.svg";
 import ErrorIcon from "../../Assets/Icons/error-24px.svg";
 
 export default function EditInventory() {
+  const { id } = useParams();
   const location = useLocation();
   const navigate = useNavigate();
   const { inventory } = location.state || {};
@@ -22,25 +23,27 @@ export default function EditInventory() {
   useEffect(() => {
     axios
       .get("http://localhost:8080/api/warehouses")
+      .then((response) => setWarehouses(response.data))
+      .catch((error) => console.error("Error fetching warehouses:", error));
+
+    if (!id) return;
+    axios
+      .get(`http://localhost:8080/api/inventories/${id}`)
       .then((response) => {
-        setWarehouses(response.data);
+        setFormData({
+          item_name: response.data.item_name,
+          description: response.data.description,
+          category: response.data.category,
+          status: response.data.status,
+          quantity: response.data.quantity,
+          warehouse_id: response.data.warehouse_id,
+        });
       })
       .catch((error) => {
-        console.error("Error fetching warehouses:", error);
+        console.error("Error fetching inventory details:", error);
+        navigate("/not-found");
       });
-
-    if (inventory) {
-      setFormData({
-        ...formData,
-        item_name: inventory.item_name,
-        description: inventory.description,
-        category: inventory.category,
-        status: inventory.status,
-        quantity: inventory.quantity,
-        warehouse_id: inventory.warehouse_id,
-      });
-    }
-  }, [inventory]);
+  }, [id]);
 
   const [errors, setErrors] = useState({});
 
@@ -53,11 +56,11 @@ export default function EditInventory() {
     }));
   };
 
-  useEffect(() => {
-    if (inventory) {
-      setFormData(inventory);
-    }
-  }, [inventory]);
+  // useEffect(() => {
+  //   if (inventory) {
+  //     setFormData(inventory);
+  //   }
+  // }, [inventory]);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -109,7 +112,7 @@ export default function EditInventory() {
         `http://localhost:8080/api/inventories/${inventory.id}`,
         updatedFormData
       );
-      navigate("/inventories");
+      navigate(-1);
     } catch (error) {
       console.error("Error saving inventory:", error);
     }

@@ -249,6 +249,7 @@ export default function WarehouseDetails() {
                   className="inventory__edit"
                   onClick={(e) => {
                     e.stopPropagation();
+
                     if (inventory && inventory.id) {
                       navigate(`/inventories/edit/${inventory.id}`, {
                         state: { inventory },
