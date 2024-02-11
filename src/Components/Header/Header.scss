@@ -8,10 +8,12 @@
 
   @include tablet-breakpoint {
     @include flex-default(center, space-between);
+    height: 15rem;
     padding: 0 $t-padding-sides 6rem;
   }
 
   @include desktop-breakpoint {
+    height: 15rem;
     padding: 2rem 8.125rem 7.5rem;
   }
 
