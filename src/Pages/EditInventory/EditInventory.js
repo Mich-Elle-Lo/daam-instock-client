@@ -7,8 +7,10 @@ import ErrorIcon from "../../Assets/Icons/error-24px.svg";
 
 export default function EditInventory() {
   const location = useLocation();
+
   const navigate = useNavigate();
   const { inventory } = location.state || {};
+  console.log("received inventory", inventory);
   const [warehouses, setWarehouses] = useState([]);
   const [formData, setFormData] = useState({
     item_name: "",
