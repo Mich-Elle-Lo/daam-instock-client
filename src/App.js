@@ -19,6 +19,7 @@ function App() {
         <section className="app__content">
           <Routes>
             <Route path="/" element={<WarehousesPage />} />
+            <Route path="/warehouse" element={<WarehousesPage />} />
             <Route path="/warehouse/:id" element={<WarehouseDetails />} />
             <Route path="/edit-warehouse/:id" element={<EditWarehouse />} />
             <Route path="/inventories" element={<InventoriesPage />} />
