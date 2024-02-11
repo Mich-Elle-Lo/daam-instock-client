@@ -9,7 +9,7 @@
   background-color: $primary-white;
   margin: -4rem 1rem 2.5rem;
   border-radius: 0.3125rem;
-  box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
+  box-shadow: 0 0.125rem 0.3125rem 0 rgba(19, 24, 44, 0.1);
   font-family: "TitilliumWeb-Regular", sans-serif;
 
   @include tablet-breakpoint {
@@ -21,17 +21,17 @@
   }
 
   &__form {
-    display: flex; // Ensure flex-direction is row for form
+    display: flex;
     flex-wrap: wrap;
     width: 100%;
     margin-top: $base-padding;
 
     @include mobile-breakpoint {
-      display: flex; // Ensure flex-direction is row for form
+      display: flex;
       flex-direction: column;
     }
     @include tablet-breakpoint {
-      justify-content: center; // Adjust alignment for tablet
+      justify-content: center;
     }
   }
 
@@ -45,18 +45,18 @@
 
     @include tablet-breakpoint {
       border-bottom: none;
-      order: 1; // Adjust order for tablet
+      order: 1;
     }
   }
 
   &__wd {
     @include mobile-breakpoint {
-      border-bottom: 1px solid $secondary-cloud;
+      border-bottom: 0.0625rem solid $secondary-cloud;
     }
 
     @include tablet-breakpoint {
       border-bottom: none;
-      border-right: 1px solid $secondary-cloud;
+      border-right: 0.0625rem solid $secondary-cloud;
       flex-direction: column;
     }
   }
@@ -86,7 +86,7 @@
     margin: 5rem, 0;
 
     &--container {
-      border-bottom: 1px solid $secondary-cloud;
+      border-bottom: 0.0625rem solid $secondary-cloud;
       width: 100%;
     }
   }
@@ -163,7 +163,7 @@
     }
 
     @include desktop-breakpoint {
-      order: 2; // Adjust order for desktop
+      order: 2;
       justify-content: flex-end;
     }
   }
@@ -194,7 +194,7 @@
       border: none;
       border-radius: $btn-border-radius;
       height: 2.25rem;
-      border: 1px solid $secondary-cloud;
+      border: 0.0625rem solid $secondary-cloud;
       font-weight: $semibold-txt;
       font-size: $m-font-size-h3;
 
