@@ -42,18 +42,22 @@ const AddWarehouse = () => {
     }
 
     if (!phoneNumber.trim()) {
-      errors.phoneNumber = "Phone Number is required";
+      errors.phoneNumber =
+        "Phone Number is required: Please following the format: +1 (123) 123-1234";
       isValid = false;
     } else if (!validatePhoneNumber(phoneNumber)) {
-      errors.phoneNumber = "Invalid Phone Number";
+      errors.phoneNumber =
+        "Invalid Phone Number. Please following the format: +1 (123) 123-1234";
       isValid = false;
     }
 
     if (!email.trim()) {
-      errors.email = "Email is required";
+      errors.email =
+        "Email is required. Please following the format: user@domain.com";
       isValid = false;
     } else if (!validateEmail(email)) {
-      errors.email = "Invalid Email";
+      errors.email =
+        "Invalid Email. Please following the format: user@domain.com";
       isValid = false;
     }
 
@@ -270,7 +274,7 @@ const AddWarehouse = () => {
               id="phoneNumber"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
-              placeholder="Phone Number"
+              placeholder="Phone Number format: +1 (123) 123-1234"
               autoComplete="PhoneNumber"
             />
 
@@ -291,7 +295,7 @@ const AddWarehouse = () => {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email"
+              placeholder="Email format use@domain.com"
               autoComplete="email"
             />
             {formErrors.email && (
