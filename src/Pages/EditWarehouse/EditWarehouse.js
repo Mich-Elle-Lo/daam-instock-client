@@ -42,6 +42,15 @@ export default function EditWarehouse() {
 
   const handleSave = async () => {
     const newErrors = {};
+
+    if (!/^\d{10}$/.test(formData.contact_phone)) {
+      newErrors.contact_phone = "Invalid Phone Number";
+    }
+
+    if (!/\S+@\S+\.\S+/.test(formData.contact_email)) {
+      newErrors.contact_email = "Invalid Email Address";
+    }
+
     Object.keys(formData).forEach((key) => {
       if (!formData[key]) {
         newErrors[key] = "This field is required";
@@ -52,6 +61,15 @@ export default function EditWarehouse() {
     if (Object.keys(newErrors).length > 0) {
       return;
     }
+
+    const formattedPhone = `+1 (${formData.contact_phone.substring(
+      0,
+      3
+    )}) ${formData.contact_phone.substring(
+      3,
+      6
+    )}-${formData.contact_phone.substring(6)}`;
+
     try {
       const formattedDateTime = new Date()
         .toISOString()
@@ -60,6 +78,7 @@ export default function EditWarehouse() {
 
       const updatedFormData = {
         ...formData,
+        contact_phone: formattedPhone,
         created_at: formattedDateTime,
         updated_at: formattedDateTime,
       };
